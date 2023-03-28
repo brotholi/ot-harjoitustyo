@@ -7,4 +7,6 @@ Viikolla 1 *Ohjelmistotekniikka*-kurssilla harjoiteltiin **Gitin** käyttöä.
   
 [gitlog.txt](https://github.com/brotholi/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)  
 
+### Viikko 2  
+
 [vaatimusmaarittely.md](https://github.com/brotholi/ot-harjoitustyo/blob/master/harjoitustyo/dokumentaatio/vaatimusmaarittely.md)  
