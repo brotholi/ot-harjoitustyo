@@ -10,6 +10,7 @@ Sovelluksessa on tavallisia käyttäjiä ja pääkäyttäjä. Tavallinen käytt�
 ## Käyttöliittymä
 
 Lihasloki sisältää ainakin 4 eri näkymää.
+[tähän tulee kuva]
 
 ### Alkunäkymä
 - Kirjautumisvaiheessa käyttäjä syöttää käyttäjätunnuksen ja salasanan. 
