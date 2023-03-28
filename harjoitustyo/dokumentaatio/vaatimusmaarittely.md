@@ -9,9 +9,10 @@ Sovelluksessa on tavallisia käyttäjiä ja pääkäyttäjä. Tavallinen käytt�
 
 ## Käyttöliittymä
 
-Lihasloki sisältää ainakin 4 eri näkymää.
-
-![](./kuvat/kayttoliittyma-luonnoksia.png)
+Lihasloki sisältää ainakin 4 eri näkymää.  
+  
+![](./kuvat/kayttoliittyma-luonnoksia.jpg)  
+  
 
 **Alkunäkymä**
 - Kirjautumisvaiheessa käyttäjä syöttää  käyttäjätunnuksen. Kirjautumisnäytöltä pääsee luomaan uuden käyttäjätunnuksen
