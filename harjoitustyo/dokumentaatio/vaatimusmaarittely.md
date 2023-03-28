@@ -14,24 +14,27 @@ Sovelluksessa on tavallisia käyttäjiä ja pääkäyttäjä. Tavallinen käytt�
   
 
 **Alkunäkymä**
-- Kirjautumisvaiheessa käyttäjä syöttää  käyttäjätunnuksen. Kirjautumisnäytöltä pääsee luomaan uuden käyttäjätunnuksen
+- Kirjautumisvaiheessa käyttäjä syöttää  käyttäjätunnuksen 
+- Kirjautumisnäytöltä pääsee luomaan uuden käyttäjätunnuksen
 
 **Uuden käyttäjätunnuksen luonti**
-- Uuden käyttäjätunnuksen luomisessa kerrotaan käyttäjätunnus
+- Kun käyttäjä luo uuden tunnuksen, syötetään käyttäjätunnus ja salasana 
+- Uusi tunnus luodaan painamalla *luo tunnus*
 
 **Kaikki kirjaukset**
 - Kirjausnäkymässä käyttäjä näkee aikaisemmin kirjaamansa treenit
 - Kirjausnäkymästä pääsee yksittäisen treenin kirjaamiseen painamalla uusi
+- Kirjausnäkymästä käyttäjä pääsee kirjautumaan ulos
 
 **Treenin kirjaus**
 - Treeninkirjausnäkymässä käyttäjä voi syöttää uusia liikkeitä treeniin
-- Treeninkirjausnäkymästä käyttäjä pääsee takaisin yleistreeniin painamalla lopeta/tallenna
+- Treeninkirjausnäkymästä käyttäjä pääsee takaisin yleisnäkymään painamalla lopeta/tallenna
 - Treenin nimeä ja päivämäärää voi muuttaa
 
 
 ## Toiminnallisuus perusversiossa
 - Käyttäjä voi luoda sovellukseen tunnuksen
-- Käyttäjätunnuksen on oltava vähintään 6 merkkiä pitkä ja uniikki
+- Käyttäjätunnuksen on oltava vähintään 5 merkkiä pitkä ja uniikki
 - Käyttäjä näkee aiemmin kirjatut treenit
 - Käyttäjä voi lisätä jokaiseen treeniin tehdyn liikkeen nimi, toistojen määrä ja lisäpaino kilogrammoina. 
 
@@ -40,11 +43,11 @@ Sovelluksessa on tavallisia käyttäjiä ja pääkäyttäjä. Tavallinen käytt�
 - Sovellus ilmoittaa jokaisen kirjatun treenin kohdalla personal best:ien määrän. 
 - Sovellukseen voi tallentaa treeniohjelmapohjia, jotka sisältävät käyttäjän valmiiksi määrittelemiä liikkeitä. Treeniohjelmapohjien avulla voi suoraan kirjata tehdyn treenin. 
 - Treeniohjelman kirjaamisen voi aloittaa myös ilman pohjaa.
-- Mahdollisesti käyttäjä kirjata myös lämmittelykierrokset erillisinä jokaisen liikeen kohdalle. 
+- Käyttäjä voi kirjata myös lämmittelykierrokset erillisinä jokaisen liikeen kohdalle. 
 - Sovellus kertoo, kuinka monta treeniä käyttäjä on kirjannut viikossa.
 
 **Omien käyttäjätietojen muutokset:**
 
-- Käyttäjä voi asettaa tavoitteeksi tietyn määrän treenejä viikossa ja sovellus ilmoittaa 			aina, milloin tavoitteeseen on päästy. Ilmoittaminen tapahtuu treenin kirjaamisen päättyessä, samassa kohtaa jossa ilmoitetaan henkilökohtaisista ennätyksistä.
+- Käyttäjä voi asettaa tavoitteeksi tietyn määrän treenejä viikossa ja sovellus ilmoittaa aina, milloin tavoitteeseen on päästy. Ilmoittaminen tapahtuu treenin kirjaamisen päättyessä. Samassa kohtaa ilmoitetaan henkilökohtaisista ennätyksistä.
 - Treenien poistaminen historiasta
 - Käyttäjätunnuksen poistaminen
