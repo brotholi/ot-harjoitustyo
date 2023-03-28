@@ -5,7 +5,7 @@
 
 ## Käyttäjäroolit
 
-Sovelluksessa on tavallisia käyttäjiä ja pääkäyttäjä. Tavallinen käyttäjä voi luoda uuden käyttäjätilin, jolle täytyy lisätä käyttäjätunnus ja salasana. Pääkäyttäjällä on enemmän oikeuksia kuin tavallisella käyttäjällä. Pääkäyttäjä voi muun muassa nähdä, kuinka monta käyttäjää sovelluksessa on.
+Sovelluksessa on tavallisia käyttäjiä ja pääkäyttäjä. Tavallinen käyttäjä voi luoda uuden käyttäjätilin, jolle täytyy lisätä käyttäjätunnus ja salasana. Pääkäyttäjällä on enemmän oikeuksia kuin tavallisella käyttäjällä. Pääkäyttäjä voi muun muassa nähdä, kuinka monta käyttäjää sovelluksella on kokonaisuudessaan.
 
 ## Käyttöliittymä
   
@@ -14,7 +14,7 @@ Sovelluksessa on tavallisia käyttäjiä ja pääkäyttäjä. Tavallinen käytt�
   
 
 **Alkunäkymä**
-- Kirjautumisvaiheessa käyttäjä syöttää  käyttäjätunnuksen 
+- Kirjautumisvaiheessa käyttäjä syöttää käyttäjätunnuksen ja salasanan
 - Kirjautumisnäytöltä pääsee luomaan uuden käyttäjätunnuksen
 
 **Uuden käyttäjätunnuksen luonti**
@@ -23,12 +23,12 @@ Sovelluksessa on tavallisia käyttäjiä ja pääkäyttäjä. Tavallinen käytt�
 
 **Kaikki kirjaukset**
 - Kirjausnäkymässä käyttäjä näkee aikaisemmin kirjaamansa treenit
-- Kirjausnäkymästä pääsee yksittäisen treenin kirjaamiseen painamalla uusi
+- Kirjausnäkymästä pääsee yksittäisen treenin kirjaamiseen painamalla *uusi*
 - Kirjausnäkymästä käyttäjä pääsee kirjautumaan ulos
 
 **Treenin kirjaus**
 - Treeninkirjausnäkymässä käyttäjä voi syöttää uusia liikkeitä treeniin
-- Treeninkirjausnäkymästä käyttäjä pääsee takaisin yleisnäkymään painamalla lopeta/tallenna
+- Treeninkirjausnäkymästä käyttäjä pääsee takaisin yleisnäkymään painamalla *tallenna*
 - Treenin nimeä ja päivämäärää voi muuttaa
 
 
@@ -41,19 +41,22 @@ Sovelluksessa on tavallisia käyttäjiä ja pääkäyttäjä. Tavallinen käytt�
 - Yksittäiseen treeniin voi kirjata päivämäärän
 - Jokaiseen treeniin voi kirjata useita liikkeitä
 - Käyttäjä voi lisätä jokaiselle treenin liikkeelle nimen ja sarjojen (settien) määrän
-- Jokaiselle setille käyttäjä voi kertoa toistojen määrä ja lisäpainon kilogrammoina.
+- Jokaiselle setille voi kertoa toistojen määrä ja lisäpainon kilogrammoina
 - Käyttäjä voi kirjautua ulos järjestelmästä
 
 ## Lisätoiminnallisuus - jatkokehittelyideoita
-- Omien ennätysten tarkastelu: Sovellus kertoo käyttäjälle henkilökohtaisen ennätyksen jokaisessa liikkeessä treenihistorian perusteella. Ennätys eli personal best lasketaan sekä kilojen että toistojen avulla. 
+- Sovellus tilastoi käyttäjän ennätyksiä yhdessä liikkeessä. Ennätys eli personal best lasketaan sekä kilojen että toistojen avulla.
 - Sovellus ilmoittaa jokaisen kirjatun treenin kohdalla personal best:ien määrän. 
 - Sovellukseen voi tallentaa treeniohjelmapohjia, jotka sisältävät käyttäjän valmiiksi määrittelemiä liikkeitä. Treeniohjelmapohjien avulla voi suoraan kirjata tehdyn treenin. 
-- Treeniohjelman kirjaamisen voi aloittaa myös ilman pohjaa.
-- Käyttäjä voi kirjata myös lämmittelykierrokset erillisinä jokaisen liikeen kohdalle. 
+- Treeniohjelmapohjan luonti tapahtuu mahdollisesti suoraan kirjausnäkymältä
+- Yksittäisen treenin kirjaamisen voi aloittaa myös ilman pohjaa.
+- Käyttäjä voi mahdollisesti kirjata myös lämmittelykierrokset erillisinä jokaisen liikeen kohdalle.
+- Lämmittelyliikkeitä ei huomioida ennätysten tilastoinnissa
+
+**Omien käyttäjätietojen katselu ja muutokset:**
+- Oma näkymänsä, johon voi siirtyä kirjausnäkymästä
+- Omien ennätysten tarkastelu: Sovellus kertoo käyttäjälle henkilökohtaisen ennätyksen jokaisessa liikkeessä treenihistorian perusteella.  
 - Sovellus kertoo, kuinka monta treeniä käyttäjä on kirjannut viikossa.
-
-**Omien käyttäjätietojen muutokset:**
-
 - Käyttäjä voi asettaa tavoitteeksi tietyn määrän treenejä viikossa ja sovellus ilmoittaa aina, milloin tavoitteeseen on päästy. Ilmoittaminen tapahtuu treenin kirjaamisen päättyessä. Samassa kohtaa ilmoitetaan henkilökohtaisista ennätyksistä.
 - Treenien poistaminen historiasta
 - Käyttäjätunnuksen poistaminen
