@@ -12,18 +12,19 @@ Sovelluksessa on tavallisia käyttäjiä ja pääkäyttäjä. Tavallinen käytt�
 Lihasloki sisältää ainakin 4 eri näkymää.
 
 ### Alkunäkymä
-- Kirjautumisvaiheessa käyttäjä syöttää käyttäjätunnuksen ja salasanan. Kirjautumisnäytöltä pääsee luomaan uuden käyttäjätunnuksen
+- Kirjautumisvaiheessa käyttäjä syöttää käyttäjätunnuksen ja salasanan. 
+- Kirjautumisnäytöltä pääsee luomaan uuden käyttäjätunnuksen painammalla *luo käyttäjätunnus*
 
 ### Uuden käyttäjätunnuksen luonti
 - Uuden käyttäjätunnuksen luomisessa kerrotaan käyttäjätunnus ja salasana
 
 ### Kaikki kirjaukset
 - Kirjausnäkymässä käyttäjä näkee aikaisemmin kirjaamansa treenit
-- Kirjausnäkymästä pääsee yksittäisen treenin kirjaamiseen painamalla uusi
+- Kirjausnäkymästä pääsee yksittäisen treenin kirjaamiseen painamalla *uusi*
 
 ### Treenin kirjaus
 - Treeninkirjausnäkymässä käyttäjä voi syöttää uusia liikkeitä treeniin
-- Treeninkirjausnäkymästä käyttäjä pääsee takaisin yleistreeniin painamalla lopeta/tallenna
+- Treeninkirjausnäkymästä käyttäjä pääsee takaisin kaikkiin kirjauksiin painamalla *tallenna treeni*
 
 
 ## Toiminnallisuus perusversiossa
@@ -43,7 +44,7 @@ Lihasloki sisältää ainakin 4 eri näkymää.
 
 
 
-## Lisätoiminnallisuus - jatkokehittelyideoita
+## Lisätoiminnallisuus – jatkokehittelyideoita
 - Omien ennätysten tarkastelu: Sovellus kertoo käyttäjälle henkilökohtaisen ennätyksen jokaisessa liikkeessä treenihistorian perusteella. Ennätys eli personal best lasketaan sekä kilojen että toistojen avulla. 
 - Sovellus ilmoittaa jokaisen kirjatun treenin kohdalla personal best:ien määrän. 
 - Sovellukseen voi tallentaa treeniohjelmapohjia, jotka sisältävät käyttäjän valmiiksi määrittelemiä liikkeitä. Treeniohjelmapohjien avulla voi suoraan kirjata tehdyn treenin. 
