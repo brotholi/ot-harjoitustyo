@@ -11,7 +11,7 @@ Sovelluksessa on tavallisia käyttäjiä ja pääkäyttäjä. Tavallinen käytt�
 
 Lihasloki sisältää ainakin 4 eri näkymää.
 
-
+![](./kuvat/kayttoliittyma-luonnoksia.png)
 
 **Alkunäkymä**
 - Kirjautumisvaiheessa käyttäjä syöttää  käyttäjätunnuksen. Kirjautumisnäytöltä pääsee luomaan uuden käyttäjätunnuksen
