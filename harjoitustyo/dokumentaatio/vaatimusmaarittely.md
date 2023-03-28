@@ -1,7 +1,7 @@
 # Vaatimusmäärittely
 ## Sovelluksen tarkoitus
 
-Lihasloki-sovelluksella pidetään kirjaa kuntosalitreeneistä. Sovellukseen kirjataan yksittäisiä tehtyjä treenejä. Sovellusta voivat käyttää useat eri käyttäjät luomalla käyttäjätunnuksen. Jokaisen käyttäjätunnuksen taakse tallennetaan käyttäjän treenihistoria.
+*Lihasloki*-sovelluksella pidetään kirjaa kuntosalitreeneistä. Sovellukseen kirjataan yksittäisiä tehtyjä treenejä. Sovellusta voivat käyttää useat eri käyttäjät luomalla käyttäjätunnuksen. Jokaisen käyttäjätunnuksen taakse tallennetaan käyttäjän treenihistoria.
 
 ## Käyttäjäroolit
 
