@@ -5,17 +5,17 @@
 
 ## Käyttäjäroolit
 
-Sovelluksessa on tavallisia käyttäjiä ja pääkäyttäjä. Tavallinen käyttäjä voi luoda uuden käyttäjätilin, jolle täytyy lisätä käyttäjätunnus ja salasana. Pääkäyttäjällä on enemmän oikeuksia kuin tavallisella käyttäjällä. Pääkäyttäjä voi muun muassa nähdä, kuinka monta käyttäjää sovelluksessa on.
+Sovelluksessa on tavallisia käyttäjiä ja pääkäyttäjä. Tavallinen käyttäjä voi luoda uuden käyttäjätilin, jolle täytyy lisätä käyttäjätunnus ja salasana. Pääkäyttäjällä on enemmän oikeuksia kuin tavallisella käyttäjällä. Pääkäyttäjä voi muun muassa nähdä, kuinka monta käyttäjää sovelluksella on.
 
 ## Käyttöliittymä
 
 Lihasloki sisältää ainakin 4 eri näkymää.
 
 ### Alkunäkymä
-- Kirjautumisvaiheessa käyttäjä syöttää  käyttäjätunnuksen. Kirjautumisnäytöltä pääsee luomaan uuden käyttäjätunnuksen
+- Kirjautumisvaiheessa käyttäjä syöttää käyttäjätunnuksen ja salasanan. Kirjautumisnäytöltä pääsee luomaan uuden käyttäjätunnuksen
 
 ### Uuden käyttäjätunnuksen luonti
-- Uuden käyttäjätunnuksen luomisessa kerrotaan käyttäjätunnus
+- Uuden käyttäjätunnuksen luomisessa kerrotaan käyttäjätunnus ja salasana
 
 ### Kaikki kirjaukset
 - Kirjausnäkymässä käyttäjä näkee aikaisemmin kirjaamansa treenit
