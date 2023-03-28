@@ -19,7 +19,7 @@ Sovelluksessa on tavallisia käyttäjiä ja pääkäyttäjä. Tavallinen käytt�
 
 **Uuden käyttäjätunnuksen luonti**
 - Kun käyttäjä luo uuden tunnuksen, syötetään käyttäjätunnus ja salasana 
-- Uusi tunnus luodaan painamalla *luo tunnus*
+- Uusi tunnus luodaan painamalla *luo käyttäjä*
 
 **Kaikki kirjaukset**
 - Kirjausnäkymässä käyttäjä näkee aikaisemmin kirjaamansa treenit
