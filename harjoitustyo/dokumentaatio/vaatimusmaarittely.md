@@ -29,8 +29,19 @@ Lihasloki sisältää ainakin 4 eri näkymää.
 ## Toiminnallisuus perusversiossa
 - Käyttäjä voi luoda sovellukseen tunnuksen
 - Käyttäjätunnuksen on oltava vähintään 6 merkkiä pitkä ja uniikki
+- Käyttäjä voi kirjautua sovellukseen käyttäjätunnuksella ja salasanalla
+- Kirjautuminen onnistuu, jos käyttäjätunnus ja salasana täsmäävät
+- Sovellus ilmoittaa, jos käyttäjätunnus tai salasana on väärin
+
+- Käyttäjä voi kirjata uuden treenin
 - Käyttäjä näkee aiemmin kirjatut treenit
-- Käyttäjä voi lisätä jokaiseen treeniin tehdyn liikkeen nimi, toistojen määrä ja lisäpaino kilogrammoina. 
+	- Kirjatut treenit näkyvät vain käyttäjälle itselleen
+- Käyttäjä voi kirjata jokaiseen treeniin useita eri treeniliikkeitä
+- Käyttäjä voi lisätä jokaisen tehdyn liikkeen nimen ja kyseisen liikkeen kierrosten (settien) lukumäärän
+- Jokaisen liikeen yksittäisen setin kohdalle käyttäjä voi kirjata toistojen määrän ja lisäpainon kilogrammoina. 
+- Käyttäjä voi kirjautua ulos järjestelmästä
+
+
 
 ## Lisätoiminnallisuus - jatkokehittelyideoita
 - Omien ennätysten tarkastelu: Sovellus kertoo käyttäjälle henkilökohtaisen ennätyksen jokaisessa liikkeessä treenihistorian perusteella. Ennätys eli personal best lasketaan sekä kilojen että toistojen avulla. 
@@ -42,6 +53,6 @@ Lihasloki sisältää ainakin 4 eri näkymää.
 
 **Omien käyttäjätietojen muutokset:**
 
-- Käyttäjä voi asettaa tavoitteeksi tietyn määrän treenejä viikossa ja sovellus ilmoittaa 			aina, milloin tavoitteeseen on päästy. Ilmoittaminen tapahtuu treenin kirjaamisen päättyessä, samassa kohtaa jossa ilmoitetaan henkilökohtaisista ennätyksistä.
+- Käyttäjä voi asettaa tavoitteeksi tietyn määrän treenejä viikossa ja sovellus ilmoittaa, jos tavoitteeseen on päästy. Ilmoitus näkyy käyttäjälle treenin kirjaamisen päättyessä, samassa kohtaa jossa ilmoitetaan henkilökohtaisista ennätyksistä.
 - Treenien poistaminen historiasta
 - Käyttäjätunnuksen poistaminen
