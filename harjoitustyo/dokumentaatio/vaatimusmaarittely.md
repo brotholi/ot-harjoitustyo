@@ -11,17 +11,19 @@ Sovelluksessa on tavallisia käyttäjiä ja pääkäyttäjä. Tavallinen käytt�
 
 Lihasloki sisältää ainakin 4 eri näkymää.
 
-### Alkunäkymä
+
+
+**Alkunäkymä**
 - Kirjautumisvaiheessa käyttäjä syöttää  käyttäjätunnuksen. Kirjautumisnäytöltä pääsee luomaan uuden käyttäjätunnuksen
 
-### Uuden käyttäjätunnuksen luonti
+**Uuden käyttäjätunnuksen luonti**
 - Uuden käyttäjätunnuksen luomisessa kerrotaan käyttäjätunnus
 
-### Kaikki kirjaukset
+**Kaikki kirjaukset**
 - Kirjausnäkymässä käyttäjä näkee aikaisemmin kirjaamansa treenit
 - Kirjausnäkymästä pääsee yksittäisen treenin kirjaamiseen painamalla uusi
 
-### Treenin kirjaus
+**Treenin kirjaus**
 - Treeninkirjausnäkymässä käyttäjä voi syöttää uusia liikkeitä treeniin
 - Treeninkirjausnäkymästä käyttäjä pääsee takaisin yleistreeniin painamalla lopeta/tallenna
 
