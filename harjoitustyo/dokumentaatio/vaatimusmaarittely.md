@@ -8,8 +8,7 @@ Lihasloki-sovelluksella pidetään kirjaa kuntosalitreeneistä. Sovellukseen kir
 Sovelluksessa on tavallisia käyttäjiä ja pääkäyttäjä. Tavallinen käyttäjä voi luoda uuden käyttäjätilin, jolle täytyy lisätä käyttäjätunnus ja salasana. Pääkäyttäjällä on enemmän oikeuksia kuin tavallisella käyttäjällä. Pääkäyttäjä voi muun muassa nähdä, kuinka monta käyttäjää sovelluksessa on.
 
 ## Käyttöliittymä
-
-Lihasloki sisältää ainakin 4 eri näkymää.  
+  
   
 ![](./kuvat/kayttoliittyma-luonnoksia.jpg)  
   
@@ -27,6 +26,7 @@ Lihasloki sisältää ainakin 4 eri näkymää.
 **Treenin kirjaus**
 - Treeninkirjausnäkymässä käyttäjä voi syöttää uusia liikkeitä treeniin
 - Treeninkirjausnäkymästä käyttäjä pääsee takaisin yleistreeniin painamalla lopeta/tallenna
+- Treenin nimeä ja päivämäärää voi muuttaa
 
 
 ## Toiminnallisuus perusversiossa
