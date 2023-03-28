@@ -10,3 +10,5 @@ Viikolla 1 *Ohjelmistotekniikka*-kurssilla harjoiteltiin **Gitin** käyttöä.
 ### Viikko 2  
 
 [vaatimusmaarittely.md](https://github.com/brotholi/ot-harjoitustyo/blob/master/harjoitustyo/dokumentaatio/vaatimusmaarittely.md)  
+
+[tuntikirjanpito.md](https://github.com/brotholi/ot-harjoitustyo/blob/master/harjoitustyo/dokumentaatio/tuntikirjanpito.md)  
