@@ -1,7 +1,7 @@
 # Vaatimusmäärittely
 ## Sovelluksen tarkoitus
 
-*Lihasloki*-sovelluksella pidetään kirjaa kuntosalitreeneistä. Sovellukseen kirjataan yksittäisiä tehtyjä treenejä. Sovellusta voivat käyttää useat eri käyttäjät luomalla käyttäjätunnuksen. Jokaisen käyttäjätunnuksen taakse tallennetaan käyttäjän treenihistoria.
+*Lihasloki*-sovelluksella pidetään kirjaa kuntosalitreeneistä. Sovellukseen kirjataan yksittäisiä tehtyjä treenejä. Sovellusta voivat käyttää useat eri käyttäjät luomalla käyttäjätunnuksen. Jokaiselle käyttäjätunnukselle tallennetaan käyttäjän oma treenihistoria.
 
 ## Käyttäjäroolit
 
@@ -34,9 +34,15 @@ Sovelluksessa on tavallisia käyttäjiä ja pääkäyttäjä. Tavallinen käytt�
 
 ## Toiminnallisuus perusversiossa
 - Käyttäjä voi luoda sovellukseen tunnuksen
-- Käyttäjätunnuksen on oltava vähintään 5 merkkiä pitkä ja uniikki
-- Käyttäjä näkee aiemmin kirjatut treenit
-- Käyttäjä voi lisätä jokaiseen treeniin tehdyn liikkeen nimi, toistojen määrä ja lisäpaino kilogrammoina. 
+  - Käyttäjätunnuksen on oltava vähintään 5 merkkiä pitkä ja uniikki
+- Käyttäjä voi kirjautua sovellukseen
+- Käyttäjälle näkyvät vain käyttäjän itse kirjaamat treenit
+- Käyttäjä voi kirjata yksittäisen treenin, jolle voi määritellä nimen
+- Yksittäiseen treeniin voi kirjata päivämäärän
+- Jokaiseen treeniin voi kirjata useita liikkeitä
+- Käyttäjä voi lisätä jokaiselle treenin liikkeelle nimen ja sarjojen (settien) määrän
+- Jokaiselle setille käyttäjä voi kertoa toistojen määrä ja lisäpainon kilogrammoina.
+- Käyttäjä voi kirjautua ulos järjestelmästä
 
 ## Lisätoiminnallisuus - jatkokehittelyideoita
 - Omien ennätysten tarkastelu: Sovellus kertoo käyttäjälle henkilökohtaisen ennätyksen jokaisessa liikkeessä treenihistorian perusteella. Ennätys eli personal best lasketaan sekä kilojen että toistojen avulla. 
