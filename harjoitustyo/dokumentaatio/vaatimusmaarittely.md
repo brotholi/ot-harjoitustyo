@@ -11,7 +11,7 @@ Sovelluksessa on tavallisia käyttäjiä ja pääkäyttäjä. Tavallinen käytt�
   
  
 ![](./kuvat/kayttoliittyma-luonnoksia.jpg)  
-  Käyttöliittymän luonnos
+*Käyttöliittymän luonnos*
 
 **Alkunäkymä**
 - Kirjautumisvaiheessa käyttäjä syöttää käyttäjätunnuksen ja salasanan
