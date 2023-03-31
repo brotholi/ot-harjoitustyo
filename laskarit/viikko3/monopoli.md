@@ -7,14 +7,15 @@
     }
 
     class Pelilauta {
-     Monopoli 
+     nimi: Monopoli 
     }
     
     
     class Ruutu {
-    - id: n int
-    - seuraava : n + 1
-     +Ruututyyppi 
+    id: n int
+    - Tietää seuraavan ruudun
+    seuraava : n + 1
+    Ruututyyppi 
     
     }
     
