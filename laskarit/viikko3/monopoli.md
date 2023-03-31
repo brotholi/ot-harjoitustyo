@@ -24,7 +24,7 @@
     Pelilauta "1" -- "2-8" Pelaaja
     direction DT
     Pelinappula "1" --> "1" Pelaaja
-    
+    Ruutu --> Pelilauta
     
     
 
