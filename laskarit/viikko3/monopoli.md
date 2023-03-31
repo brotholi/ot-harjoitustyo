@@ -24,7 +24,7 @@
     direction TD
     Pelaaja "1" --> "1" Pelinappula
     Pelilauta "1" --> "40" Ruutu
-    Pelinappula "1" --> Ruutu "1"
+    Pelinappula "1" --> "1" Ruutu
     
     
 
