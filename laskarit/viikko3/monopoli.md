@@ -26,6 +26,7 @@
      Asemat
      Laitokset
      Normaalit kadut
+      id : string nimi
    
     }
     
