@@ -12,8 +12,8 @@
     
     
     class Ruutu {
-    - id : int n
-    - seur : n + 1
+    - id : n int
+    - seuraava : n + 1
      +Ruututyyppi 
     
     }
@@ -21,19 +21,23 @@
     
 
     class Normaalit kadut {
-    id : string nimi
+    id : nimi string
     }
          
     class Pelinappula {
     }
     
     class Toiminto {
-    
+    +Erilaisia
     }
     
     class Kortit {
     Erilaisia
     
+    }
+    
+    class Raha {
+    määrä int int
     }
     
 
@@ -61,7 +65,11 @@
     
     Ruutu "1" <-- "1" Toiminto : liittyy
     
-    Kortit <-- Toiminto : sisältää
+    Kortit "1" <-- "1" Toiminto : sisältää
+    
+    Pelaaja <-- Raha
+    
+    Normaalit kadut "1" -- "4" hotelli
     
     
 
