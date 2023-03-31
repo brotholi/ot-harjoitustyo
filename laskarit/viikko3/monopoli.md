@@ -37,6 +37,10 @@
     class Pelinappula {
     }
     
+    class Toiminto {
+    
+    }
+    
 
     Pelilauta "1" -- "2-8" Pelaaja
 
@@ -51,6 +55,7 @@
     Pelilauta -- Sijainti : Tietää aloitusruudun sijainnin
     Pelilauta -- Sijainti : Tietää vankilan sijainnin
     
+    Ruutu <-- Toiminto
     
 
 
