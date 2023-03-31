@@ -21,8 +21,6 @@
     class Ruututyyppi {
      Aloitusruutu
      Vankila
-     Sattuma
-     Yhteismaa
      Asemat
      Laitokset
    
@@ -41,6 +39,11 @@
     
     }
     
+    class Kortti {
+    -tyyppi
+    
+    }
+    
 
     Pelilauta "1" -- "2-8" Pelaaja
 
@@ -50,12 +53,18 @@
 
     Ruutu "1" ..> "1" Ruututyyppi 
     Ruututyyppi -- Normaalit kadut
+    Ruututyyppi -- Sattuma ja yhteismaa
+    Sattuma ja yhteismaa --> kortti
+    
     Ruutu "1" -- "1" Sijainti
     
     Pelilauta -- Sijainti : Tietää aloitusruudun sijainnin
     Pelilauta -- Sijainti : Tietää vankilan sijainnin
     
-    Ruutu <-- Toiminto
+    Ruutu "1" <-- "1" Toiminto
+    
+    Kortti "*" <-- "*" Toiminto
+    
     
 
 
