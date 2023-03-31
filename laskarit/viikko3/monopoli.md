@@ -38,6 +38,8 @@
     Ruutu --> Laitokset
     Ruutu --> Normaalit kadut
     
+    
+    Pelilauta -- Sijainti --> Ruutu
 
 
     
