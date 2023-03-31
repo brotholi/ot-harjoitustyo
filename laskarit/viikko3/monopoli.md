@@ -13,11 +13,12 @@
     
     
     class Peliruutu {
-    
+    - id : ruutu n
+    - seur : n + 1
     }
 
     Pelilauta "1" -- "2-8" Pelaaja
-    Pelilauta "1" -- "40" Peliruutu
+    Pelilauta "1" <-- "40" Peliruutu
     
 
 ```
