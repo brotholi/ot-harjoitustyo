@@ -49,7 +49,7 @@
     Sijainti -- Pelilauta
     
     Ruutu --> Sijainti
-    Ruutu ..> Ruutyppi 
+    Ruutu ..> Ruututyyppi
     
 
 
