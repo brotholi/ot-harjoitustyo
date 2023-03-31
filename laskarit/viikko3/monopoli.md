@@ -12,7 +12,7 @@
     
     
     class Ruutu {
-    - id : n int
+    - id: n int
     - seuraava : n + 1
      +Ruututyyppi 
     
@@ -37,7 +37,7 @@
     }
     
     class Raha {
-    määrä int int
+    määrä int
     }
     
 
@@ -69,7 +69,10 @@
     
     Pelaaja <-- Raha
     
-    Normaalit kadut "1" -- "4" hotelli
+    Normaalit kadut "1" -- "4" talo
+    Normaalit kadut "1" -- "1" Hotelli
+    
+    Pelaaaja --> Normaalit Kadut : omistaa
     
     
 
