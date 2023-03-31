@@ -1,11 +1,15 @@
 TESTI
 
 ```mermaid
-    sequenceDiagram
-    
-    
-        Alice->>+John: Hello John, how are you?
-        Alice->>+John: John, can you hear me?
-        John-->>-Alice: Hi Alice, I can hear you!
-        John-->>-Alice: I feel great!
+sequenceDiagram
+  actor User
+  participant UI
+  participant TodoService
+  participant UserRepository
+  User->>UI: click "Login" button
+  UI->>TodoService: login("kalle", "kalle123")
+  TodoService->>UserRepository: find_by_username("kalle")
+  UserRepository-->>TodoService: user
+  TodoService-->>UI: user
+  UI->UI: show_todos_view()
 ```
