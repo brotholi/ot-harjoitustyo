@@ -44,15 +44,15 @@
     Pelilauta "1" --> "40" Ruutu
     Pelinappula "1" --> "1" Ruutu
 
-    
-    Sijainti -- Pelilauta
+
     
     Ruututyyppi --> Sijainti
     Ruutu ..> Ruututyyppi
     Ruututyyppi -- Normaalit kadut
     Normaalit kadut -- Sijainti
     
-    Pelilauta -- Sijainti
+    Pelilauta -- Sijainti "Tietää aloitusruudun sijainnin"
+    Pelilauta -- Sijainti "Tietää vankilan sijainnin"
     
     
 
