@@ -40,7 +40,7 @@
     }
     
     class Kortti {
-    -tyyppi
+    Erilaisia
     
     }
     
@@ -54,7 +54,7 @@
     Ruutu "1" ..> "1" Ruututyyppi 
     Ruututyyppi -- Normaalit kadut
     Ruututyyppi -- Sattuma ja yhteismaa
-    Sattuma ja yhteismaa --> kortti
+    Sattuma ja yhteismaa --> Kortti
     
     Ruutu "1" -- "1" Sijainti
     
