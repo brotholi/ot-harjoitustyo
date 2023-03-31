@@ -39,7 +39,7 @@
     
     }
     
-    class Kortti {
+    class Kortit {
     Erilaisia
     
     }
@@ -51,10 +51,16 @@
     Pelilauta "1" --> "40" Ruutu : sisältää
     Pelinappula "1" --> "1" Ruutu : sijaitsee
 
-    Ruutu "1" ..> "1" Ruututyyppi 
-    Ruututyyppi -- Normaalit kadut
+    Ruutu "1" ..> "5" Ruututyyppi 
+    
+    Ruututyyppi -- Aloitusruutu
+    Ruututyyppi -- Vankila
     Ruututyyppi -- Sattuma ja yhteismaa
-    Sattuma ja yhteismaa --> Kortti
+    Ruututyyppi -- Asemat ja laitokset
+    Ruututyyppi -- Normaalit kadut
+
+
+    Sattuma ja yhteismaa --> "*" Kortit
     
     Ruutu "1" -- "1" Sijainti
     
@@ -63,7 +69,7 @@
     
     Ruutu "1" <-- "1" Toiminto
     
-    Kortti "*" <-- "*" Toiminto
+    Kortti "*" <-- "1" Toiminto
     
     
 
