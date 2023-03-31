@@ -11,7 +11,7 @@
         id: pelaajan nimi
     }
 
-    class Pelilauta "1" -- "2-8" class Pelaaja
+    Pelilauta "1" -- "2-8" Pelaaja
 
 
 ```
