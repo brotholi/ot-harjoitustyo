@@ -13,7 +13,7 @@
     
     
     class Peliruutu {
-    - id : ruutu n
+    - id : int n
     - seur : n + 1
     }
 
