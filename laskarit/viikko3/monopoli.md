@@ -69,7 +69,7 @@
     
     Ruutu "1" <-- "1" Toiminto
     
-    Kortti "*" <-- "1" Toiminto
+    Kortit "*" <-- "*" Toiminto
     
     
 
