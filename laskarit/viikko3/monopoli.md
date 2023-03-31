@@ -66,7 +66,7 @@
     
     Ruutu "1" <-- "1" Toiminto : liittyy
     
-    Kortit "1" <-- "1" Toiminto : sisältää
+    Kortti "1" <-- "1" Toiminto : sisältää
     
     Normaalit kadut "1" -- "4" talo : sisältää
     Normaalit kadut "1" -- "1" Hotelli : sisältää
