@@ -14,7 +14,21 @@
     class Ruutu {
     - id : int n
     - seur : n + 1
-     }
+     +Ruututyyppi 
+    
+    }
+    
+    class Ruututyyppi {
+     Aloitusruutu
+     Vankila
+     Sattuma
+     Yhteismaa
+     Asemat
+     Laitokset
+     Normaalit kadut
+   
+    }
+    
     
 
     class Normaalit kadut {
@@ -24,25 +38,18 @@
     class Pelinappula {
     }
     
-    direction LR
+
     Pelilauta "1" -- "2-8" Pelaaja
-    direction TD
+
     Pelaaja "1" --> "1" Pelinappula
     Pelilauta "1" --> "40" Ruutu
     Pelinappula "1" --> "1" Ruutu
-    Ruutu --> Aloitusruutu
-    Ruutu --> Vankila
-    Ruutu --> Sattuma
-    Ruutu --> Yhteismaa
-    Ruutu --> Asemat
-    Ruutu --> Laitokset
-    Ruutu --> Normaalit kadut
-    
-    direction LR
+
     
     Sijainti -- Pelilauta
     
     Ruutu --> Sijainti
+    Ruutu ..> Ruutyppi 
     
 
 
