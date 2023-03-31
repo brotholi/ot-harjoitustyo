@@ -3,37 +3,37 @@
     
     
     class Pelaaja {
-        Pelaajan nimi
+       id: nimi string
     }
 
     class Pelilauta {
-     nimi: Monopoli 
+     Monopoli 
     }
     
     
     class Ruutu {
-    id: n int
-    - Tietää seuraavan ruudun
-    seuraava : n + 1
-    Ruututyyppi 
+     id: n int
+     - Tietää seuraavan ruudun
+     seuraava : n + 1
+     Ruututyyppi 
     
     }
     
     
 
     class Normaalit kadut {
-    id : nimi string
+     id : nimi string
     }
          
     class Pelinappula {
     }
     
     class Toiminto {
-    +Erilaisia
+     -Erilaisia
     }
     
     class Kortit {
-    Erilaisia
+     -Erilaisia
     
     }
     
