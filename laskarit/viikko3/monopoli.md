@@ -40,9 +40,9 @@
 
     Pelilauta "1" -- "2-8" Pelaaja
 
-    Pelaaja "1" --> "1" Pelinappula
-    Pelilauta "1" --> "40" Ruutu
-    Pelinappula "1" --> "1" Ruutu
+    Pelaaja "1" --> "1" Pelinappula : omistaa
+    Pelilauta "1" --> "40" Ruutu : sisältää
+    Pelinappula "1" --> "1" Ruutu : sijaitsee
 
 
     
