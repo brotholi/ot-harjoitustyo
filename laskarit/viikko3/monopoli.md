@@ -1,6 +1,5 @@
 ```mermaid
  classDiagram
-    direction LR
     
     
     class Pelaaja {
@@ -20,11 +19,12 @@
     class Pelinappula {
     }
     
-
+    direction LR
     Pelilauta "1" -- "2-8" Pelaaja
-    direction DT
-    Pelinappula "1" --> "1" Pelaaja
-    Ruutu --> Pelilauta
+    direction TD
+    Pelaaja "1" --> "1" Pelinappula
+    Pelilauta "1" --> "40" Ruutu
+    
     
     
 
