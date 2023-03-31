@@ -72,7 +72,7 @@
     Normaalit kadut "1" -- "4" talo
     Normaalit kadut "1" -- "1" Hotelli
     
-    Pelaaaja --> Normaalit Kadut : omistaa
+    Pelaaja --> Normaalit kadut : omistaa
     
     
 
