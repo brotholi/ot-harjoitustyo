@@ -25,8 +25,6 @@
      Yhteismaa
      Asemat
      Laitokset
-     Normaalit kadut
-      id : string nimi
    
     }
     
@@ -49,8 +47,13 @@
     
     Sijainti -- Pelilauta
     
-    Ruutu --> Sijainti
+    Ruututyyppi --> Sijainti
     Ruutu ..> Ruututyyppi
+    Ruututyyppi -- Normaalit kadut
+    Normaalit kadut -- Sijainti
+    
+    Pelilauta -- Sijainti
+    
     
 
 
