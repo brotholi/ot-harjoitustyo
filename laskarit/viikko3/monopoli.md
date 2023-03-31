@@ -44,9 +44,6 @@
     Pelilauta "1" --> "40" Ruutu : sisältää
     Pelinappula "1" --> "1" Ruutu : sijaitsee
 
-
-    
-    Ruututyyppi --> Sijainti
     Ruutu "1" ..> "1" Ruututyyppi 
     Ruututyyppi -- Normaalit kadut
     Ruutu "1" -- "1" Sijainti
