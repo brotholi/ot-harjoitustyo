@@ -61,15 +61,15 @@
     
     Ruutu "1" -- "1" Sijainti
     
-    Pelilauta -- Sijainti : Tietää aloitusruudun sijainnin
-    Pelilauta -- Sijainti : Tietää vankilan sijainnin
+    Pelilauta -- "1" Sijainti : Tietää aloitusruudun sijainnin
+    Pelilauta -- "1" Sijainti : Tietää vankilan sijainnin
     
     Ruutu "1" <-- "1" Toiminto : liittyy
     
     Kortit "1" <-- "1" Toiminto : sisältää
     
-    Normaalit kadut "1" -- "4" talo : voi sisältää
-    Normaalit kadut "1" -- "1" Hotelli : voi sisältää
+    Normaalit kadut "1" -- "4" talo : sisältää
+    Normaalit kadut "1" -- "1" Hotelli : sisältää
     
     Pelaaja "1" -- "*" Normaalit kadut : omistaa
     
