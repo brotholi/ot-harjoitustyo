@@ -39,7 +39,8 @@
     Ruutu --> Normaalit kadut
     
     
-    Pelilauta -- Sijainti --> Ruutu
+    Ruutu -- Sijainti
+    
 
 
     
