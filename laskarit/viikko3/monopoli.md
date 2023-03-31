@@ -13,7 +13,7 @@
     
     class Ruutu {
      id: n int
-     - Tietää seuraavan ruudun
+     Tietää seuraavan ruudun
      seuraava : n + 1
      Ruututyyppi 
     
@@ -29,11 +29,11 @@
     }
     
     class Toiminto {
-     -Erilaisia
+     Erilaisia
     }
     
-    class Kortit {
-     -Erilaisia
+    class Kortti {
+     Erilaisia
     
     }
     
@@ -57,7 +57,7 @@
     Ruututyyppi -- Normaalit kadut
 
 
-    Sattuma ja yhteismaa --> "*" Kortit
+    Sattuma ja yhteismaa --> "*" Kortti
     
     Ruutu "1" -- "1" Sijainti
     
