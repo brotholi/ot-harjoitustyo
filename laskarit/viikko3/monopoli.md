@@ -16,23 +16,6 @@
     - seur : n + 1
      }
     
-    class Aloitusruutu {
-    }
-    
-    class Vankila {
-    }
-    
-    class Sattuma {
-    }
-    
-    class yhteismaa {
-    }
-    
-    class Asemat {
-    }
-    
-    class Laitokset {
-    }
 
     class Normaalit kadut {
     id : string nimi
