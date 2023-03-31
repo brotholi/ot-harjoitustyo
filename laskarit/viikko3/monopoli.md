@@ -18,14 +18,6 @@
     
     }
     
-    class Ruututyyppi {
-     Aloitusruutu
-     Vankila
-     Asemat
-     Laitokset
-   
-    }
-    
     
 
     class Normaalit kadut {
