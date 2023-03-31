@@ -40,7 +40,9 @@
     
     direction LR
     
-    Ruutu -- Sijainti
+    Sijainti -- Pelilauta
+    
+    Ruutu --> Sijainti
     
 
 
