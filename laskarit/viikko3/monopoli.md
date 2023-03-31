@@ -47,9 +47,9 @@
 
     
     Ruututyyppi --> Sijainti
-    Ruutu ..> Ruututyyppi
+    Ruutu "1" ..> "1" Ruututyyppi 
     Ruututyyppi -- Normaalit kadut
-    Normaalit kadut -- Sijainti
+    Ruutu "1" -- "1" Sijainti
     
     Pelilauta -- Sijainti : Tietää aloitusruudun sijainnin
     Pelilauta -- Sijainti : Tietää vankilan sijainnin
