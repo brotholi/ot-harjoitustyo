@@ -1,14 +1,14 @@
 ```mermaid
  classDiagram
-    direction RL
+    direction LR
+    
+    
+    class Pelaaja {
+        id: pelaajan nimi
+    }
 
     class Pelilauta {
      id: string   
-    }
-
-
-    class Pelaaja {
-        id: pelaajan nimi
     }
 
     Pelilauta "1" -- "2-8" Pelaaja
