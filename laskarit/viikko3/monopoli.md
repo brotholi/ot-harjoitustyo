@@ -59,9 +59,9 @@
     Pelilauta -- Sijainti : Tietää aloitusruudun sijainnin
     Pelilauta -- Sijainti : Tietää vankilan sijainnin
     
-    Ruutu "1" <-- "1" Toiminto
+    Ruutu "1" <-- "1" Toiminto : liittyy
     
-    Kortit "*" <-- "*" Toiminto
+    Kortit <-- Toiminto : sisältää
     
     
 
