@@ -73,7 +73,7 @@
     
     Pelaaja "1" -- "*" Normaalit kadut : omistaa
     
-    Pelaaja -- Raha : omistaa
+    Pelaaja "1" -- "*" Raha : omistaa
     
     
 
