@@ -3,11 +3,11 @@
     
     
     class Pelaaja {
-        id: pelaajan nimi
+        Pelaajan nimi
     }
 
     class Pelilauta {
-     id: string   
+     Monopoli 
     }
     
     
