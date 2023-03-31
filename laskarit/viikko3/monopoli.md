@@ -48,7 +48,7 @@
     Pelilauta "1" --> "40" Ruutu : sisältää
     Pelinappula "1" --> "1" Ruutu : sijaitsee
 
-    Ruutu "1" ..> "5" Ruututyyppi 
+    Ruutu "*" ..> "1" Ruututyyppi 
     
     Ruututyyppi -- Aloitusruutu
     Ruututyyppi -- Vankila
