@@ -68,12 +68,12 @@
     
     Kortit "1" <-- "1" Toiminto : sisältää
     
-    Pelaaja <-- Raha
-    
     Normaalit kadut "1" -- "4" talo
     Normaalit kadut "1" -- "1" Hotelli
     
     Pelaaja "1" --> "*" Normaalit kadut : omistaa
+    
+    Pelaaja <-- Raha
     
     
 
