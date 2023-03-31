@@ -51,8 +51,8 @@
     Ruututyyppi -- Normaalit kadut
     Normaalit kadut -- Sijainti
     
-    Pelilauta -- Sijainti "Tietää aloitusruudun sijainnin"
-    Pelilauta -- Sijainti "Tietää vankilan sijainnin"
+    Pelilauta -- Sijainti : Tietää aloitusruudun sijainnin
+    Pelilauta -- Sijainti : Tietää vankilan sijainnin
     
     
 
