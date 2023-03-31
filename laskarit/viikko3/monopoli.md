@@ -38,6 +38,7 @@
     Ruutu --> Laitokset
     Ruutu --> Normaalit kadut
     
+    direction LR
     
     Ruutu -- Sijainti
     
