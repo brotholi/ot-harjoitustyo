@@ -2,8 +2,9 @@ TESTI
 
 ```mermaid
 sequenceDiagram
-  participant Alice
-  participant Bob
-  Alice->>Bob: Hi Bob
-  Bob->>Alice: Hi Alice
+  participant main
+  participant Machine
+  participant FuelTank
+  Machine->>Machine: Machine() 
+  Machine->>FuelTank: FuelTank()
 ```
