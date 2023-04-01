@@ -11,10 +11,10 @@ sequenceDiagram
   Machine->>FuelTank: FuelTank()
   Machine->>FuelTank: tank.fill(40)
   Machine->>Engine: Engine()
-  deactivate machine
+  deactivate Machine
   
-  main->>+Machine: drive()
-  Machine->>+Engine: start()
+  main->>Machine: drive()
+  Machine->>Engine: start()
  
   Engine->>FuelTank: consume(5)
   Engine->>Machine:  
