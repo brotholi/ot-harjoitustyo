@@ -27,6 +27,7 @@ sequenceDiagram
   
   main->>Lataajalaite: lataa_arvoa(kallen_kortti, 3)
   activate Lataajalaite
+  Lataajalaite->>Matkakortti: Matkakortti("Kalle")
   Lataajalaite->>Matkakortti: kasvata_arvoa(3)
   Lataajalaite-->>main:   
   deactivate Lataajalaite
