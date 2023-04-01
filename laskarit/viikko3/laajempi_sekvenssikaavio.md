@@ -11,9 +11,9 @@ sequenceDiagram
   
   main->>HKLLaitehallinto: HKLLaitehallinto()
   activate HKLLaitehallinto
-  main->>Lataaja: Lataajalaite
-  main->>Lukija: Lukijalaite()
-  main->>Lukija: Lukijalaite()
+  main->>Lataajalaite: Lataajalaite
+  main->>Lukijalaite: Lukijalaite()
+  main->>Lukijalaite: Lukijalaite()
  
   main->>HKLLaitehallinto: lisaa_lataaja(rautatientori)
   main->>HKLLaitehallinto: lisaa_lukija(ratikka6)
