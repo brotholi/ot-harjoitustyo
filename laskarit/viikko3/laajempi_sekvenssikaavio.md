@@ -12,9 +12,16 @@ sequenceDiagram
   main->>HKLLaitehallinto:   
   activate HKLLaitehallinto
   
-  HKLLaitehallinto->>Lataajalaite:    
-  HKLLaitehallinto->>Lukijalaite:    
-  HKLLaitehallinto-->>Lukijalaite:   
+  HKLLaitehallinto-->>Lataajalaite: Lataajalaite()   
+  HKLLaitehallinto-->>Lukijalaite: Lukijalaite()
+  HKLLaitehallinto-->>Lukijalaite: Lukijalaite()
+ 
+  HKLLaitehallinto->>Lataajalaite: lisaa_lataaja(rautatientori)
+  HKLLaitehallinto->>Lukijalaite: lisaa_lukija(ratikka6)
+  HKLLaitehallinto->>Lukijalaite: lisaa_lukija(bussi244)
+  
+  HKLLaitehallinto-->>Kioski: Kioski()
+  
   
   
   
