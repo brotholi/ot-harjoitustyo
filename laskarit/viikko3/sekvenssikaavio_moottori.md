@@ -20,7 +20,7 @@ sequenceDiagram
   Machine->>Engine: start()
   activate Engine
   Engine->>FuelTank: consume(5)
-  Engine-->>Machine:    
+    
   deactivate Engine
   Machine->>Engine: is_running()
   activate Engine
@@ -30,7 +30,7 @@ sequenceDiagram
   Engine->>FuelTank: consume(10)
  
   deactivate Engine
-  Engine-->>Machine:      
+     
   Machine-->>main:   
   deactivate Machine
 
