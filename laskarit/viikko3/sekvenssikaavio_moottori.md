@@ -29,6 +29,7 @@ sequenceDiagram
   deactivate FuelTank
   deactivate Engine
   deactivate Machine
+  Machine-->>main
   
   
   
