@@ -1,4 +1,4 @@
-Tehtävä 3: Sekvenssikaavio
+#Tehtävä 3: Sekvenssikaavio
 
 ```mermaid
 sequenceDiagram
@@ -26,15 +26,10 @@ sequenceDiagram
   activate Engine
   Engine->>Machine: True
   Machine->>Engine: use_energy()
- 
   Engine->>FuelTank: consume(10)
- 
   deactivate Engine
      
   Machine-->>main:   
   deactivate Machine
-
-  
-  
   
 ```
