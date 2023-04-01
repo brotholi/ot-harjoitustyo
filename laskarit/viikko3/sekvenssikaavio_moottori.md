@@ -1,4 +1,4 @@
-# Tehtävä 3: Sekvenssikaavio
+## Tehtävä 3: Sekvenssikaavio
 
 ```mermaid
 sequenceDiagram
