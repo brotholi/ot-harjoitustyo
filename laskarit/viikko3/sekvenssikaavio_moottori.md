@@ -28,8 +28,9 @@ sequenceDiagram
   Engine->>FuelTank: consume(10)
   deactivate FuelTank
   deactivate Engine
+    Machine-->>main:   
   deactivate Machine
-  Machine-->>main
+
   
   
   
