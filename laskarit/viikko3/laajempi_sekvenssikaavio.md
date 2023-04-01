@@ -9,12 +9,12 @@ sequenceDiagram
   participant Kioski
   participant Matkakortti
   
-  main->>HKLlaitehallinto:   
-  activate HKLlaitehallinto
+  main->>HKLLaitehallinto:   
+  activate HKLLaitehallinto
   
-  HKLlaitehallinto->>Lataajalaite:    
-  HKLlaitehallinto->>Lukijalaite:    
-  HKLlaitehallinto-->>Lukijalaite:   
+  HKLLaitehallinto->>Lataajalaite:    
+  HKLLaitehallinto->>Lukijalaite:    
+  HKLLaitehallinto-->>Lukijalaite:   
   
   
   
