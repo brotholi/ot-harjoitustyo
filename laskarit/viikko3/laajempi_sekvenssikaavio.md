@@ -19,14 +19,14 @@ sequenceDiagram
   main->>Kioski: Kioski()
   activate Kioski
   main->>Kioski: osta_matkakortti("Kalle")
-  deactivate Kioski
   Kioski-->>main: Matkakortti("Kalle")
+  deactivate Kioski
   
   main->>Lataajalaite: lataa_arvoa(kallen_kortti, 3)
   activate Lataajalaite
   Lataajalaite->>Matkakortti: kasvata_arvoa(3)
-  deactivate Lataajalaite
   Lataajalaite-->>main:   
+  deactivate Lataajalaite
   
   
   main->>Lukijalaite: ostalippu(kallen_kortti, 0)
