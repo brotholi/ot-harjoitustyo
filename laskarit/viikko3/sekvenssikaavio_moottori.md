@@ -12,6 +12,11 @@ sequenceDiagram
   Machine->>FuelTank: tank.fill(40)
   Machine-->>Engine: engine.start()
   Engine-->>FuelTank: tank.consume(5)
+  Machine->>Engine: engine.is_running()
+  Engine->>Machine: True
+  Machine->>Engine: engine.use_energy()
+  Engine->>FuelTank: tank.consume(10)
+  
   
   
   
