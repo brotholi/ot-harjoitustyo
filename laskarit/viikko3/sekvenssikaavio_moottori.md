@@ -12,6 +12,7 @@ sequenceDiagram
   Machine->>FuelTank: FuelTank()
   Machine->>FuelTank: fill(40)
   Machine->>Engine: Engine()
+  Machine-->>main:   
   deactivate Machine
   
   main->>Machine: drive()
@@ -28,7 +29,7 @@ sequenceDiagram
   Engine->>FuelTank: consume(10)
  
   deactivate Engine
-    Machine-->>main:   
+  Machine-->>main:   
   deactivate Machine
 
   
