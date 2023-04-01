@@ -9,7 +9,11 @@ sequenceDiagram
   main->>Machine: Machine() 
   Machine->>FuelTank: FuelTank()
   Machine->>FuelTank: tank.fill(40)
+  Machine->>Engine Engine()
+  
+  main->>Machine: drive()
   Machine-->>Engine: engine.start()
+ 
   Engine-->>FuelTank: tank.consume(5)
   Machine->>Engine: engine.is_running()
   Engine->>Machine: True
