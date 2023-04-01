@@ -11,7 +11,6 @@ sequenceDiagram
   
   main->>HKLLaitehallinto: HKLLaitehallinto()
   activate HKLLaitehallinto
-
  
   main->>HKLLaitehallinto: lisaa_lataaja(rautatientori)
   main->>HKLLaitehallinto: lisaa_lukija(ratikka6)
@@ -21,23 +20,26 @@ sequenceDiagram
   activate Kioski
   main->>Kioski: osta_matkakortti("Kalle")
   deactivate Kioski
-  Kioski->>main: Matkakortti("Kalle")
+  Kioski-->>main: Matkakortti("Kalle")
   
   main->>Lataajalaite: lataa_arvoa(kallen_kortti, 3)
   activate Lataajalaite
   Lataajalaite->>Matkakortti: kasvata_arvoa(3)
   deactivate Lataajalaite
-  Lataajalaite->>main:   
+  Lataajalaite-->>main:   
   
   
   main->>Lukijalaite: ostalippu(kallen_kortti, 0)
   activate Lukijalaite
   Lukijalaite->>Matkakortti: vahenna_arvoa(RATIKKA)
+  Lukijalaite-->>main: True
   deactivate Lukijalaite
-  Lukijalaite-->>main:   
-  
   
   main->>Lukijalaite: osta_lippu(kallen_kortti, 2)
+  activate Lukijalaite
+  Lukijalaite-->>main: False
+  deactivate Lukijalaite
+  
   
   ```
   
