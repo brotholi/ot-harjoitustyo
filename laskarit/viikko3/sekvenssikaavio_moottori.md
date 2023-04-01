@@ -5,6 +5,9 @@ sequenceDiagram
   participant main
   participant Machine
   participant FuelTank
-  Machine->>Machine: Machine() 
+  main->>Machine: Machine() 
   Machine->>FuelTank: FuelTank()
+  Machine->>FuelTank: tank.fill(40)
+  
+  
 ```
