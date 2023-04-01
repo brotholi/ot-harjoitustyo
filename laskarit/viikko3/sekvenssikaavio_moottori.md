@@ -24,9 +24,9 @@ sequenceDiagram
   activate Engine
   Engine->>Machine: True
   Machine->>Engine: use_energy()
-  activate FuelTank
+ 
   Engine->>FuelTank: consume(10)
-  deactivate FuelTank
+ 
   deactivate Engine
     Machine-->>main:   
   deactivate Machine
