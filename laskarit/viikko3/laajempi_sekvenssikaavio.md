@@ -27,11 +27,14 @@ sequenceDiagram
   activate Lataajalaite
   LataajalaiteMatkakortti: kasvata_arvoa(3)
   Lataajalaite-->>main:   
+  deactivate Lataajalaite
   
   main->>Lukijalaite: ratikka6.ostalippu(kallen_kortti, 0)
   activate Lukijalaite
   Lukijalaite->>Matkakortti: vahenna_arvoa(RATIKKA)
-  Lukijalaite-->>main:   
+  dectivate Lukijalaite
+  Lukijalaite-->>main:  
+  
   
   main->>Lukijalaite: bussi244.osta_lippu(kallen_kortti, 2)
   
