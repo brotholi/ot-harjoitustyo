@@ -11,7 +11,7 @@ sequenceDiagram
   
   main->>HKLLaitehallinto: HKLLaitehallinto()
   activate HKLLaitehallinto
-  main->>Lataajalaite: Lataajalaite
+  main->>Lataajalaite: Lataajalaite()
   main->>Lukijalaite: Lukijalaite()
   main->>Lukijalaite: Lukijalaite()
  
