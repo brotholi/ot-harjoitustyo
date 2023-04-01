@@ -7,9 +7,11 @@ sequenceDiagram
   participant FuelTank
   participant Engine
   main->>Machine: Machine() 
+  activate Machine
   Machine->>FuelTank: FuelTank()
   Machine->>FuelTank: tank.fill(40)
   Machine->>Engine: Engine()
+  deactivate machine
   
   main->>+Machine: drive()
   Machine->>+Engine: start()
