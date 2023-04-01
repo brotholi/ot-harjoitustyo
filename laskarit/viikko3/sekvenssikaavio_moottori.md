@@ -12,9 +12,10 @@ sequenceDiagram
   Machine->>Engine: Engine()
   
   main->>+Machine: drive()
-  Machine-->>+Engine: start()
+  Machine->>+Engine: start()
  
-  Engine-->>FuelTank: consume(5)
+  Engine->>FuelTank: consume(5)
+  Engine-->Machine
   Machine->>Engine: is_running()
   Engine->>Machine: True
   Machine->>Engine: use_energy()
