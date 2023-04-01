@@ -18,7 +18,7 @@ sequenceDiagram
   main->> HKLLaitehallinto: lisaa_lukija(bussi244)
   
   main-->>Kioski: Kioski()
-  main->>osta_matkakortti("Kalle")
+  main->>Kioski: osta_matkakortti("Kalle")
   Kioski->>main: Matkakortti("Kalle")
   
   
