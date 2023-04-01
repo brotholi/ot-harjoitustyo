@@ -18,12 +18,12 @@ sequenceDiagram
   Machine->>Engine: start()
  
   Engine->>FuelTank: consume(5)
-  Engine->>Machine:
+  Engine-->>Machine:
   Machine->>Engine: is_running()
   Engine->>Machine: True
   Machine->>Engine: use_energy()
   Engine->>FuelTank: consume(10)
-  Machine-->>main
+  Machine-->>main:  
   deactivate Machine
   
   
