@@ -22,12 +22,12 @@ sequenceDiagram
   main->>Kioski: Kioski()
   activate Kioski
   main->>Kioski: osta_matkakortti("Kalle")
+  Kioski->>Matkakortti: Matkakortti("Kalle")
   Kioski-->>main: Matkakortti("Kalle")
   deactivate Kioski
   
   main->>Lataajalaite: lataa_arvoa(kallen_kortti, 3)
   activate Lataajalaite
-  Lataajalaite->>Matkakortti: Matkakortti("Kalle")
   Lataajalaite->>Matkakortti: kasvata_arvoa(3)
   Lataajalaite-->>main:   
   deactivate Lataajalaite
