@@ -17,11 +17,11 @@ sequenceDiagram
   main->>HKLLaitehallinto: lisaa_lukija(ratikka6)
   main->>HKLLaitehallinto: lisaa_lukija(bussi244)
   
-  main-->>Kioski: Kioski()
+  main->>Kioski: Kioski()
   activate Kioski
-  main->>Kioski: osta_matkakortti("Kalle")
+  main->>Kioski: 'osta_matkakortti("Kalle")'
   deactivate Kioski
-  Kioski->>main: Matkakortti("Kalle")
+  Kioski->>main: 'Matkakortti("Kalle")'
   
   main->>Lataajalaite: lataa_arvoa(kallen_kortti, 3)
   activate Lataajalaite
@@ -29,20 +29,16 @@ sequenceDiagram
   Lataajalaite-->>main:   
   deactivate Lataajalaite
   
-  main->>Lukijalaite: ostalippu(kallen_kortti, 0)
+  main->>Lukijalaite: 'ostalippu(kallen_kortti, 0)'
   activate Lukijalaite
-  Lukijalaite->>Matkakortti: vahenna_arvoa(RATIKKA)
+  Lukijalaite->>Matkakortti: 'vahenna_arvoa(RATIKKA)'
   dectivate Lukijalaite
   Lukijalaite-->>main:   
   
   
-  main->>Lukijalaite: osta_lippu(kallen_kortti, 2)
+  main->>Lukijalaite: 'osta_lippu(kallen_kortti, 2)'
   
   ```
-  
-  
-  
-  
   
   
   
