@@ -28,6 +28,7 @@ class TestMaksukortti(unittest.TestCase):
 
     def test_metodikutsusta_false_jos_ei_rahaa(self):
         self.assertFalse(self.maksukortti.ota_rahaa(1300))
+        
 
         
 
