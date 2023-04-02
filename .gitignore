@@ -9,7 +9,6 @@ __pycache__
 
 # data files
 data/database.sqlite
-data/todos.csv
 data/test-database.sqlite
-data/test-todos.csv_
+
 
