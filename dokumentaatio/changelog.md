@@ -13,4 +13,4 @@
 - alustavaa runkoa sqlite3 tietokantojen käsittelylle
 - Kun lihasloki sovellus käynnistyy, tulee luo uusi käyttäjä -näkymä esiin
 - Käyttäjä voi luoda uuden käyttäjätunnuksen, user_service luo siitä User-luokan olion
-- Vielä käyttäjätietoja ei tallenneta mihinkään.
+- Käyttäjätietoja ei vielä tallenneta mihinkään, tulevaisuudessa ne lisätään SQLite-tietokantaan
