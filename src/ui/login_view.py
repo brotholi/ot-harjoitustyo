@@ -1,6 +1,6 @@
 from tkinter import Tk, ttk, constants
 
-#from services.gym_service import task_service, InvalidCredentialsError
+
 class LoginView:
 
     def __init__(self, root):
@@ -59,7 +59,6 @@ class LoginView:
 
         self._root.grid_columnconfigure(1, weight=1)
     
-#Tämä eriytetään erilliseen tiedostoon?
 
 window = Tk()
 window.title("Lihasloki")
