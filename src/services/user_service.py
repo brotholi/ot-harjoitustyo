@@ -1,23 +1,19 @@
 from entities.user import User
 from repositories.user_repository import UserRep
 
+
 class UserService:
 
-    def __init__(self, user_repository):
+    def __init__(self):
         self._user = None
-        self._user_repository = user_repository
         
 #luo uuden käyttäjän
 
-    def create_new_user(self, username, password, password_check):
-        if password == password_check:
-            new_user = User(username, password)
-            self._user_repository.create_new_user(new_user)
-        
-        else:
-            print("passwords do not match")
+    def create_new_user(self, username, password):
+        #luodaan uusi user-olio 
+        new_user = User(username, password)
+        #viedään uuden käyttäjän tiedot tietokantaan
+        #user = self._user_repository.create_new_user(new_user)
+        print(f'Käyttäjätunnus  {username} luotu')
+        return new_user
 
-user_service = UserService()
-        
-
-    

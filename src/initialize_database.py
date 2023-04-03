@@ -1,4 +1,3 @@
-import os
 import sqlite3
 from database_connection import database_connection
 
@@ -25,10 +24,10 @@ def create_tables(connection):
             password text
         );
         """))
+        
     connection.commit
 
 if __name__ == "__main__":
     initialize_database()
-
 
 

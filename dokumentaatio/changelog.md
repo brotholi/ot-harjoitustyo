@@ -1,0 +1,16 @@
+## Viikko 3
+- Luotu pohja seuraaville kokonaisuuksille:
+- ui
+	- login_view
+	- create_user_view
+	- ui (käyttöliittymää hallitseva kokonaisuus)
+- entities
+	- user
+- services
+	- user-service
+- repositories
+	- user repository
+- runkoa sqlite3 tietokantojen käsittelylle
+- Kun lihasloki sovellus käynnistyy, tulee luo uusi käyttäjä -näkymä esiin
+- Käyttäjä voi luoda uuden käyttäjätunnuksen, user_service luo siitä User-olion entities luokan avulla
+- Vielä käyttäjätietoja ei tallenneta mihinkään.
