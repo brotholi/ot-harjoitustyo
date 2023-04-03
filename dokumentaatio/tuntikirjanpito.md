@@ -7,4 +7,4 @@
 | 2.4.  | 6    | Käyttöliittymän toteutusta |
 | 3.4.  | 4    | user service ja tietokantayhteyspohjat|
 | 4.4   | 6    | käyttäjätunnuksen luominen käyttöliittymässä: kokonaisuuksien yhdistäminen |
-| yht   | 4    | | 
+| yht   | 20   | | 
