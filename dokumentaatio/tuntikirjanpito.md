@@ -6,5 +6,5 @@
 | 31.3. | 1    | poetryn alustus ja ohjeisiin tutustuminen |
 | 2.4.  | 6    | Käyttöliittymän toteutusta |
 | 3.4.  | 4    | user service ja tietokantayhteyspohjat|
-| 4.4   | 6    | käyttäjätunnuksen luonti kuntoon |
+| 4.4   | 6    | käyttäjätunnuksen luominen käyttöliittymässä: kokonaisuuksien yhdistäminen |
 | yht   | 4    | | 
