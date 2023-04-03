@@ -7,9 +7,9 @@
 - entities
 	- user
 - services
-	- user-service
+	- user_service
 - repositories
-	- user repository
+	- user_repository
 - alustavaa runkoa sqlite3 tietokantojen käsittelylle
 - Kun lihasloki sovellus käynnistyy, tulee luo uusi käyttäjä -näkymä esiin
 - Käyttäjä voi luoda uuden käyttäjätunnuksen, user_service luo siitä User-olion entities luokan avulla
