@@ -68,4 +68,3 @@ ui = LoginView(window)
 
 
 window.mainloop()
-

@@ -1,10 +1,9 @@
-from tkinter import ttk, constants
-from login_view import LoginView
-from create_user import CreateUserView
+from ui.login_view import LoginView
+from ui.create_user import CreateUserView
 
 
 class UI:
-    def _init_(self, root):
+    def __init__(self, root):
         self._root = root
         self._current_view = None
 
@@ -18,21 +17,21 @@ class UI:
         self._hide_current_view()
 
         self._current_view = LoginView(
-              self._root
+              self._root, 
+              self._show_create_user_view
         )
 
-    def _show_logbook_view(self):
-        self._hide_current_view()
-
-
-    def _show_entry_view(self):
-        self._hide_current_view()
-        
+        self._current_view.pack()
 
     def _show_create_user_view(self):
         self._hide_current_view()
         self._current_view = CreateUserView(
-            self._root
+            self._root,
+            self._show_login_view
         )
+        self._current_view.pack()
+
+        
+
         
     
