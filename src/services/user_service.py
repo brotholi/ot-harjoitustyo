@@ -14,6 +14,6 @@ class UserService:
         new_user = User(username, password)
         #viedään uuden käyttäjän tiedot tietokantaan
         #user = self._user_repository.create_new_user(new_user)
-        print(f'Käyttäjätunnus  {username} luotu')
+     
         return new_user
 
