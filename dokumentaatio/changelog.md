@@ -11,6 +11,6 @@
 - repositories
 	- user_repository
 - alustavaa runkoa sqlite3 tietokantojen käsittelylle
-- Kun lihasloki sovellus käynnistyy, tulee luo uusi käyttäjä -näkymä esiin
+- Kun lihasloki sovellus käynnistyy, tulee create_user-näkymä esiin
 - Käyttäjä voi luoda uuden käyttäjätunnuksen, user_service luo siitä User-luokan olion
 - Käyttäjätietoja ei vielä tallenneta mihinkään, tulevaisuudessa ne lisätään SQLite-tietokantaan
