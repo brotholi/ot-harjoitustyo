@@ -8,5 +8,5 @@
 | 3.4.  | 4    | user service ja tietokantayhteyspohjat|
 | 4.4   | 6    | käyttäjätunnuksen luominen käyttöliittymässä: kokonaisuuksien yhdistäminen |
 | 17.4. | 1    | pylint käyttöön |
-| 18.4. | 
+| 18.4. | 10   | uutta toiminnallisuutta: kaksi näkymää ja käyttäjän tallennus tietokantaan |
 | yht   | 20   | | 
