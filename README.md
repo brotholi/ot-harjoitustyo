@@ -10,6 +10,8 @@ Lihasloki-sovelluksella pidetään kirjaa kuntosalitreeneistä. Sovellukseen kir
 - [Arkkitehtuurikuvaus](./dokumentaatio/arkkitehtuuri.md)
 
 ## Käyttö
+- Tarvittavat alustukset tehdään komennolla *poetry run invoke build*
 - Sovellus käynnistetään komennolla *poetry run invoke start*
 - Testejä voi ajaa komennolla *poetry run invoke test*
 - Testikattavuusraportin voi muodostaa komennolla *poetry run invoke coverage-report*
+
