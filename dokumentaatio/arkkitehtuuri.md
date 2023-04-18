@@ -1,8 +1,5 @@
 # Sovelluksen logiikka
 
-## Pakkauskaavio
-
-
 ## Luokkakaavio
 
 ```mermaid
