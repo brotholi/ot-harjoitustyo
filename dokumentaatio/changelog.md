@@ -14,3 +14,9 @@
 - Kun Lihasloki sovellus käynnistyy, tulee create_user-näkymä esiin
 - Käyttäjä voi luoda uuden käyttäjätunnuksen, user_service luo siitä User-luokan olion
 - Käyttäjätietoja ei vielä tallenneta mihinkään, tulevaisuudessa ne lisätään SQLite-tietokantaan
+
+## Viikko 4
+- poetry run invoke start-komento avaa login-näkymän, josta pääsee siirtymään create_user-näkymälle painamalla "luo käyttäjä"
+- create_user-näkymässä User-olioon liittyvät käyttäjätunnus ja salasana talletetaan tietokantaan
+- käyttäjän luonti vie takaisin login-näkymään
+- user_reposiotoria laajennettu, palauttaa tarvittaessa kaikki käyttäjät tai yhden käyttäjän käyttäjänimellä
