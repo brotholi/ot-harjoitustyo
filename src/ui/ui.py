@@ -15,7 +15,7 @@ class UI:
         if self._current_view:
             self._current_view.destroy()
         self._current_view = None
-    
+
     def _handle_create_user(self):
         self._show_create_user_view()
 

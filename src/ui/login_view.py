@@ -20,14 +20,14 @@ class LoginView:
         print("error")
 
     def _handle_login(self):
-        #yritä loginia käyttäjäservicellä
+        # yritä loginia käyttäjäservicellä
         username_entry_value = self._username_entry.get()
         password_entry_value = self._password_entry.get()
         if len(username_entry_value) > 0:
             print(f"Käyttäjätunnuksesi oli: {username_entry_value}")
 
-    #def _handle_create_user(self):
-        #print("Luodaan uusi käyttäjä")
+    # def _handle_create_user(self):
+        # print("Luodaan uusi käyttäjä")
 
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)
@@ -40,7 +40,7 @@ class LoginView:
         self._password_entry = ttk.Entry(master=self._frame)
 
         login_button = ttk.Button(
-           master=self._frame,
+            master=self._frame,
             text="Kirjaudu",
             command=self._handle_login
         )

@@ -9,7 +9,7 @@ class CreateUserView:
         self._current_view = None
         self._username_entry = None
         self._password_entry = None
-        
+
         self._initialize()
 
     def pack(self):
@@ -26,16 +26,17 @@ class CreateUserView:
         if len(username_entry_value) < 5:
             print("Käyttäjätunnus liian lyhyt (oltava vähintään 5 merkkiä)")
             return
-        
+
         if len(password_entry_value) < 1:
             print("Syötä salasana")
             return
-        
+
         if password_entry_value != password_check_value:
             print("Salasanat eivät täsmää")
             return
         try:
-            user_service.create_new_user(username_entry_value, password_entry_value)
+            user_service.create_new_user(
+                username_entry_value, password_entry_value)
             self._handle_back_to_login()
 
         except UserExistsError:
@@ -43,16 +44,17 @@ class CreateUserView:
 
         print(f'Käyttäjätunnus  {username_entry_value} luotu')
 
-        
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)
         heading_label = ttk.Label(master=self._frame, text="Luo uusi käyttäjä")
-        username_label = ttk.Label(master=self._frame, text="Anna käyttäjätunnus")
+        username_label = ttk.Label(
+            master=self._frame, text="Anna käyttäjätunnus")
         self._username_entry = ttk.Entry(master=self._frame)
 
         password_label = ttk.Label(master=self._frame, text="Anna salasana")
         self._password_entry = ttk.Entry(master=self._frame)
-        password_again_label = ttk.Label(master=self._frame, text="Salasana uudelleen")
+        password_again_label = ttk.Label(
+            master=self._frame, text="Salasana uudelleen")
         self._password_again_entry = ttk.Entry(master=self._frame)
 
         create_user_button = ttk.Button(
@@ -76,4 +78,3 @@ class CreateUserView:
 
         create_user_button.grid(row=4, column=1, padx=5,
                                 pady=5, sticky=constants.E)
-

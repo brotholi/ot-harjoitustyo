@@ -1,8 +1,10 @@
 from entities.user import User
 from repositories.user_repository import user_repository
 
+
 class UserExistsError(Exception):
     pass
+
 
 class UserService:
 
@@ -14,15 +16,16 @@ class UserService:
         # tarkastetaan, ettei käyttäjää ole olemassa
         check_user_exists = self.check_if_user_exists(username)
 
-        if check_user_exists == True:
+        if check_user_exists:
             raise UserExistsError()
-        #luodaan olio new user
+        # luodaan olio new user
         # viedään uuden käyttäjän tiedot tietokantaan
-        user = self._user_repository.create_new_user(User(username, password))
-        return user
-    
+        new_user = User(username, password)
+        self._user_repository.create_new_user(new_user)
+        return new_user
+
     def check_if_user_exists(self, username):
         return False
-        
-user_service = UserService()
 
+
+user_service = UserService()
