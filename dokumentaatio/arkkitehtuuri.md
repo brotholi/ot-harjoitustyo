@@ -1,7 +1,7 @@
 ```mermaid
  classDiagram
       User "1" <-- "*" LogEntry
-      Exercise "*" --> "1" Logentry
+      Exercise "*" --> "1" LogEntry
       class User{
           username
           password
