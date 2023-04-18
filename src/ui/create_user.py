@@ -1,4 +1,4 @@
-from tkinter import Tk, ttk, constants
+from tkinter import ttk, constants, StringVar
 from services.user_service import user_service, UserExistsError
 
 
@@ -37,12 +37,18 @@ class CreateUserView:
         try:
             user_service.create_new_user(
                 username_entry_value, password_entry_value)
+            print(f'Käyttäjätunnus  {username_entry_value} luotu')
             self._handle_back_to_login()
 
         except UserExistsError:
-            print("Käyttäjä on jo olemassa")
+            self._show_error_message("Käyttäjä on jo olemassa")
 
-        print(f'Käyttäjätunnus  {username_entry_value} luotu')
+    def _show_error_message(self, message):
+        self._error_var.set(message)
+        self._error_label.grid()
+
+    def _hide_error(self):
+        self._error_label.grid_remove()
 
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)
@@ -63,6 +69,14 @@ class CreateUserView:
             command=self._create_user_handler
         )
 
+        self._error_var = StringVar(self._frame)
+
+        self._error_label = ttk.Label(
+            master=self._frame,
+            textvariable=self._error_var,
+            foreground="purple"
+        )
+
         heading_label.grid(row=0, column=0, padx=5, pady=5)
         username_label.grid(row=1, column=0, padx=5, pady=10)
         self._username_entry.grid(row=1, column=1, sticky=(
@@ -78,3 +92,8 @@ class CreateUserView:
 
         create_user_button.grid(row=4, column=1, padx=5,
                                 pady=5, sticky=constants.E)
+
+        self._error_label.grid(row=5, column=1, padx=5,
+                               pady=5, sticky=constants.E)
+
+        self._hide_error()

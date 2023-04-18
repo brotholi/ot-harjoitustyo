@@ -25,6 +25,10 @@ class UserService:
         return new_user
 
     def check_if_user_exists(self, username):
+        existing_user = self._user_repository.find_by_username(username)
+        if existing_user:
+            return True
+
         return False
 
 
