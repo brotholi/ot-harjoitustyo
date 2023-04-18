@@ -3,45 +3,52 @@ from tkinter import Tk, ttk, constants
 
 class LoginView:
 
-    def __init__(self, root):
+    def __init__(self, root, handle_create_user):
         self._root = root
-        self._current_view = None
+        self._handle_create_user = handle_create_user
+        self._frame = None
 
         self._initialize()
 
     def pack(self):
-        # näytä näkymä
         self._frame.pack(fill=constants.X)
 
     def destroy(self):
-        # tuhoa näkymä
         self._frame.destroy()
 
     def _error(self):
         print("error")
 
-    def _handle_login_button(self):
+    def _handle_login(self):
+        #yritä loginia käyttäjäservicellä
         username_entry_value = self._username_entry.get()
         password_entry_value = self._password_entry.get()
+        if len(username_entry_value) > 0:
+            print(f"Käyttäjätunnuksesi oli: {username_entry_value}")
 
-        print(f"Käyttäjätunnuksesi oli: {username_entry_value}")
-        salasana = password_entry_value
+    #def _handle_create_user(self):
+        #print("Luodaan uusi käyttäjä")
 
     def _initialize(self):
-        # kenttien alustus eri metodeihin?
         self._frame = ttk.Frame(master=self._root)
-        heading_label = ttk.Label(master=self._root, text="Kirjautuminen")
+        heading_label = ttk.Label(master=self._frame, text="Kirjautuminen")
 
-        username_label = ttk.Label(master=self._root, text="Käyttäjätunnus")
-        self._username_entry = ttk.Entry(master=self._root)
+        username_label = ttk.Label(master=self._frame, text="Käyttäjätunnus")
+        self._username_entry = ttk.Entry(master=self._frame)
 
-        password_label = ttk.Label(master=self._root, text="Salasana")
-        self._password_entry = ttk.Entry(master=self._root)
+        password_label = ttk.Label(master=self._frame, text="Salasana")
+        self._password_entry = ttk.Entry(master=self._frame)
 
         login_button = ttk.Button(
-            master=self._root,
+           master=self._frame,
             text="Kirjaudu",
-            command=self._handle_login_button
+            command=self._handle_login
+        )
+
+        create_user_button = ttk.Button(
+            master=self._frame,
+            text="Luo käyttäjä",
+            command=self._handle_create_user
         )
 
         heading_label.grid(row=0, column=0, columnspan=2,
@@ -54,14 +61,6 @@ class LoginView:
             constants.E, constants.W), padx=5, pady=5)
 
         login_button.grid(row=3, column=0, columnspan=2)
+        create_user_button.grid(row=4, column=0, columnspan=2)
 
-        self._root.grid_columnconfigure(1, weight=1)
-
-
-window = Tk()
-window.title("Lihasloki")
-
-ui = LoginView(window)
-
-
-window.mainloop()
+        self._frame.grid_columnconfigure(1, weight=1)
