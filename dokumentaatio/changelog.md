@@ -20,3 +20,4 @@
 - create_user-näkymässä User-olioon liittyvät käyttäjätunnus ja salasana talletetaan tietokantaan
 - käyttäjän luonti vie takaisin login-näkymään
 - user_reposiotoria laajennettu, palauttaa tarvittaessa kaikki käyttäjät tai yhden käyttäjän käyttäjänimellä
+- testattu, että user_repository luo käyttäjän ja vie sen tietokantaan sekä palauttaa kaikki käyttäjät
