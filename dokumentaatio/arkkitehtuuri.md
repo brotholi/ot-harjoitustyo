@@ -1,3 +1,10 @@
+# Sovelluksen logiikka
+
+## Pakkauskaavio
+
+
+## Luokkakaavio
+
 ```mermaid
  classDiagram
       User "1" <-- "*" LogEntry
