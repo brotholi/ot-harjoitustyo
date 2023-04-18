@@ -2,6 +2,7 @@ import unittest
 from services.user_service import UserService
 from entities.user import User
 
+
 class TestCreateUser(unittest.TestCase):
     def setUp(self):
         pass
