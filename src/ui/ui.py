@@ -1,6 +1,7 @@
 from tkinter import Tk
 from ui.login_view import LoginView
 from ui.create_user import CreateUserView
+from ui.logbook_view import LogbookView
 
 
 class UI:
@@ -22,6 +23,9 @@ class UI:
     def _handle_back_to_login(self):
         self._show_login_view()
 
+    def _handle_logbook_view(self):
+        self._show_create_user_view
+
     def _show_login_view(self):
         self._hide_current_view()
 
@@ -39,3 +43,11 @@ class UI:
             self._handle_back_to_login
         )
         self._current_view.pack()
+
+    def _show_logbook_view(self):
+        self._hide_current_view
+        self._current_view = LogbookView(
+            self._root,
+            self._handle_back_to_login
+
+        )
