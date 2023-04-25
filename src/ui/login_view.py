@@ -1,6 +1,7 @@
 from tkinter import ttk, constants, StringVar
 from services.user_service import user_service, InvalidCredentialsError
 
+
 class LoginView:
 
     def __init__(self, root, handle_create_user, handle_logbook_view):
@@ -78,7 +79,7 @@ class LoginView:
 
         login_button.grid(row=3, column=0, columnspan=2)
         create_user_button.grid(row=4, column=0, columnspan=2)
-        
+
         self._error_label.grid(row=5, column=1, padx=5,
                                pady=5, sticky=constants.E)
 

@@ -6,7 +6,7 @@ htmlcov
 __pycache__
 *.py[cod]
 *$py.class
-databases/database.sqlite
-databases/workouts.JSON
-
-
+data/database.sqlite
+data/workouts.JSON
+data/test-database.sqlite
+data/test-workouts.JSON

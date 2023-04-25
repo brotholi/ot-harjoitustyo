@@ -1,5 +1,6 @@
 from tkinter import ttk, constants
-#from services.user_service import user_service
+# from services.user_service import user_service
+
 
 class LogentryView:
 
@@ -24,4 +25,3 @@ class LogentryView:
         label = ttk.Label(master=self._frame, text=f'Uusi treeni')
         label.grid(row=0, column=0, sticky=constants.W, padx=5, pady=5)
         self._frame.grid_columnconfigure(1, weight=1, minsize=300)
-

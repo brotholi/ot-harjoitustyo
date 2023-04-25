@@ -101,9 +101,9 @@ class CreateUserView:
 
         create_user_button.grid(row=4, column=1, padx=5,
                                 pady=5, sticky=constants.E)
-        
+
         return_button.grid(row=4, column=0, padx=5,
-                                pady=5, sticky=constants.W)
+                           pady=5, sticky=constants.W)
 
         self._error_label.grid(row=5, column=1, padx=5,
                                pady=5, sticky=constants.E)

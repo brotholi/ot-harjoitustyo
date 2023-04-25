@@ -1,9 +1,12 @@
 from entities.user import User
-from repositories.user_repository import user_repository
+from repositories.user_repository import (
+    user_repository as default_user_repository
+)
 
 
 class UserExistsError(Exception):
     pass
+
 
 class InvalidCredentialsError(Exception):
     pass
@@ -11,7 +14,7 @@ class InvalidCredentialsError(Exception):
 
 class UserService:
 
-    def __init__(self):
+    def __init__(self, user_repository=default_user_repository):
         self._user = None
         self._user_repository = user_repository
 
@@ -33,13 +36,13 @@ class UserService:
             return True
 
         return False
-    
+
     def login(self, username, password):
-        #tarkistetaan, että käyttäjä on olemassa ja salasana täsmää
+        # tarkistetaan, että käyttäjä on olemassa ja salasana täsmää
         current_user = self._user_repository.find_by_username(username)
         if not current_user or current_user.password != password:
             raise InvalidCredentialsError
-        #palautetaan käyttäjä
+        # palautetaan käyttäjä
         self._user = current_user
 
         return current_user
@@ -47,5 +50,6 @@ class UserService:
     def get_current_user(self):
         username = self._user.username
         return username
+
 
 user_service = UserService()

@@ -1,6 +1,7 @@
 from tkinter import ttk, constants
 from services.user_service import user_service
 
+
 class LogbookView:
 
     def __init__(self, root, handle_back_to_login, handle_logentry_view):
@@ -32,7 +33,8 @@ class LogbookView:
 
     def _initialize_header(self):
         username = user_service.get_current_user()
-        heading_label = ttk.Label(master=self._frame, text=f'Kirjautuneena: {username}')
+        heading_label = ttk.Label(
+            master=self._frame, text=f'Kirjautuneena: {username}')
         heading_label.grid(row=0, column=0, sticky=constants.W, padx=5, pady=5)
 
         logout_button = ttk.Button(
@@ -50,7 +52,8 @@ class LogbookView:
             command=self._add_entry_handler
         )
 
-        add_entry_button.grid(row=4, column=1, sticky=constants.E, padx=5, pady=5)
+        add_entry_button.grid(
+            row=4, column=1, sticky=constants.E, padx=5, pady=5)
 
     def _logout_handler(self):
         self._handle_back_to_login()
