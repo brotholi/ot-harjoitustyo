@@ -52,5 +52,5 @@ sequenceDiagram
   UserRepository-->>UserService: user
   UserService-->>UI: user
   UI->>UI: show_login_view()
-  
+ ```
 
