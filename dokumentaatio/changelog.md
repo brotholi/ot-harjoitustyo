@@ -25,7 +25,7 @@
 
 
 ## Viikko 5
-- korjattu data-kansion ongelmia
+- korjattu tyhjän data-kansion aiheuttamia ongelmia
 - käyttäjä voi kirjautua sisään
 - Sisäänkirjautuminen näyttää logbook-näkymän
 - Logbook-näkymästä voi siirtyä yksittäisen treenin kirjaamiseen painamalla "lisää uusi treeni"
