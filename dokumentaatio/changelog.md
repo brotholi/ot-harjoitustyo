@@ -22,3 +22,14 @@
 - käyttäjän luonti vie takaisin login-näkymään
 - user_reposiotoria laajennettu, palauttaa tarvittaessa kaikki käyttäjät tai yhden käyttäjän käyttäjänimellä
 - testattu, että user_repository luo käyttäjän ja vie sen tietokantaan sekä palauttaa kaikki käyttäjät
+
+
+## Viikko 5
+- korjattu data-kansion ongelmia
+- käyttäjä voi kirjautua sisään
+- Sisäänkirjautuminen näyttää logbook-näkymän
+- Logbook-näkymästä voi siirtyä yksittäisen treenin kirjaamiseen painamalla "lisää uusi treeni"
+	- luotu pohjaa logbook-servicelle, jolla tallennetaan treenit tiedostoon (ei vielä toimi)
+- käyttäjä voi kirjautua ulos painamalla "kirjaudu ulos"
+- lisätty takaisin-nappula create-user -näkymään, joka vie takaisin kirjautumiseen
+- testattu, että user_servicen login toimii
