@@ -42,6 +42,7 @@ sequenceDiagram
 # Uuden käyttäjän luominen
 
 ```mermaid
+sequenceDiagram
   actor User
   participant UI
   participant UserService
