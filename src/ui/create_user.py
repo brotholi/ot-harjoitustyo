@@ -24,20 +24,22 @@ class CreateUserView:
         password_check_value = self._password_again_entry.get()
 
         if len(username_entry_value) < 5:
-            print("Käyttäjätunnus liian lyhyt (oltava vähintään 5 merkkiä)")
+            self._show_error_message(
+                "Käyttäjätunnus liian lyhyt (oltava vähintään 5 merkkiä)")
             return
 
         if len(password_entry_value) < 1:
-            print("Syötä salasana")
+            self._show_error_message("Syötä salasana")
             return
 
         if password_entry_value != password_check_value:
-            print("Salasanat eivät täsmää")
+            self._show_error_message("Salasanat eivät täsmää")
             return
         try:
             user_service.create_new_user(
                 username_entry_value, password_entry_value)
-            print(f'Käyttäjätunnus  {username_entry_value} luotu')
+            self._show_error_message(
+                f'Käyttäjätunnus  {username_entry_value} luotu')
             self._handle_back_to_login()
 
         except UserExistsError:
@@ -83,7 +85,7 @@ class CreateUserView:
         self._error_label = ttk.Label(
             master=self._frame,
             textvariable=self._error_var,
-            foreground="purple"
+            foreground="blue"
         )
 
         heading_label.grid(row=0, column=0, padx=5, pady=5)
