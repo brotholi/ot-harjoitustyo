@@ -21,7 +21,7 @@
       }
 ```
 
-## Sekvenssikaavio
+## Sekvenssikaaviot
 
 # Kirjautuminen
 
@@ -31,9 +31,26 @@ sequenceDiagram
   participant UI
   participant UserService
   participant UserRepository
-  User->UI: press "Kirjaudu" button
-  UI->UserService: login("Mollamaija", "heppa2")
-  userService->UserRepository: find_by_username("Mollamaija")
-  UserRepository-->UserService: user
-  UserService-->UI: user
+  User->>UI: press "Kirjaudu" button
+  UI->>UserService: login("Mollamaija", "heppa2")
+  UserService->>UserRepository: find_by_username("Mollamaija")
+  UserRepository-->>UserService: user
+  UserService-->>UI: user
+  UI->>UI: show_logbook_view()
 ```
+
+# Uuden käyttäjän luominen
+
+```mermaid
+  actor User
+  participant UI
+  participant UserService
+  participant UserRepository
+  User->>UI: press "Luo käyttäjä" button
+  UI->>UserService: create_new_user("Mollamaija", "1244")
+  UserService->>UserRepository: find_by_username("Mollamaija")
+  UserRepository-->>UserService: user
+  UserService-->>UI: user
+  UI->>UI: show_login_view()
+  
+
