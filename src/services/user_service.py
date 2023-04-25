@@ -5,6 +5,9 @@ from repositories.user_repository import user_repository
 class UserExistsError(Exception):
     pass
 
+class InvalidCredentialsError(Exception):
+    pass
+
 
 class UserService:
 
@@ -30,6 +33,19 @@ class UserService:
             return True
 
         return False
+    
+    def login(self, username, password):
+        #tarkistetaan, että käyttäjä on olemassa ja salasana täsmää
+        current_user = self._user_repository.find_by_username(username)
+        if not current_user or current_user.password != password:
+            raise InvalidCredentialsError
+        #palautetaan käyttäjä
+        self._user = current_user
 
+        return current_user
+
+    def get_current_user(self):
+        username = self._user.username
+        return username
 
 user_service = UserService()

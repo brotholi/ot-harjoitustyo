@@ -43,6 +43,9 @@ class CreateUserView:
         except UserExistsError:
             self._show_error_message("Käyttäjä on jo olemassa")
 
+    def _return_handler(self):
+        self._handle_back_to_login()
+
     def _show_error_message(self, message):
         self._error_var.set(message)
         self._error_label.grid()
@@ -69,6 +72,12 @@ class CreateUserView:
             command=self._create_user_handler
         )
 
+        return_button = ttk.Button(
+            master=self._frame,
+            text="Takaisin",
+            command=self._return_handler
+        )
+
         self._error_var = StringVar(self._frame)
 
         self._error_label = ttk.Label(
@@ -92,6 +101,9 @@ class CreateUserView:
 
         create_user_button.grid(row=4, column=1, padx=5,
                                 pady=5, sticky=constants.E)
+        
+        return_button.grid(row=4, column=0, padx=5,
+                                pady=5, sticky=constants.W)
 
         self._error_label.grid(row=5, column=1, padx=5,
                                pady=5, sticky=constants.E)

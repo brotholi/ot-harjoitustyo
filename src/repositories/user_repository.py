@@ -37,4 +37,3 @@ class UserRep:
 
 
 user_repository = UserRep(create_database_connection())
-lihasloki_users = user_repository.find_all()
