@@ -26,10 +26,10 @@
 
 ## Viikko 5
 - korjattu tyhjän data-kansion aiheuttamia ongelmia
-- käyttäjä voi kirjautua sisään
+- käyttäjä voi kirjautua sisään. Kirjautuminen tarkistaa, että käyttäjätunnus ja salasana ovat oikein.
 - Sisäänkirjautuminen näyttää logbook-näkymän
 - Logbook-näkymästä voi siirtyä yksittäisen treenin kirjaamiseen painamalla "lisää uusi treeni"
-	- luotu pohjaa logbook-servicelle, jolla tallennetaan treenit tiedostoon (ei vielä toimi)
+	- luotu pohjaa logbook-repositorylle, joka tallentaa treenit tiedostoon (ei vielä toimi)
 - käyttäjä voi kirjautua ulos painamalla "kirjaudu ulos"
 - lisätty takaisin-nappula create-user -näkymään, joka vie takaisin kirjautumiseen
 - testattu, että user_servicen login toimii
