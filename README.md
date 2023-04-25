@@ -8,6 +8,7 @@ Lihasloki-sovelluksella pidetään kirjaa kuntosalitreeneistä. Sovellukseen kir
 - [Työaikakirjanpito](./dokumentaatio/tuntikirjanpito.md)
 - [Changelog](./dokumentaatio/changelog.md)
 - [Arkkitehtuurikuvaus](./dokumentaatio/arkkitehtuuri.md)
+- [release](./dokumentaatio/arkkitehtuuri.md)
 
 ## Käyttö
 - Tarvittavat alustukset tehdään komennolla *poetry run invoke build*
