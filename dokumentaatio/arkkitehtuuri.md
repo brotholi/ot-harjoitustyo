@@ -20,3 +20,20 @@
           reps
       }
 ```
+
+## Sekvenssikaavio
+
+# Kirjautuminen
+
+```mermaid
+sequenceDiagram
+  actor User
+  participant UI
+  participant UserService
+  participant UserRepository
+  User->UI: press "Kirjaudu" button
+  UI->UserService: login("Mollamaija", "heppa2")
+  userService->UserRepository: find_by_username("Mollamaija")
+  UserRepository-->UserService: user
+  UserService-->UI: user
+```
