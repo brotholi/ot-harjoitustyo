@@ -10,5 +10,5 @@
 | 17.4. | 1    | pylint käyttöön |
 | 18.4. | 10   | uutta toiminnallisuutta: kaksi näkymää ja käyttäjän tallennus tietokantaan |
 | 24.4. | 2    | database-virheen korjausta ja kirjautumisen toteutus |
-| 25.4. | 9    | treenien tallennus json-tiedostoon, uusia näkymiä |
+| 25.4. | 9    | yhden käyttäjän näkymä, uloskirjautuminen, uusia testejä |
 | yht   | 42   | | 
