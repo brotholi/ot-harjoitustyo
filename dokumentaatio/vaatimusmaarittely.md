@@ -33,16 +33,16 @@ Sovelluksessa on tavallisia käyttäjiä ja pääkäyttäjä. Tavallinen käytt�
 
 
 ## Toiminnallisuus perusversiossa
-- Käyttäjä voi luoda sovellukseen tunnuksen (tehty)
+- Käyttäjä voi luoda sovellukseen tunnuksen **(tehty)**
   - Käyttäjätunnuksen on oltava vähintään 5 merkkiä pitkä ja uniikki
-- Käyttäjä voi kirjautua sovellukseen (tehty)
+- Käyttäjä voi kirjautua sovellukseen **(tehty)**
 - Käyttäjälle näkyvät vain käyttäjän itse kirjaamat treenit
 - Käyttäjä voi kirjata yksittäisen treenin, jolle voi määritellä nimen
 - Yksittäiseen treeniin voi kirjata päivämäärän
 - Jokaiseen treeniin voi kirjata useita liikkeitä
 - Käyttäjä voi lisätä jokaiselle treenin liikkeelle nimen ja sarjojen (settien) määrän
 - Jokaiselle setille voi kertoa toistojen määrä ja lisäpainon kilogrammoina
-- Käyttäjä voi kirjautua ulos järjestelmästä (tehty)
+- Käyttäjä voi kirjautua ulos järjestelmästä **(tehty)**
 
 ## Lisätoiminnallisuus - jatkokehittelyideoita
 - Sovellus tilastoi käyttäjän ennätyksiä yhdessä liikkeessä. Ennätys eli personal best lasketaan sekä kilojen että toistojen avulla.
