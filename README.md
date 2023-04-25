@@ -14,4 +14,4 @@ Lihasloki-sovelluksella pidetään kirjaa kuntosalitreeneistä. Sovellukseen kir
 - Sovellus käynnistetään komennolla *poetry run invoke start*
 - Testejä voi ajaa komennolla *poetry run invoke test*
 - Testikattavuusraportin voi muodostaa komennolla *poetry run invoke coverage-report*
-
+- Komennolla *poetry run invoke lint* voi suorittaa tiedoston .pylintrc määrittelemät tarkistukset
