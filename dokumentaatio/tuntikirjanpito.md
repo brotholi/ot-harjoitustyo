@@ -9,4 +9,6 @@
 | 4.4   | 6    | käyttäjätunnuksen luominen käyttöliittymässä: kokonaisuuksien yhdistäminen |
 | 17.4. | 1    | pylint käyttöön |
 | 18.4. | 10   | uutta toiminnallisuutta: kaksi näkymää ja käyttäjän tallennus tietokantaan |
-| yht   | 31   | | 
+| 24.4. | 2    | database-virheen korjausta ja kirjautumisen toteutus |
+| 25.4. | 9    | treenien tallennus json-tiedostoon, uusia näkymiä |
+| yht   | 42   | | 
