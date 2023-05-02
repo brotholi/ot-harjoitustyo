@@ -11,4 +11,5 @@
 | 18.4. | 10   | uutta toiminnallisuutta: kaksi näkymää ja käyttäjän tallennus tietokantaan |
 | 24.4. | 2    | database-virheen korjausta ja kirjautumisen toteutus |
 | 25.4. | 9    | yhden käyttäjän näkymä, uloskirjautuminen, uusia testejä ja dokumentointia |
-| yht   | 42   | | 
+|  2.5. | 6    | treenin lisäys käyttöliittymältä ja tallennus tiedostoon, uusia testejä ja dokumentointia |
+| yht   | 48   | | 
