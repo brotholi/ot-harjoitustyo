@@ -64,6 +64,7 @@ sequenceDiagram
   UserService-->>UI: user
   UI->>UI: show_logbook_view()
 ```
+Painamalla kirjaudu-nappulaa tapahtumankäsittelijä kutsuu UserService-luokan metodia. Parametriksi annetaan käyttäjätunnus ja salasana. Tämän jälkeen sovellus tutkii, UserRepositoryn avulla, että käyttäjä on olemassa ja että salasana on oikein. Jos kaikki on ok, kirjautuminen onnistuu ja käyttöliittymä UI-luokka näyttää treeninkirjausnäkymän kirjautuneelle käyttäjälle.
 
 ### Uuden käyttäjän luominen
 
@@ -81,6 +82,8 @@ sequenceDiagram
   UI->>UI: show_login_view()
  ```
  
+
+ 
  ### Uuden treenin lisääminen
 
 ```mermaid
@@ -92,7 +95,7 @@ sequenceDiagram
   User->>UI: press "Lisää uusi treeni" button
   UI->>LogEntryService: create_new_entry("Mollamaija", "jalkapäivä", "3.4.2023")
   LogEntryService->>LogbookRepository: create_new_entry("entry)
-  LogbookRepository-->>UserService: entry
+  LogbookRepository-->>LogEntryService: entry
   LogEntryService-->>UI: entry
   UI->>UI: show_logbook_view()
  ```
