@@ -31,7 +31,6 @@ class LogentryView:
         logbook_service.create_new_entry(
             username, title_entry_value, date_entry_value)
 
-        print("tallennettu")
         self._handle_logbook_view()
 
     def _initialize(self):
