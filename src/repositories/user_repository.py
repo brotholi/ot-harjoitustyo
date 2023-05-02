@@ -9,10 +9,20 @@ class DatabaseDoesNotExistError(Exception):
 
 
 class UserRep:
+    """Luokka, joka vastaa sovelluksen käyttäjiin liittyvistä tietokantaoperaatioista.
+    """
     def __init__(self, connection):
+        """Luokan konstruktori.
+        Args:
+            connection: Tietokantayhteyteen liittyvä Connection-olio
+        """
         self._connection = connection
 
     def find_all(self):
+        """Palauttaa kaikki tietokannassa olevat käyttäjät.
+        Returns:
+            Palauttaa listan User-olioita.
+        """
         cursor = self._connection.cursor()
         try:
             cursor.execute("select * from lihasloki_users")
@@ -22,12 +32,22 @@ class UserRep:
         return [User(row["username"], row["password"]) for row in rows]
 
     def delete_all(self):
+        """Poistaa kaikki käyttäjät.
+        """
         cursor = self._connection.cursor()
         cursor.execute("delete from lihasloki_users")
         self._connection.commit()
 
-# syöttää käyttäjän tiedot tauluun
     def create_new_user(self, user):
+        """Syöttää käyttäjän tiedot tauluun.
+
+        Args:
+            todo: Tallennettava käyttäjä User-oliona.
+
+        Returns:
+            Tallennettu käyttjä User-oliona.
+        """
+
         cursor = self._connection.cursor()
         try:
             cursor.execute("insert into lihasloki_users (username, password) values (?, ?)",
@@ -38,8 +58,15 @@ class UserRep:
         self._connection.commit()
         return user
 
-# hakee yhden käyttäjän tiedot
     def find_by_username(self, username):
+        """Hakee yhden käyttäjän tiedot käyttäjätunnuksen perusteella.
+        Args:
+            username: Käyttäjätunnus, jonka omaava käyttäjä palautetaan.
+        Returns:
+            Palauttaa User-olion, jos käyttäjätunnuksen käyttäjä on tietokannassa.
+            Muutoin palauttaa None.
+        """
+
         cursor = self._connection.cursor()
         try:
             cursor.execute("select * from lihasloki_users where username = ?",
@@ -50,6 +77,8 @@ class UserRep:
         return User(row["username"], row["password"]) if row else None
 
     def _handle_nonexistent_database_error(self):
+        """Jos tietokantaa ei ole alustettu, lopettaa sovelluksen.
+        """
         print("Tietokantaa ei ole olemassa,tee ensin alustukset komennolla poetry run invoke build")
         sys.exit()
 

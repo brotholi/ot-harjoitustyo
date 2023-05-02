@@ -3,8 +3,21 @@ from services.user_service import user_service, InvalidCredentialsError
 
 
 class LoginView:
+    """Käyttäjän kirjautumisesta vastaava näkymä."""
 
     def __init__(self, root, handle_create_user, handle_logbook_view):
+        """Luokan konstruktori. Luo uuden kirjautumisnäkymän.
+        Args:
+            root:
+                TKinter-elementti, johon näkymä alustetaan.
+            handle_login:
+                Kutsuttava-arvo, jota kutsutaan kun käyttäjä kirjautuu sisään.
+            handle_create_user
+                Kutsuttava-arvo, jota kutsutaan kun siirrytään uuden käyttäjän luomisesta vastaavaan näkymään.
+            handle_logbook_view
+                Kutsuttava-arvo, jota kutsutaan kun siirrytään treenin kirjaus -näkymään.
+        """
+        
         self._root = root
         self._handle_create_user = handle_create_user
         self._handle_logbook_view = handle_logbook_view
@@ -15,20 +28,28 @@ class LoginView:
         self._initialize()
 
     def pack(self):
+        """"Näyttää nykyisen näkymän."""
         self._frame.pack(fill=constants.X)
 
     def destroy(self):
+        """"Tuhoaa nykyisen näkymän."""
         self._frame.destroy()
 
     def _show_error_message(self, message):
+        """"Näyttää error-viestin käyttäjälle.
+        Args:
+            message: Merkkijonona error-viesti"""
         self._error_var.set(message)
         self._error_label.grid()
 
     def _hide_error(self):
+        """Piilottaa error-viestin.
+        """
         self._error_label.grid_remove()
 
     def _handle_login(self):
-        # yritä loginia käyttäjäservicellä
+        """Yrittää kirjata yhden käyttäjän sisään käyttäjäservicellä.
+        """
         username_entry_value = self._username_entry.get()
         password_entry_value = self._password_entry.get()
         if len(username_entry_value) > 0:
@@ -39,6 +60,8 @@ class LoginView:
                 self._show_error_message("Väärä käyttäjätunnus tai salasana")
 
     def _initialize(self):
+        """Alustaa näkymän.
+        """
         self._frame = ttk.Frame(master=self._root)
         heading_label = ttk.Label(master=self._frame, text="Kirjautuminen")
 

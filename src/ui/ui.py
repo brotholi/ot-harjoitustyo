@@ -6,14 +6,22 @@ from ui.logentry_view import LogentryView
 
 
 class UI:
+    """Luokka, joka vastaa sovelluksen käyttöliittymästä."""
     def __init__(self, root):
+        """Luokan konstruktori. Luo uuden käyttöliittymä-luokan.
+        Args:
+            root:
+                TKinter-elementti, johon käyttöliittymä alustetaan.
+        """
         self._root = root
         self._current_view = None
 
     def start(self):
+        """Käynnistää käyttöliittymän ja näyttää login-näkymän."""
         self._show_login_view()
 
     def _hide_current_view(self):
+        """Piilottaa nykyisen näkymän ja tuhoaa sen."""
         if self._current_view:
             self._current_view.destroy()
         self._current_view = None

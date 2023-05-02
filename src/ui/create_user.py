@@ -3,7 +3,16 @@ from services.user_service import user_service, UserExistsError
 
 
 class CreateUserView:
+    """uuden käyttäjän rekisteröitymisestä vastaava näkymä."""
+
     def __init__(self, root, _handle_back_to_login):
+        """Luokan konstruktori. Luo uuden rekisteröitymisnäkymän.
+        Args:
+            root:
+                TKinter-elementti, johon näkymä alustetaan.
+            handle_back_to_login:
+                Kutsuttava-arvo, jota kutsutaan kun siirrytään takaisin kirjautumisnäkymään.
+        """
         self._root = root
         self._handle_back_to_login = _handle_back_to_login
         self._current_view = None
@@ -13,12 +22,17 @@ class CreateUserView:
         self._initialize()
 
     def pack(self):
+        """Näyttää näkymän.
+        """
         self._frame.pack(fill=constants.X)
 
     def destroy(self):
+        """Tuhoaa näkymän.
+        """
         self._frame.destroy()
 
     def _create_user_handler(self):
+        """Uuden käyttäjän luomisesta vastaava tapahtumankäsittelijä."""
         username_entry_value = self._username_entry.get()
         password_entry_value = self._password_entry.get()
         password_check_value = self._password_again_entry.get()
@@ -46,16 +60,24 @@ class CreateUserView:
             self._show_error_message("Käyttäjä on jo olemassa")
 
     def _return_handler(self):
+        """Palauttaa kirjautumisnäkymän."""
         self._handle_back_to_login()
 
     def _show_error_message(self, message):
+        """"Näyttää error-viestin käyttäjälle.
+        Args:
+            message: Merkkijonona error-viesti"""
+
         self._error_var.set(message)
         self._error_label.grid()
 
     def _hide_error(self):
+        """Piilottaa error-viestin.
+        """
         self._error_label.grid_remove()
 
     def _initialize(self):
+        "Alustaa käyttäjän luonti -näkymän."
         self._frame = ttk.Frame(master=self._root)
         heading_label = ttk.Label(master=self._frame, text="Luo uusi käyttäjä")
         username_label = ttk.Label(
