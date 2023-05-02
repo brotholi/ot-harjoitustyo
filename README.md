@@ -9,7 +9,7 @@ Lihasloki-sovelluksella pidetään kirjaa kuntosalitreeneistä. Sovellukseen kir
 - [Työaikakirjanpito](./dokumentaatio/tuntikirjanpito.md)
 - [Changelog](./dokumentaatio/changelog.md)
 - [Arkkitehtuurikuvaus](./dokumentaatio/arkkitehtuuri.md)
-- [Release](https://github.com/brotholi/ot-harjoitustyo/releases/tag/viikko5)
+- [Release](https://github.com/brotholi/ot-harjoitustyo/releases/tag/viikko6)
 
 ## Asennus
 1. Asenna riippuvuudet komennolla poetry install
