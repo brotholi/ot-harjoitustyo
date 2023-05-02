@@ -5,11 +5,11 @@
 
 Lihasloki-sovelluksen koodin pakkausrakenne on seuraava:
 ```mermaid
- flowchart TD
+ flowchart TB
      ui --> services
      services --> repositories
-     services --> entities
-     repositories --> entities
+     services --- entities
+     repositories --- entities
 ```
 
 ui-vastaa käyttöliittymästä, services sovelluslogiikasta ja repositories tietojen tallennuksesta tiedostoon ja tietokantaan. Entities sisältää sovelluksen logiikan kannalta oleellisia luokkia.
