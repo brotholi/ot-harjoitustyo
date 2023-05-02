@@ -4,7 +4,7 @@ Lataa viimeisimmän [releasen](https://github.com/brotholi/ot-harjoitustyo/relea
 
 ## Ohjelman käynnistäminen
 
-Asenna ennen ohjelman käynnistystä riippuvuudet seuraavalla komennolla:
+Asenna riippuvuudet ennen ohjelman käynnistystä seuraavalla komennolla:
 
 ```bash
 poetry install
@@ -21,3 +21,22 @@ Lopuksi käynnistä ohjelma komennolla:
 ```
 poetry run invoke start
 ```
+
+## Kirjautuminen
+
+Sovellus avautuu kirjautumisnäkymään:
+
+[kuva]
+
+Voit kirjautua sisään kirjoittamalla olemassaolevan käyttäjätunnuksen ja salasanan kenttiin ja painamalla *kirjaudu*
+
+Kirjautumisnäkymästä pääsee luomaan uuden käyttäjän painamalla *Luo uusi käyttäjä*
+
+[kuva]
+
+Uuden käyttäjän voi luoda syöttämällä tiedot kenttiin. Käyttäjätunnuksen on oltava vähintään 5 merkkiä pitkä.
+
+Kirjautuminen avaa käyttäjälle oman näkymän. Tästä näkymästä pääsee luomaan uuden treenin painamalla *Lisää uusi treeni*
+
+*Kirjaudu ulos*-nappula kirjaa käyttäjän ulos.
+
