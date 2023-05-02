@@ -8,7 +8,6 @@ Lihasloki-sovelluksen pakkausrakenne on seuraava:
  flowchart TD
      ui --> services
      services --> repositories
- flowchart LR
      services --> entities
      repositories --> entities
 ```
