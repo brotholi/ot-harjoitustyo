@@ -8,8 +8,8 @@ Lihasloki-sovelluksen koodin pakkausrakenne on seuraava:
  flowchart TD
      ui --> services
      services --> repositories
-     services --- entities
-     repositories --- entities
+     services --> entities
+     repositories --> entities
 ```
 
 ui-vastaa käyttöliittymästä, services sovelluslogiikasta ja repositories tietojen tallennuksesta tiedostoon ja tietokantaan. Entities sisältää sovelluksen logiikan kannalta oleellisia luokkia.
