@@ -1,5 +1,15 @@
 # Sovelluksen logiikka
 
+
+## Rakenne
+
+Lihasloki-sovelluksen pakkausrakenne on seuraava:
+```mermaid
+ flowchart TD
+     ui --> services
+     services --> repositories
+```
+
 ## Luokkakaavio
 
 ```mermaid
