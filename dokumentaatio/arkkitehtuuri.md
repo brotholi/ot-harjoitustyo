@@ -20,7 +20,7 @@ Käyttöliittymällä on neljä erilaista näkymää:
 - Kirjautuminen
 - Uuden käyttäjän luonti
 - Yhden käyttäjän näkymä / lista treeneistä
-- Treenin kirjaus-näkymä
+- Treenin kirjaus -näkymä
 
 Kaikki käyttöliittymän näkymät ovat erillisiä luokkia, joita hallitsee UI-luokka. UI-luokka vastaa siitä, mikä näkymä näytetään. Näkymät kutsuvat aina services-luokkia.
 
