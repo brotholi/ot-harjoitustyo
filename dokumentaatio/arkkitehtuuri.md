@@ -3,7 +3,7 @@
 
 ## Rakenne
 
-Lihasloki-sovelluksen pakkausrakenne on seuraava:
+Lihasloki-sovelluksen koodin pakkausrakenne on seuraava:
 ```mermaid
  flowchart TD
      ui --> services
@@ -12,9 +12,21 @@ Lihasloki-sovelluksen pakkausrakenne on seuraava:
      repositories --> entities
 ```
 
+ui-vastaa käyttöliittymästä, services sovelluslogiikasta ja repositories tietojen tallennuksesta tiedostoon ja tietokantaan. Entities sisältää sovelluksen logiikan kannalta oleellisia luokkia.
 
+## Käyttöliittymä
 
-## Luokkakaavio
+Käyttöliittymällä on neljä erilaista näkymää:
+- Kirjautuminen
+- Uuden käyttäjän luonti
+- Yhden käyttäjän näkymä / lista treeneistä
+- Treenin kirjaus-näkymä
+
+Kaikki käyttöliittymän näkymät ovat erillisiä luokkia, joita hallitsee UI-luokka. UI-luokka vastaa siitä, mikä näkymä näytetään. Näkymät kutsuvat aina services-luokkia.
+
+## Sovelluslogiikka
+
+Lihasloki-sovelluksen kolme luokkaa ovat User, LogEntry ja Exercise. User-luokka kuvaa yhtä käyttäjää, LogEntry yhtä yhden käyttäjän treenikirjausta ja Exercise yhtä liikettä, joita voi olla yhdessä treenissä useita.
 
 ```mermaid
  classDiagram
@@ -35,9 +47,9 @@ Lihasloki-sovelluksen pakkausrakenne on seuraava:
       }
 ```
 
-## Sekvenssikaaviot
+## Toiminnallisuus
 
-# Kirjautuminen
+### Kirjautuminen
 
 ```mermaid
 sequenceDiagram
@@ -53,7 +65,7 @@ sequenceDiagram
   UI->>UI: show_logbook_view()
 ```
 
-# Uuden käyttäjän luominen
+### Uuden käyttäjän luominen
 
 ```mermaid
 sequenceDiagram
@@ -68,4 +80,19 @@ sequenceDiagram
   UserService-->>UI: user
   UI->>UI: show_login_view()
  ```
+ 
+ ### Uuden treenin lisääminen
 
+```mermaid
+sequenceDiagram
+  actor User
+  participant UI
+  participant LogEntryService
+  participant LogbookRepository
+  User->>UI: press "Lisää uusi treeni" button
+  UI->>LogEntryService: create_new_entry("Mollamaija", "jalkapäivä", "3.4.2023")
+  LogEntryService->>LogbookRepository: create_new_entry("entry)
+  LogbookRepository-->>UserService: entry
+  LogEntryService-->>UI: entry
+  UI->>UI: show_logbook_view()
+ ```
