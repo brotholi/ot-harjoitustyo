@@ -8,7 +8,7 @@ try:
 except FileNotFoundError:
     pass
 
-EXERCISES_FILENAME = os.getenv("TODOS_FILENAME") or "workouts.JSON"
+EXERCISES_FILENAME = os.getenv("EXERCISES_FILENAME") or "workouts.csv"
 EXERCISES_FILE_PATH = os.path.join(dirname, "..", "data", EXERCISES_FILENAME)
 
 DATABASE_FILENAME = os.getenv("DATABASE_FILENAME") or "database.sqlite"
