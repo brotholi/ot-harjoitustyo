@@ -6,8 +6,8 @@
 Lihasloki-sovelluksen koodin pakkausrakenne on seuraava:
 ```mermaid
  flowchart TB
-     ui --> services
-     services --> repositories
+     ui --- services
+     services --- repositories
      services --- entities
      repositories --- entities
 ```
