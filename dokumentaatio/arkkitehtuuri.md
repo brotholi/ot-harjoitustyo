@@ -12,7 +12,7 @@ Lihasloki-sovelluksen koodin pakkausrakenne on seuraava:
      repositories --- entities
 ```
 
-ui-vastaa käyttöliittymästä, services sovelluslogiikasta ja repositories tietojen tallennuksesta tiedostoon ja tietokantaan. Entities sisältää sovelluksen logiikan kannalta oleellisia luokkia.
+Pakkaus *ui*-vastaa käyttöliittymästä, *services* sovelluslogiikasta ja *repositories* tietojen tallennuksesta tiedostoon ja tietokantaan. *Entities* sisältää sovelluksen logiikan kannalta oleellisia luokkia.
 
 ## Käyttöliittymä
 
