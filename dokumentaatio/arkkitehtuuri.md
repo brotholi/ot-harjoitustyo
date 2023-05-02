@@ -94,7 +94,7 @@ sequenceDiagram
   participant LogbookRepository
   User->>UI: press "Lisää uusi treeni" button
   UI->>LogbookService: create_new_entry("Mollamaija", "jalkapäivä", "3.4.2023")
-  LogbookService->>LogbookRepository: create_new_entry("entry)
+  LogbookService->>LogbookRepository: create_new_entry(entry)
   LogbookRepository-->>LogbookService: entry
   LogbookService-->>UI: entry
   UI->>UI: show_logbook_view()
