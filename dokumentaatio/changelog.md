@@ -33,3 +33,10 @@
 - käyttäjä voi kirjautua ulos painamalla "kirjaudu ulos"
 - lisätty takaisin-nappula create-user -näkymään, joka vie takaisin kirjautumiseen
 - testattu, että user_servicen login toimii
+
+## Viikko 6
+- käyttäjä voi luoda uuden treenin, jolle annetaan nimi ja päivämäänä
+	- treenistä puuttuu vielä yksittäisten liikkeiden lisäys
+- treenit tallennetaan csv-tiedostoon
+- testattu, että uuden treenin/"entryn" luonti onnistuu
+- laajennettu logentry_view-näkymää käyttöliittymällä
