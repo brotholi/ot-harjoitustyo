@@ -8,8 +8,8 @@ Lihasloki-sovelluksen koodin pakkausrakenne on seuraava:
  flowchart TD
      ui --> services
      services --> repositories
-     services -- entities
-     repositories -- entities
+     services --- entities
+     repositories --- entities
 ```
 
 ui-vastaa käyttöliittymästä, services sovelluslogiikasta ja repositories tietojen tallennuksesta tiedostoon ja tietokantaan. Entities sisältää sovelluksen logiikan kannalta oleellisia luokkia.
@@ -81,7 +81,7 @@ sequenceDiagram
   UserService-->>UI: user
   UI->>UI: show_login_view()
  ```
- 
+Ennen uuden käyttäjän luomisessa käyttöliittymältä tehdään tarkistus, että käyttäjätunnus on vähintään 5 merkkiä ja salana täsmää salasana uudelleen -kentän kanssa. Tämän jälkeen käyttöliittymältä kutsutaan Luo käyttäjä -painiketta painettaessa UserServiceä, joka etsii, onko käyttäjää jo olemassa. Tämä tehdään UserRepositor-luokan avulla, jolle annetaan käyttäjän käyttöliitymällä kenttiin syöttämät arvot parametreina. Jos samannimistä käyttäjää ei löydy, lisätään käyttäjä sqlite-tietokantaan. Tämän jälkeen käyttöliittymä palaa kirjautumisnäkymään. 
 
  
  ### Uuden treenin lisääminen
@@ -90,12 +90,14 @@ sequenceDiagram
 sequenceDiagram
   actor User
   participant UI
-  participant LogEntryService
+  participant LogbookService
   participant LogbookRepository
   User->>UI: press "Lisää uusi treeni" button
-  UI->>LogEntryService: create_new_entry("Mollamaija", "jalkapäivä", "3.4.2023")
-  LogEntryService->>LogbookRepository: create_new_entry("entry)
-  LogbookRepository-->>LogEntryService: entry
-  LogEntryService-->>UI: entry
+  UI->>LogbookService: create_new_entry("Mollamaija", "jalkapäivä", "3.4.2023")
+  LogbookService->>LogbookRepository: create_new_entry("entry)
+  LogbookRepository-->>LogbookService: entry
+  LogbookService-->>UI: entry
   UI->>UI: show_logbook_view()
  ```
+ 
+Uusi treeni luodaan painamalla Luo uusi treeni, jolloin tapahtumankäsittelijä avaa uuden näkymän. Tallenna-nappulasta kutsutaan tapahtumankäsittelijän avulla LogbookService-luokkaa. Luokka luo uuden LogEntry-olion ja kutsuu LogbookRepositorya. LogbookRepository-luokka vie olion csv-tiedostoon. Tämän jälkeen näytetään yhden käyttäjän näkymä, jossa näkyvät kaikki treenikirjaukset.
