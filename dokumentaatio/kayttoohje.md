@@ -26,13 +26,13 @@ poetry run invoke start
 
 Sovellus avautuu kirjautumisnäkymään:
 
-[kuva]
+![](./kuvat/kirjautuminen.png)
 
 Voit kirjautua sisään kirjoittamalla olemassaolevan käyttäjätunnuksen ja salasanan kenttiin. Tämän jälkeen paina *kirjaudu*.
 
 Kirjautumisnäkymästä pääsee luomaan uuden käyttäjän painamalla *Luo uusi käyttäjä*. Tämä avaa uuden näkymän, josta pääsee takaisin painamalla *takaisin*.
 
-[kuva]
+![](./kuvat/luo_kayttaja.png)
 
 Uuden käyttäjän voi luoda syöttämällä tiedot kenttiin. Käyttäjätunnuksen on oltava vähintään 5 merkkiä pitkä.
 
