@@ -34,9 +34,9 @@ Sovelluksessa on tavallisia käyttäjiä ja pääkäyttäjä. Tavallinen käytt�
 
 ## Toiminnallisuus perusversiossa
 - Käyttäjä voi luoda sovellukseen tunnuksen **(tehty)**
-  - Käyttäjätunnuksen on oltava vähintään 5 merkkiä pitkä ja uniikki
+  - Käyttäjätunnuksen on oltava vähintään 5 merkkiä pitkä ja uniikki **(tehty)**
 - Käyttäjä voi kirjautua sovellukseen **(tehty)**
-- Käyttäjälle näkyvät vain käyttäjän itse kirjaamat treenit
+- Käyttäjälle näkyvät vain käyttäjän itse kirjaamat treenit **(tehty)**
 - Käyttäjä voi kirjata yksittäisen treenin, jolle voi määritellä nimen **(tehty)**
 - Yksittäiseen treeniin voi kirjata päivämäärän **(tehty)**
 - Jokaiseen treeniin voi kirjata useita liikkeitä
