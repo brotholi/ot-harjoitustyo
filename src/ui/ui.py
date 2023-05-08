@@ -8,6 +8,7 @@ from ui.exercise_view import ExerciseView
 
 class UI:
     """Luokka, joka vastaa sovelluksen käyttöliittymästä."""
+
     def __init__(self, root):
         """Luokan konstruktori. Luo uuden käyttöliittymä-luokan.
         Args:
@@ -38,7 +39,7 @@ class UI:
 
     def _handle_logentry_view(self):
         self._show_logentry_view()
-    
+
     def _handle_exercise_view(self):
         self._show_exercise_view()
 
@@ -85,8 +86,8 @@ class UI:
         self._hide_current_view()
         self._current_view = ExerciseView(
             self._root,
-            self._handle_logentry_view
+            self._handle_logentry_view,
+            self._handle_logbook_view
 
         )
         self._current_view.pack()
-

@@ -11,6 +11,7 @@ class DatabaseDoesNotExistError(Exception):
 class UserRep:
     """Luokka, joka vastaa sovelluksen käyttäjiin liittyvistä tietokantaoperaatioista.
     """
+
     def __init__(self, connection):
         """Luokan konstruktori.
         Args:

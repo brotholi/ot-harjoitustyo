@@ -5,6 +5,8 @@ def drop_tables(connection):
     cursor = connection.cursor()
     cursor.execute("""
         drop table if exists lihasloki_users; """)
+    cursor.execute("""
+        drop table if exists lihasloki_exercises; """)
     connection.commit()
 
 
@@ -17,6 +19,16 @@ def create_tables(connection):
         );
         """))
     connection.commit()
+
+    cursor.execute(("""    
+        create table lihasloki_exercises (
+            exercise_id primary key,
+            logentry_id,
+            name text,
+            weight text,
+            reps text
+        );
+        """))
 
 
 def initialize_database():

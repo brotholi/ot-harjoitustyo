@@ -3,6 +3,7 @@ from entities.log_entry import LogEntry
 from services.user_service import user_service
 from services.logbook_service import logbook_service
 
+
 class LogbookView:
 
     def __init__(self, root, handle_back_to_login, handle_logentry_view):
@@ -30,7 +31,6 @@ class LogbookView:
         self._initialize_header()
         self._initialize_logs()
         self._initialize_footer()
-        
 
         self._frame.grid_columnconfigure(1, weight=1, minsize=300)
 
@@ -67,12 +67,9 @@ class LogbookView:
         username = user_service.get_current_user()
         displayable_logs = logbook_service.find_user_logs(username)
 
-        #näytetään vain 5 viimeisintä treeniä?
+        # näytetään vain 5 viimeisintä treeniä?
 
         for row in displayable_logs:
             log_label = ttk.Label(
-            master=self._frame, text=f'{row.logdate} ------ {row.logtitle}')
+                master=self._frame, text=f'{row.logdate} ------ {row.logtitle}')
             log_label.grid(sticky=constants.W, padx=5, pady=5)
-            
-            
-

@@ -17,7 +17,7 @@ class LoginView:
             handle_logbook_view
                 Kutsuttava-arvo, jota kutsutaan kun siirrytään treenin kirjaus -näkymään.
         """
-        
+
         self._root = root
         self._handle_create_user = handle_create_user
         self._handle_logbook_view = handle_logbook_view

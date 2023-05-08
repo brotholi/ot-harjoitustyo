@@ -39,7 +39,6 @@ class LogentryView:
     def _hide_change_date_button(self):
         self._change_date_button.grid_forget()
 
-
     def _hide_date_entry(self):
         """Piilottaa päivämäärän syöttökentän.
         """
@@ -59,7 +58,7 @@ class LogentryView:
         if len(title_entry_value) <= 0:
             self._show_error_message("Syötä otsikko")
             return
-        
+
         if len(date_entry_value) == 0:
             date = datetime.now()
             date_entry_value = date.strftime("%d.%m.%Y")
@@ -80,7 +79,6 @@ class LogentryView:
         self._hide_current_date()
         self._show_date_entry()
 
-
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)
 
@@ -92,7 +90,8 @@ class LogentryView:
         date_label = ttk.Label(master=self._frame, text="Päivämäärä:")
         current_date = datetime.now()
 
-        self.current_date_label = ttk.Label(master=self._frame, text=f'{current_date.day}.{current_date.month}.{current_date.year}')
+        self.current_date_label = ttk.Label(
+            master=self._frame, text=f'{current_date.day}.{current_date.month}.{current_date.year}')
 
         self._change_date_button = ttk.Button(
             master=self._frame,
@@ -102,22 +101,25 @@ class LogentryView:
 
         self._date_entry = ttk.Entry(master=self._frame)
 
-        title_entry_label.grid(row=3, column=0, sticky=constants.W, padx=5, pady=5)
-        self._title_entry.grid(row=3, column=1, sticky=(constants.E, constants.W), padx=5, pady=5)
+        title_entry_label.grid(
+            row=3, column=0, sticky=constants.W, padx=5, pady=5)
+        self._title_entry.grid(row=3, column=1, sticky=(
+            constants.E, constants.W), padx=5, pady=5)
 
         date_label.grid(row=4, column=0, sticky=constants.W, padx=5, pady=5)
-        self.current_date_label.grid(row=4, column=1, sticky=constants.E, padx=5, pady=5)
+        self.current_date_label.grid(
+            row=4, column=1, sticky=constants.E, padx=5, pady=5)
 
         self._change_date_button.grid(row=5, column=1, padx=5,
-            pady=5, sticky=constants.E)
+                                      pady=5, sticky=constants.E)
 
-        self._date_entry.grid(row=4, column=1, sticky=(constants.E, constants.W), padx=5, pady=5)
-        
+        self._date_entry.grid(row=4, column=1, sticky=(
+            constants.E, constants.W), padx=5, pady=5)
+
         self.initialize_footer()
         self._hide_error()
         self._hide_date_entry()
         self._root.grid_columnconfigure(1, weight=1)
-
 
     def initialize_header(self):
         label = ttk.Label(master=self._frame, text=f'Uusi treeni')
@@ -128,11 +130,12 @@ class LogentryView:
             command=self._return_handler
         )
 
-        label.grid(row=0, column=0, columnspan=2, sticky=constants.W, padx=5, pady=5)
+        label.grid(row=0, column=0, columnspan=2,
+                   sticky=constants.W, padx=5, pady=5)
 
         return_button.grid(row=0, column=1, padx=5,
-            pady=5, sticky=constants.E)
-        
+                           pady=5, sticky=constants.E)
+
     def initialize_footer(self):
         save_entry_button = ttk.Button(
             master=self._frame,
@@ -142,7 +145,7 @@ class LogentryView:
 
         ok_label = ttk.Label(
             master=self._frame, text="Siirry syöttämään liikkeet")
-        
+
         self._error_var = StringVar(self._frame)
 
         self._error_label = ttk.Label(
@@ -152,11 +155,9 @@ class LogentryView:
         )
 
         save_entry_button.grid(row=6, column=0, padx=5,
-            pady=5, sticky=constants.W)
-        
+                               pady=5, sticky=constants.W)
+
         ok_label.grid(row=7, column=0, padx=5, pady=5, sticky=constants.W)
 
         self._error_label.grid(row=8, column=0, padx=5,
-            pady=5, sticky=constants.W)
-
-
+                               pady=5, sticky=constants.W)
