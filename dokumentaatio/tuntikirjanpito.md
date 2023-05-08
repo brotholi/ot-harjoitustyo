@@ -13,4 +13,5 @@
 | 25.4. | 9    | yhden käyttäjän näkymä, uloskirjautuminen, uusia testejä ja dokumentointia |
 |  2.5. | 6    | treenin lisäys käyttöliittymältä ja tallennus tiedostoon, uusia testejä ja dokumentointia |
 | 5.5.  | 8    | Laajennuksia ohjelmaan |
+| 6.5.  | 8    | Virheenkorjauksia, testejä ja koodin laatu |
 | yht   | 56   | | 
