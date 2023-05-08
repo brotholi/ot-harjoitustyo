@@ -1,6 +1,7 @@
 from tkinter import ttk, constants
+from entities.log_entry import LogEntry
 from services.user_service import user_service
-
+from services.logbook_service import logbook_service
 
 class LogbookView:
 
@@ -27,7 +28,9 @@ class LogbookView:
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)
         self._initialize_header()
+        self._initialize_logs()
         self._initialize_footer()
+        
 
         self._frame.grid_columnconfigure(1, weight=1, minsize=300)
 
@@ -52,11 +55,24 @@ class LogbookView:
             command=self._add_entry_handler
         )
 
-        add_entry_button.grid(
-            row=4, column=1, sticky=constants.E, padx=5, pady=5)
+        add_entry_button.grid(sticky=constants.E, padx=5, pady=5)
 
     def _logout_handler(self):
         self._handle_back_to_login()
 
     def _add_entry_handler(self):
         self._handle_logentry_view()
+
+    def _initialize_logs(self):
+        username = user_service.get_current_user()
+        displayable_logs = logbook_service.find_user_logs(username)
+
+        #näytetään vain 5 viimeisintä treeniä?
+
+        for row in displayable_logs:
+            log_label = ttk.Label(
+            master=self._frame, text=f'{row.logdate} ------ {row.logtitle}')
+            log_label.grid(sticky=constants.W, padx=5, pady=5)
+            
+            
+

@@ -3,6 +3,7 @@ from ui.login_view import LoginView
 from ui.create_user import CreateUserView
 from ui.logbook_view import LogbookView
 from ui.logentry_view import LogentryView
+from ui.exercise_view import ExerciseView
 
 
 class UI:
@@ -37,6 +38,9 @@ class UI:
 
     def _handle_logentry_view(self):
         self._show_logentry_view()
+    
+    def _handle_exercise_view(self):
+        self._show_exercise_view()
 
     def _show_login_view(self):
         self._hide_current_view()
@@ -71,7 +75,18 @@ class UI:
         self._hide_current_view()
         self._current_view = LogentryView(
             self._root,
-            self._handle_logbook_view
+            self._handle_logbook_view,
+            self._handle_exercise_view
 
         )
         self._current_view.pack()
+
+    def _show_exercise_view(self):
+        self._hide_current_view()
+        self._current_view = ExerciseView(
+            self._root,
+            self._handle_logentry_view
+
+        )
+        self._current_view.pack()
+

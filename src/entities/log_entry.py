@@ -1,3 +1,5 @@
+from datetime import datetime
+
 class LogEntry:
     """Luokka, joka kuvaa yksittäistä tehtävää
     
@@ -6,7 +8,7 @@ class LogEntry:
         logtitle: Merkkijonoarvo, joka kuvaa kirjausta otsikkoa.
         logdate: Merkkijonoarvo, joka kuvaa kirjauksen päivämäärää.
     """
-    def __init__(self, user: str, logtitle: str, logdate: str):
+    def __init__(self, user: str, logtitle: str, logdate: datetime):
 
         """Luokan konstruktori, joka luo uuden kirjauksen.
         Args:
