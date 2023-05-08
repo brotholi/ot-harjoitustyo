@@ -12,4 +12,5 @@
 | 24.4. | 2    | database-virheen korjausta ja kirjautumisen toteutus |
 | 25.4. | 9    | yhden käyttäjän näkymä, uloskirjautuminen, uusia testejä ja dokumentointia |
 |  2.5. | 6    | treenin lisäys käyttöliittymältä ja tallennus tiedostoon, uusia testejä ja dokumentointia |
-| yht   | 48   | | 
+| 5.5.  | 8    | Laajennuksia ohjelmaan |
+| yht   | 56   | | 
