@@ -1,5 +1,6 @@
 from tkinter import ttk, constants
 from entities.log_entry import LogEntry
+from entities.exercise import Exercise
 from services.user_service import user_service
 from services.logbook_service import logbook_service
 
@@ -66,10 +67,12 @@ class LogbookView:
     def _initialize_logs(self):
         username = user_service.get_current_user()
         displayable_logs = logbook_service.find_user_logs(username)
-
-        # näytetään vain 5 viimeisintä treeniä?
-
+ 
         for row in displayable_logs:
             log_label = ttk.Label(
                 master=self._frame, text=f'{row.logdate} ------ {row.logtitle}')
             log_label.grid(sticky=constants.W, padx=5, pady=5)
+            #exercises = logbook_service.find_logentry_exercises(row.id)
+            #for exercise in exercises:
+            #    exercise_label = ttk.Label(master=self._frame, text=f'{exercise.name} -- {exercise.weight} -- {exercise.reps}')
+            #    exercise_label.grid(sticky=constants.E, padx=5, pady=5)

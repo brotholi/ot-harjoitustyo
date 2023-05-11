@@ -30,7 +30,9 @@ class ExerciseRepository:
         except sqlite3.OperationalError:
             self._handle_nonexistent_database_error()
         rows = cursor.fetchall()
-        return [Exercise(row["name"], row["weight"], row["reps"]) for row in rows]
+        if len(rows) > 0:
+            return [Exercise(row["name"], row["weight"], row["reps"]) for row in rows]
+        return []
 
     def delete_all(self):
         """Poistaa kaikki liikkeet.
@@ -105,12 +107,6 @@ class ExerciseRepository:
             exercises.append(exercise)
 
         return exercises
-
-            
-                
-            
-
-
 
     def _handle_nonexistent_database_error(self):
         """Jos tietokantaa ei ole alustettu, lopettaa sovelluksen.

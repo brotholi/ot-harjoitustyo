@@ -1,5 +1,5 @@
 from datetime import datetime
-from random import randint
+import uuid
 from entities.log_entry import LogEntry
 from entities.exercise import Exercise
 from repositories.logbook_repository import (
@@ -40,7 +40,7 @@ class LogbookService:
         return exercise
     
     def find_logentry_exercises(self, logentry_id):
-        entries = self._logbook_repository.find_by_logentry_id(logentry_id)
+        entries = self._exercises_repository.find_by_logentry_id(logentry_id)
         if len(entries) > 0:
             return entries
         return []
@@ -55,19 +55,21 @@ class LogbookService:
         return user_exercises
     
     def create_logentry_id(self):
-        id_check = True
-        while (id_check == True):
-            id = randint
-            id_check = self.check_if_id_exists(id)
-        return id
+        logentry_id = uuid.uuid4()
+        return logentry_id
+        #id_check = True
+        #while (id_check == True):
+        #    id = randint
+        #    id_check = self.check_if_id_exists(id)
+        #return id
     
-    def check_if_id_exists(self, logentry_id):
-        #haetaan logentry_id:tä tietokannasta!
-        existing_id = self._exercises_repository.find_by_logentry_id(logentry_id)
-        if existing_id:
-            return True
-        
-        return False
+    #def check_if_id_exists(self, logentry_id):
+    #    #haetaan logentry_id:tä tietokannasta!
+    #    existing_id = self._exercises_repository.find_by_logentry_id(logentry_id)
+    #    if existing_id:
+    #        return True
+    #    
+    #    return False
 
 
     def check_date_format(self, date):

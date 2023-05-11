@@ -31,8 +31,8 @@ class ExerciseView:
         log = logbook_service.find_current_log(username)
 
         name_entry_value = self._title_entry.get()
-        weigth_entry_value = self._weigth_entry.get()
-        reps_entry_value = self._reps_entry.get()
+        weigth_entry_value = self._weigth_entry_1.get()
+        reps_entry_value = self._reps_entry_1.get()
 
         new_exercise = logbook_service.create_new_exercise(
             log.id, name_entry_value, weigth_entry_value, reps_entry_value)
