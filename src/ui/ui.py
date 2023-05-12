@@ -86,7 +86,6 @@ class UI:
         self._hide_current_view()
         self._current_view = ExerciseView(
             self._root,
-            self._handle_logentry_view,
             self._handle_logbook_view
 
         )

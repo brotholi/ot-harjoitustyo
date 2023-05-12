@@ -8,6 +8,7 @@ from repositories.logbook_repository import (
 from repositories.exercises_repository import (
     exercise_repository as default_exercise_repository
 )
+from services.user_service import user_service
 
 
 class LogbookService:
@@ -16,6 +17,7 @@ class LogbookService:
         self._entry = None
         self._logbook_repository = logbook_repository
         self._exercises_repository = exercise_repository
+        
 
     def create_new_entry(self, username, title, time):
         logentry_id = self.create_logentry_id()
@@ -31,8 +33,12 @@ class LogbookService:
     
     def find_current_log(self, username):
         current_log = self._logbook_repository.find_newest_log(username)
-
         return current_log
+    
+    def find_log_by_logtitle(self, logtitle):
+        username = user_service.get_current_user()
+        logs_by_name = self._logbook_repository.find_by_logtitle(username, logtitle)
+        return logs_by_name
     
     def create_new_exercise(self, logentry_id, exercise_name, weigth, reps):
         exercise = Exercise(exercise_name, weigth, reps)
@@ -55,22 +61,9 @@ class LogbookService:
         return user_exercises
     
     def create_logentry_id(self):
-        logentry_id = uuid.uuid4()
+        uusi = uuid.uuid4()
+        logentry_id = str(uusi)
         return logentry_id
-        #id_check = True
-        #while (id_check == True):
-        #    id = randint
-        #    id_check = self.check_if_id_exists(id)
-        #return id
-    
-    #def check_if_id_exists(self, logentry_id):
-    #    #haetaan logentry_id:tä tietokannasta!
-    #    existing_id = self._exercises_repository.find_by_logentry_id(logentry_id)
-    #    if existing_id:
-    #        return True
-    #    
-    #    return False
-
 
     def check_date_format(self, date):
         if "." not in date:
@@ -91,7 +84,7 @@ class LogbookService:
             return False
         
         for part in parts:
-            is_number = any(char.isdigit() for char in part)
+            is_number = part.isdigit()
             if is_number == False:
                 return False
             

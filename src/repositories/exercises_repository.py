@@ -73,23 +73,23 @@ class ExerciseRepository:
             Palauttaa Exerices-oliot, jos logentry_id on tietokannassa.
             Muutoin palauttaa None.
         """
-        id = str(logentry_id)
 
         cursor = self._connection.cursor()
         try:
             cursor.execute("select * from lihasloki_exercises where logentry_id = ?",
-                           (id,))
+                           (logentry_id,))
         except sqlite3.OperationalError:
             self._handle_nonexistent_database_error()
         rows = cursor.fetchall()
+
         if len(rows) == 0:
-            return None
+            return []
 
         exercises = []
         for row in rows:
             exercise = Exercise(row["name"], row["weight"], row["reps"])
             exercises.append(exercise)
-
+    
         return exercises
     
     def find_by_exercise_name_for_user(self, logentry_ids, exercise_name):
