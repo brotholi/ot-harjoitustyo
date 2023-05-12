@@ -20,7 +20,7 @@ def create_tables(connection):
         """))
     connection.commit()
 
-    cursor.execute(("""    
+    cursor.execute(("""
         create table lihasloki_exercises (
             exercise_id primary key,
             logentry_id,

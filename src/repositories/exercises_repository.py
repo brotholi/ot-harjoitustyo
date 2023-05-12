@@ -45,7 +45,8 @@ class ExerciseRepository:
         """Syöttää käyttäjän tiedot tauluun.
 
         Args:
-            todo: Tallennettava liike Exercise-oliona ja logentry_id, joka liittää liikkeen tiettyyn kirjaukseen.
+            todo: Tallennettava liike Exercise-oliona ja 
+            logentry_id, joka liittää liikkeen tiettyyn kirjaukseen.
 
         Returns:
             Tallennettu käyttäjä Exercise-oliona.
@@ -56,7 +57,8 @@ class ExerciseRepository:
         cursor = self._connection.cursor()
 
         try:
-            cursor.execute("insert into lihasloki_exercises (exercise_id, logentry_id, name, weight, reps) values (?, ?, ?, ?, ?)",
+            cursor.execute("""insert into lihasloki_exercises
+             (exercise_id, logentry_id, name, weight, reps) values (?, ?, ?, ?, ?)""",
                            (id, logentry_id, exercise.name,
                             exercise.weight, exercise.reps)
                            )
@@ -89,13 +91,13 @@ class ExerciseRepository:
         for row in rows:
             exercise = Exercise(row["name"], row["weight"], row["reps"])
             exercises.append(exercise)
-    
+
         return exercises
-    
+
     def find_by_exercise_name_for_user(self, logentry_ids, exercise_name):
-        """Hakee yhden käyttäjän kaikki samannimiset liikkeet. 
+        """Hakee yhden käyttäjän kaikki samannimiset liikkeet.
             Saa parametreina kaikki käyttäjän logentry_id:t listana ja liikkeen nimen.
-            Palauttaa kaikki liikkeet listana
+            Palogentry_idlauttaa kaikki liikkeet listana
         """
         exercises = []
         for entry_id in logentry_ids:

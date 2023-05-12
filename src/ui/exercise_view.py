@@ -3,6 +3,7 @@ from entities.log_entry import LogEntry
 from services.user_service import user_service
 from services.logbook_service import logbook_service
 
+
 class ExerciseListView:
     """Näkymä, joka listaa liikkeet."""
 
@@ -12,25 +13,28 @@ class ExerciseListView:
         self._frame = None
 
         self._initialize()
- 
+
     def pack(self):
         self._frame.pack(fill=constants.X)
 
     def destroy(self):
         self._frame.destroy()
-  
+
     def _initialize_exercise(self, exercise, set_number):
         item_frame = ttk.Frame(master=self._frame)
         if set_number == 1:
             separator = ttk.Separator(master=item_frame, orient='horizontal')
             separator.grid(sticky=constants.EW, columnspan=5)
 
-            exercise_label = ttk.Label(master=item_frame, text=f'{exercise.name}')
-            exercise_label.grid(row=3, column=0, padx=5, pady=5, sticky=constants.W)
+            exercise_label = ttk.Label(
+                master=item_frame, text=f'{exercise.name}')
+            exercise_label.grid(row=3, column=0, padx=5,
+                                pady=5, sticky=constants.W)
 
-        label = ttk.Label(master=item_frame, text=f'{set_number}.  {exercise.weight}kg  x  {exercise.reps}')
+        label = ttk.Label(
+            master=item_frame, text=f'{set_number}.  {exercise.weight}kg  x  {exercise.reps}')
         label.grid(row=4, column=0, padx=5, pady=5, sticky=constants.W)
-        
+
         item_frame.grid_columnconfigure(0, weight=1)
         item_frame.pack(fill=constants.X)
 
@@ -83,20 +87,18 @@ class ExerciseView:
         if set_number == 1:
             self._weigth_entry_1.grid_remove()
             self._reps_entry_1.grid_remove()
-        
+
         if set_number == 2:
             self._weigth_entry_2.grid_remove()
-        
+
         if set_number == 3:
             self._weigth_entry_3.grid_remove()
-
-        
 
     def _create_exercise_handler(self):
         username = user_service.get_current_user()
         log = logbook_service.find_current_log(username)
 
-        for i in range (0,3):
+        for i in range(0, 3):
             name_entry_value = self._title_entry.get()
             if len(name_entry_value) == 0:
                 self._show_error_message("Syötä liikkeen nimi")
@@ -114,15 +116,15 @@ class ExerciseView:
                 weigth_entry_value = self._weigth_entry_3.get()
                 reps_entry_value = self._reps_entry_3.get()
 
-            weight_number = weigth_entry_value.isdigit() 
-            reps_number = reps_entry_value.isdigit() 
-            
+            weight_number = weigth_entry_value.isdigit()
+            reps_number = reps_entry_value.isdigit()
+
             if weight_number == False or reps_number == False:
                 self._show_error_message("Syötä paino ja toistot numeroina")
                 return
             logbook_service.create_new_exercise(
-            log.id, name_entry_value, weigth_entry_value, reps_entry_value)
-        
+                log.id, name_entry_value, weigth_entry_value, reps_entry_value)
+
         self._title_entry.delete(0, constants.END)
         self._weigth_entry_1.delete(0, constants.END)
         self._reps_entry_1.delete(0, constants.END)
@@ -130,13 +132,12 @@ class ExerciseView:
         self._reps_entry_2.delete(0, constants.END)
         self._weigth_entry_3.delete(0, constants.END)
         self._reps_entry_3.delete(0, constants.END)
-        
+
         self._hide_error()
         self._initialize_exercise_list()
 
-
         return
-    
+
     def _save_logentry_handler(self):
         self._handle_logbook_view()
 
@@ -156,7 +157,6 @@ class ExerciseView:
 
         date.grid(
             row=0, column=1, sticky=constants.E, padx=5, pady=5)
-
 
     def _initialize_exercise_list(self):
         if self._exercise_list_view:
@@ -184,18 +184,21 @@ class ExerciseView:
         title_entry_label.grid(
             row=3, column=0, sticky=constants.W, padx=5, pady=5)
 
-        self._title_entry.grid(row=3, column=1, sticky=constants.W, padx=5, pady=5)
+        self._title_entry.grid(
+            row=3, column=1, sticky=constants.W, padx=5, pady=5)
 
-        set_heading_label = ttk.Label(master=self._frame, text= 'sarja')
-        weight_heading_label = ttk.Label(master=self._frame, text= 'kg')
-        reps_heading_label = ttk.Label(master=self._frame, text= 'toistot')
+        set_heading_label = ttk.Label(master=self._frame, text='sarja')
+        weight_heading_label = ttk.Label(master=self._frame, text='kg')
+        reps_heading_label = ttk.Label(master=self._frame, text='toistot')
 
-        set_heading_label.grid(row=4, column=0, padx=5,pady=5, sticky=constants.W)
-        weight_heading_label.grid(row=4, column=0, padx=5,pady=5, sticky=constants.E)
-        reps_heading_label.grid(row=4, column=1, padx=5,pady=5, sticky=constants.W)
+        set_heading_label.grid(row=4, column=0, padx=5,
+                               pady=5, sticky=constants.W)
+        weight_heading_label.grid(
+            row=4, column=0, padx=5, pady=5, sticky=constants.E)
+        reps_heading_label.grid(row=4, column=1, padx=5,
+                                pady=5, sticky=constants.W)
 
         self._initialize_exercise_rows()
-        
 
     def _initialize_exercise_rows(self):
         set_label_1 = ttk.Label(master=self._frame, text="1", width=2)
@@ -208,10 +211,12 @@ class ExerciseView:
             command=self._set_exercise_done(1)
         )
 
-        set_label_1.grid(row=5, column=0, padx=5,pady=5, sticky=constants.W)
-        self._weigth_entry_1.grid(row=5, column=0, padx=5,pady=5, sticky=constants.E)
-        self._reps_entry_1.grid(row=5, column=1, padx=5,pady=5, sticky=constants.W)
-        done_button_1.grid(row=5, column=1, padx=5,pady=5, sticky=constants.E)
+        set_label_1.grid(row=5, column=0, padx=5, pady=5, sticky=constants.W)
+        self._weigth_entry_1.grid(
+            row=5, column=0, padx=5, pady=5, sticky=constants.E)
+        self._reps_entry_1.grid(row=5, column=1, padx=5,
+                                pady=5, sticky=constants.W)
+        done_button_1.grid(row=5, column=1, padx=5, pady=5, sticky=constants.E)
 
         set_label_2 = ttk.Label(master=self._frame, text="2", width=2)
         self._weigth_entry_2 = ttk.Entry(master=self._frame, width=4)
@@ -223,10 +228,12 @@ class ExerciseView:
             command=self._set_exercise_done(2)
         )
 
-        set_label_2.grid(row=6, column=0, padx=5,pady=5, sticky=constants.W)
-        self._weigth_entry_2.grid(row=6, column=0, padx=5,pady=5, sticky=constants.E)
-        self._reps_entry_2.grid(row=6, column=1, padx=5,pady=5, sticky=constants.W)
-        done_button_2.grid(row=6, column=1, padx=5,pady=5, sticky=constants.E)
+        set_label_2.grid(row=6, column=0, padx=5, pady=5, sticky=constants.W)
+        self._weigth_entry_2.grid(
+            row=6, column=0, padx=5, pady=5, sticky=constants.E)
+        self._reps_entry_2.grid(row=6, column=1, padx=5,
+                                pady=5, sticky=constants.W)
+        done_button_2.grid(row=6, column=1, padx=5, pady=5, sticky=constants.E)
 
         set_label_3 = ttk.Label(master=self._frame, text="3", width=2)
         self._weigth_entry_3 = ttk.Entry(master=self._frame, width=4)
@@ -238,11 +245,12 @@ class ExerciseView:
             command=self._set_exercise_done(3)
         )
 
-        set_label_3.grid(row=7, column=0, padx=5,pady=5, sticky=constants.W)
-        self._weigth_entry_3.grid(row=7, column=0, padx=5,pady=5, sticky=constants.E)
-        self._reps_entry_3.grid(row=7, column=1, padx=5,pady=5, sticky=constants.W)
-        done_button_3.grid(row=7, column=1, padx=5,pady=5, sticky=constants.E)
-
+        set_label_3.grid(row=7, column=0, padx=5, pady=5, sticky=constants.W)
+        self._weigth_entry_3.grid(
+            row=7, column=0, padx=5, pady=5, sticky=constants.E)
+        self._reps_entry_3.grid(row=7, column=1, padx=5,
+                                pady=5, sticky=constants.W)
+        done_button_3.grid(row=7, column=1, padx=5, pady=5, sticky=constants.E)
 
     def __inilialize_footer(self):
 
@@ -272,13 +280,10 @@ class ExerciseView:
         save_button.grid(row=20, column=1, padx=5,
                          pady=5, sticky=constants.E)
 
-        
         self._error_label.grid(row=7, column=1, padx=5,
                                pady=5, sticky=constants.E)
 
         self._hide_error()
-
-
 
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)

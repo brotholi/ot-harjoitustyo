@@ -14,4 +14,6 @@
 |  2.5. | 6    | treenin lisäys käyttöliittymältä ja tallennus tiedostoon, uusia testejä ja dokumentointia |
 | 5.5.  | 8    | Laajennuksia ohjelmaan |
 | 8.5.  | 8    | Virheenkorjauksia, testejä ja koodin laatu |
-| yht   | 56   | | 
+| 11.5. | 2   | exercise-näkymän toteutusta |
+| 12.5. | 8   | exercise-repositoryn toteutusta ja sovelluksen laajennusta |
+| yht   | 66   | | 

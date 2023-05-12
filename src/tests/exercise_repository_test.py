@@ -35,11 +35,13 @@ class TestExerciseRepository(unittest.TestCase):
         exercise_repository.create_new_exercise("14", self._exercise_squat)
         exercise_repository.create_new_exercise(
             "15", self._exercise_benchpress)
-        exercise_repository.create_new_exercise("15", Exercise("Squat", "90", "5"))
-        exercise_repository.create_new_exercise("18", Exercise("Squat", "60", "12"))
+        exercise_repository.create_new_exercise(
+            "15", Exercise("Squat", "90", "5"))
+        exercise_repository.create_new_exercise(
+            "18", Exercise("Squat", "60", "12"))
 
         logentries = ["14", "15", "18"]
-        
-        all_users_squats = exercise_repository.find_by_exercise_name_for_user(logentries, "Squat")
-        self.assertEqual(len(all_users_squats), 3)
 
+        all_users_squats = exercise_repository.find_by_exercise_name_for_user(
+            logentries, "Squat")
+        self.assertEqual(len(all_users_squats), 3)

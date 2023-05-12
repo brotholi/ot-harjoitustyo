@@ -24,9 +24,9 @@ class LogbookRepository:
                 username = parts[0]
                 log_title = parts[1]
                 date = parts[2]
-                id = parts[3]
+                logentry_id = parts[3]
 
-                entries.append(LogEntry(username, log_title, date, id))
+                entries.append(LogEntry(username, log_title, date, logentry_id))
 
         return entries
 
@@ -45,7 +45,7 @@ class LogbookRepository:
         i = len(user_logs) - 1
         newest_log = user_logs[i]
         return newest_log
-    
+
     def find_by_logtitle(self, username, logtitle):
         user_logs = self.find_by_username(username)
         entries_by_title = filter(
@@ -53,8 +53,7 @@ class LogbookRepository:
         logentries = list(entries_by_title)
         if len(logentries) > 0:
             return logentries
-        else:
-            return []
+        return []
 
     def make_sure_file_exists(self):
         # tarkistaa, että tiedosto on olemassa
