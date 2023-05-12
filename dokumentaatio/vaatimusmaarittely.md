@@ -39,22 +39,14 @@ Sovelluksessa on tavallisia käyttäjiä ja pääkäyttäjä. Tavallinen käytt�
 - Käyttäjälle näkyvät vain käyttäjän itse kirjaamat treenit **(tehty)**
 - Käyttäjä voi kirjata yksittäisen treenin, jolle voi määritellä nimen **(tehty)**
 - Yksittäiseen treeniin voi kirjata päivämäärän **(tehty)**
-- Jokaiseen treeniin voi kirjata useita liikkeitä
-- Käyttäjä voi lisätä jokaiselle treenin liikkeelle nimen ja sarjojen (settien) määrän
-- Jokaiselle setille voi kertoa toistojen määrä ja lisäpainon kilogrammoina
+- Jokaiseen treeniin voi kirjata useita liikkeitä **(tehty)**
+- Käyttäjä voi lisätä jokaiselle treenin liikkeelle nimen ja sarjojen (settien) määrän (**tehty**)
+- Jokaiselle setille voi kertoa toistojen määrä ja lisäpainon kilogrammoina (**tehty**)
 - Käyttäjä voi kirjautua ulos järjestelmästä **(tehty)**
 
 ## Lisätoiminnallisuus - jatkokehittelyideoita
 - Sovellus tilastoi käyttäjän ennätyksiä yhdessä liikkeessä. Ennätys eli personal best lasketaan sekä kilojen että toistojen avulla.
 - Sovellus ilmoittaa jokaisen kirjatun treenin kohdalla personal best:ien määrän. 
-- Sovellukseen voi tallentaa treeniohjelmapohjia, jotka sisältävät käyttäjän valmiiksi määrittelemiä liikkeitä. Treeniohjelmapohjien avulla voi suoraan kirjata tehdyn treenin. 
-- Treeniohjelmapohjan luonti tapahtuu mahdollisesti suoraan kirjausnäkymältä
-- Yksittäisen treenin kirjaamisen voi aloittaa myös ilman pohjaa.
-- Käyttäjä voi mahdollisesti kirjata myös lämmittelykierrokset erillisinä jokaisen liikeen kohdalle.
-- Lämmittelyliikkeitä ei huomioida ennätysten tilastoinnissa
-
-**Omien käyttäjätietojen katselu ja muutokset:**
-- Oma näkymänsä, johon voi siirtyä kirjausnäkymästä
 - Omien ennätysten tarkastelu: Sovellus kertoo käyttäjälle henkilökohtaisen ennätyksen jokaisessa liikkeessä treenihistorian perusteella.  
 - Sovellus kertoo, kuinka monta treeniä käyttäjä on kirjannut viikossa.
 - Käyttäjä voi asettaa tavoitteeksi tietyn määrän treenejä viikossa ja sovellus ilmoittaa aina, milloin tavoitteeseen on päästy. Ilmoittaminen tapahtuu treenin kirjaamisen päättyessä. Samassa kohtaa ilmoitetaan henkilökohtaisista ennätyksistä.
