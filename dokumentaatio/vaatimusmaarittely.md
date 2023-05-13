@@ -35,7 +35,7 @@ Sovelluksessa on ainoastaan tavallisia käyttäjiä. Tavallinen käyttäjä voi 
 - Liikkeidenkirjausnäkymästä pääsee takaisin kaikkien kirjausten näkymään painamalla *tallenna*
 
 
-## Toiminnallisuus perusversiossa
+## Toiminnallisuus
 - Käyttäjä voi luoda sovellukseen tunnuksen 
   - Käyttäjätunnuksen on oltava vähintään 5 merkkiä pitkä ja uniikki
 - Käyttäjä voi kirjautua sovellukseen 
@@ -46,4 +46,5 @@ Sovelluksessa on ainoastaan tavallisia käyttäjiä. Tavallinen käyttäjä voi 
 - Käyttäjä voi lisätä jokaiselle treenin liikkeelle nimen ja sarjojen (settien) määrän 
 - Jokaiselle setille voi kertoa toistojen määrä ja lisäpainon kilogrammoina 
 - Käyttäjä voi kirjautua ulos järjestelmästä 
+- Käyttäjä voi hakea aikaisempia kirjauksiaan nimen perusteella
 
