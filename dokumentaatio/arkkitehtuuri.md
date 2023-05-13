@@ -90,7 +90,7 @@ Rivillä on ensin käyttäjätunnus, sitten treenikirjauksen nimi, päivämäär
 
 Yksittäisten liikkeiden tiedot talletetaan SQLite-tietokannan tauluun `lihasloki_exercises`, joka on samassa tiedostossa database.sqlite kuin käyttäjätiedot. Yksi rivi taulussa on aina yksi sarja, joka sisältää liikkeen nimen, toistot ja lisäpainon. Tietokantaan tallettaessa liikkeellä on aina rivinumero (määritellään tauluun kirjattujen liikkeiden pohjalta), treenikirjauksen id (sama kuin csv-tiedostossa), nimi, lisäpaino ja toistot. Alla on testikäyttäjän ruusa-kirjaaman jalkapäivä-treenin liikkeitä:
 
-```
+
 ```
 0|12d5f963-cfff-4141-b569-af5fdcbb3385|kyykky|45|12
 1|12d5f963-cfff-4141-b569-af5fdcbb3385|kyykky|50|8
@@ -100,7 +100,7 @@ Yksittäisten liikkeiden tiedot talletetaan SQLite-tietokannan tauluun `lihaslok
 5|12d5f963-cfff-4141-b569-af5fdcbb3385|maastaveto|0|0
 
 ```
-```
+
 
 ## Päätoiminnallisuudet
 
