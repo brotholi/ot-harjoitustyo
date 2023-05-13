@@ -183,7 +183,7 @@ sequenceDiagram
   LogbookService->>ExerciseRepository: create_new_exercise(logentry.id, exercise)
   ExerciseRepository-->>LogbookService: exercise
   LogbookService-->>UI: exercise
-  UI->>UI: _initialize_exercise_list()
+  UI->>UI: initialize_exercise_list()
  ```
 
 
