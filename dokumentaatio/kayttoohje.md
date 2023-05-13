@@ -42,10 +42,20 @@ Kirjautuminen avaa käyttäjälle oman näkymän:
 
 *Kirjaudu ulos*-nappula kirjaa käyttäjän ulos.
 
-Uuden kirjauksen voi luoda painamalla *Luo uusi treeni*.
-
-Viiden aikaisemman treenikirjauksen päivämäärä ja nimi näytetään *Aikaisemmat treenit*-otsikon alla.
+Jos käyttäjällä on yli viisi aikaisempaa kirjausta, viiden aikaisemman treenikirjauksen päivämäärä ja nimi näytetään *Aikaisemmat treenit*-otsikon alla.
+Muutoin näytetään kaikki aiemmat kirjaukset.
 
 Aikaisempien treenien tarkempia tietoja voi saada kirjoittamalla alhaalla olevaan kenttään treenin nimen. 
 
 Tällöin tuodaan näkyviin lista tällä nimellä olevista treeneistä ja niiden liikkeistä.
+
+Uuden kirjauksen voi luoda painamalla *Luo uusi treeni*. Tämä avaa uuden kirjausnäkymän:
+
+![](./kuvat/logentry_view.png)
+
+treenin nimi syötetään *nimi*-kenttään. Nimi ei saa olla tyhjä.
+
+Oletusarvoisesti päivämäärä on kuluva päivä. Päivää pääsee muuttamaan painamalla *muuta päivämäärää*. Tällöin avautuu syöttökenttä, johon päivämäärän voi syöttää. Jos kenttään ei syötä mitään, on päivämäärä edelleen kuluva päivä.
+
+![](./kuvat/logentry_view_date.png)
+
