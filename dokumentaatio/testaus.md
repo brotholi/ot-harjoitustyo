@@ -1,5 +1,7 @@
 # Testausdokumentti
 
+Testaus on suoritettu automaattisilla yksikkötesteillä unittestilla sekä manuaalisesti järjestelmätasolla.
+
 
 ## Yksikkö- ja integraatiotestaus
 
