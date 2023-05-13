@@ -9,10 +9,6 @@ Sovelluksessa on ainoastaan tavallisia käyttäjiä. Tavallinen käyttäjä voi 
 
 ## Käyttöliittymä
   
- 
-![](./kuvat/kayttoliittyma-luonnoksia.jpg)  
-*Käyttöliittymän luonnos*
-
 **Alkunäkymä**
 - Kirjautumisvaiheessa käyttäjä syöttää käyttäjätunnuksen ja salasanan
 - Kirjautumisnäytöltä pääsee luomaan uuden käyttäjätunnuksen
