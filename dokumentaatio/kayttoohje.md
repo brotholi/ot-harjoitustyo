@@ -36,7 +36,16 @@ Kirjautumisnäkymästä pääsee luomaan uuden käyttäjän painamalla *Luo uusi
 
 Uuden käyttäjän voi luoda syöttämällä tiedot kenttiin. Käyttäjätunnuksen on oltava vähintään 5 merkkiä pitkä.
 
-Kirjautuminen avaa käyttäjälle oman näkymän. Tästä näkymästä pääsee luomaan uuden treenin painamalla *Lisää uusi treeni*
+Kirjautuminen avaa käyttäjälle oman näkymän: 
+
+![](./kuvat/logbook_view.png)
 
 *Kirjaudu ulos*-nappula kirjaa käyttäjän ulos.
 
+Uuden kirjauksen voi luoda painamalla *Luo uusi treeni*.
+
+Viiden aikaisemman treenikirjauksen päivämäärä ja nimi näytetään *Aikaisemmat treenit*-otsikon alla.
+
+Aikaisempien treenien tarkempia tietoja voi saada kirjoittamalla alhaalla olevaan kenttään treenin nimen. 
+
+Tällöin tuodaan näkyviin lista tällä nimellä olevista treeneistä ja niiden liikkeistä.
