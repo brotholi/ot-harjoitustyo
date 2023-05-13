@@ -16,11 +16,12 @@ Pakkaus *ui*-vastaa käyttöliittymästä, *services* sovelluslogiikasta ja *rep
 
 ## Käyttöliittymä
 
-Käyttöliittymällä on neljä erilaista näkymää:
+Käyttöliittymällä on viisi erilaista näkymää:
 - Kirjautuminen
 - Uuden käyttäjän luonti
 - Yhden käyttäjän näkymä / lista treeneistä
 - Treenin kirjaus -näkymä
+- Liikkeiden kirjaus -näkymä
 
 Kaikki käyttöliittymän näkymät ovat erillisiä luokkia, joita hallitsee UI-luokka. UI-luokka vastaa siitä, mikä näkymä näytetään. Näkymät kutsuvat aina services-luokkia.
 
@@ -37,8 +38,10 @@ Lihasloki-sovelluksen kolme luokkaa ovat User, LogEntry ja Exercise. User-luokka
           password
       }
       class LogEntry{
+          user
           logtitle
           logdate
+          logentry_id
       }
       class Exercise{
           name
@@ -92,12 +95,35 @@ sequenceDiagram
   participant UI
   participant LogbookService
   participant LogbookRepository
-  User->>UI: press "Lisää uusi treeni" button
+  User->>UI: press "Ok" button
+  UI->>LogbookService: check_date_format(date)
+  LogbookService-->>UI: date
   UI->>LogbookService: create_new_entry("Mollamaija", "jalkapäivä", "3.4.2023")
+  LogbookService->>LogbookService: create_logentry_id()
   LogbookService->>LogbookRepository: create_new_entry(entry)
   LogbookRepository-->>LogbookService: entry
   LogbookService-->>UI: entry
-  UI->>UI: show_logbook_view()
+  UI->>UI: show_exercise_view()
  ```
  
-Uusi treeni luodaan painamalla Luo uusi treeni, jolloin tapahtumankäsittelijä avaa uuden näkymän. Tallenna-nappulasta kutsutaan tapahtumankäsittelijän avulla LogbookService-luokkaa. Luokka luo uuden LogEntry-olion ja kutsuu LogbookRepositorya. LogbookRepository-luokka vie olion csv-tiedostoon. Tämän jälkeen näytetään yhden käyttäjän näkymä, jossa näkyvät kaikki treenikirjaukset.
+Uusi treeni luodaan painamalla Luo uusi treeni, jolloin tapahtumankäsittelijä avaa uuden näkymän. Painamalla ok-uusi treeni tallennettaan ja siirrytään liikkeiden kirjaus -näkymään. Ennen uuden treenin luomista käyttöliittymältä tehdään kuitenkin tarkistus, että päivämäärä on syötetty oikeassa muodossa (pp.kk.vvvv). UI kutsuu tapahtumankäsittelijän avulla LogbookService-luokkaa, joka tekee tarkistuksen. Jos tarkistus menee läpi,  LogbookServise-luokka luo uuden LogEntry-olion luomalla ensin sille uniikin id:n, jonka jälkeen se kutsuu LogbookRepositorya. LogbookRepository-luokka vie olion csv-tiedostoon. Tämän jälkeen käyttäjä pääsee siirtymään kirjaamaan liikkeet.
+
+### Liikkeen kirjaus
+
+```mermaid
+sequenceDiagram
+  actor User
+  participant UI
+  participant LogbookService
+  participant ExerciseRepository
+  User->>UI: press "Lisää liike" button
+  UI->>LogbookService: create_new_exercise("kyykky", "50", "8")
+  LogbookService->>LogbookService: find_current_log()
+  LogbookService->>ExerciseRepository: create_new_exercise(logentry.id, exercise)
+  ExerciseRepository-->>LogbookService: exercise
+  LogbookService-->>UI: exercise
+  UI->>UI: _initialize_exercise_list()
+ ```
+
+
+Uusi liike luodaan painamalla 'Lisää liike'. Tapahtumankäsittelijän avulla LogbookService-luokkaa, joka hakee nykyisen logentry-kirjauksen oliona. Luokka luo uuden Exercise-olion ja kutsuu ExerciseRepositorya, jolle se antaa myös nykyisen kirjauksen id:n. LogbookRepository-luokka vie olion ja id:n tietokantaan. Tämän jälkeen liike näytetään käyttäjälle liikkeiden kirjausnäkymällä, nykyisen näkymän "alinäkymällä", joka näkyy kirjausikkunan yläpuolella. 
