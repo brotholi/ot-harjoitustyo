@@ -76,7 +76,7 @@ Repositories-luokat UserRepository, LogbookRepository ja ExerciseRepository vast
 
 ### Tiedostot
 
-Käyttäjien ja liikkeiden sekä treenikirjausten tiedot talletetaan erillisiin tiedostoihin. Sovelluksen juuressa on konfiguraatiotiedosto(https://github.com/ohjelmistotekniikka-hy/python-todo-app/blob/master/.env), joka määrittelee eri tiedostojen nimet.
+Käyttäjien ja liikkeiden sekä treenikirjausten tiedot talletetaan erillisiin tiedostoihin. Sovelluksen juuressa on konfiguraatiotiedosto .env, joka määrittelee eri tiedostojen nimet.
 
 Sovelluksen käyttäjien tiedot tallennetaan SQLite-tietokannan tauluun `lihasloki_users`, joka alustetaan initialize_database.py-tiedostossa.
 
