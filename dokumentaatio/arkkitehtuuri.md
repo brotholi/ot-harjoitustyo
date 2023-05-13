@@ -79,7 +79,10 @@ sequenceDiagram
   participant UserRepository
   User->>UI: press "Luo käyttäjä" button
   UI->>UserService: create_new_user("Mollamaija", "1244")
+  UserService->>UserService: check_if_user_exists()
   UserService->>UserRepository: find_by_username("Mollamaija")
+  UserRepository-->>UserService: None
+  UserService->>UserRepository: create_new_user(user)'
   UserRepository-->>UserService: user
   UserService-->>UI: user
   UI->>UI: show_login_view()
