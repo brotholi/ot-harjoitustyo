@@ -75,10 +75,19 @@ Painamalla *Ok* käyttäjä pääsee kirjaamaan yksittäiset liikkeet treenille.
 
 ## Liikkeiden kirjaus treenille
 
-Liikkeet kirjataan liikkeiden kirjausnäkymässä. Liikkeelle on syötettävä nimi ja kolmelle sarjalle sekä lisäpaino että toistot.
+Liikkeet kirjataan liikkeiden kirjausnäkymässä. 
+
+![](./kuvat/exercise_view.png)
+
+Liikkeelle on syötettävä nimi ja kolmelle sarjalle sekä lisäpaino että toistot.
 Liike tallennetaan painamalla *Lisää*. Tällöin se tulee näkyviin liikkeen kirjausnäkymän yläpuolelle.
+
+![](./kuvat/exercise_view_list.png)
 
 Treenin voi tallentaa kirjatuilla liikkeillä painamalla *tallenna*, joka vie käyttäjän takaisin aloitusnäkymään. 
 Huom! muista tallentaa myös viimeisenä kirjauksessa oleva liike painamalla *lisää* ennen kuin siirryt aloitusnäkymään takaisin
+
+
+
 
 
