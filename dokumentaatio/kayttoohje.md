@@ -59,7 +59,9 @@ Uuden kirjauksen voi luoda painamalla *Luo uusi treeni*. Tämä avaa uuden kirja
 
 ![](./kuvat/logentry_view.png)
 
-treenin nimi syötetään *Otsikko*-kenttään. Nimi ei saa olla tyhjä.
+Painamalla *peruuta*, käyttäjä pääsee takaisin aloitusnäkymään.
+
+Treenin nimi syötetään *Otsikko*-kenttään. Nimi ei saa olla tyhjä.
 
 Oletusarvoisesti päivämäärä on kuluva päivä. Päivää pääsee muuttamaan painamalla *Muuta päivämäärää*. Tällöin avautuu syöttökenttä, johon päivämäärän voi syöttää. Päivämäärä on syötettävä muodossa pp.kk.vvvv. Jos kenttään ei syötä mitään, on päivämäärä edelleen kuluva päivä.
 
