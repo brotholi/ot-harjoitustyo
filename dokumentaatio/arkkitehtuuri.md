@@ -12,7 +12,7 @@ Lihasloki-sovelluksen koodin pakkausrakenne on seuraava:
      repositories --- entities
 ```
 
-Pakkaus *ui*-vastaa käyttöliittymästä, *services* sovelluslogiikasta ja *repositories* tietojen tallennuksesta tiedostoon ja tietokantaan. *Entities* sisältää sovelluksen logiikan kannalta oleellisia luokkia.
+Kaaviossa pakkaus *ui*-vastaa käyttöliittymästä, *services* sovelluslogiikasta ja *repositories* tietojen tallennuksesta tiedostoon ja tietokantaan. *Entities* sisältää sovelluksen logiikan kannalta oleellisia luokkia.
 
 ## Käyttöliittymä
 
@@ -24,6 +24,10 @@ Käyttöliittymällä on viisi erilaista näkymää:
 - Liikkeidenkirjausnäkymä
 
 Kaikki käyttöliittymän näkymät ovat erillisiä luokkia, joita hallitsee UI-luokka. UI-luokka vastaa siitä, mikä näkymä näytetään. Näkymät kutsuvat aina services-luokkia.
+
+Yhden käyttäjän näkymässä näytetään ainoastaan kirjautuneen käyttäjän viisi viimeisintä kirjausta. Hakutoiminnolla hakupalkin alapuolelle näytetään haun tulokset. 
+
+Kun treenin liikkeiden kirjausnäkymällä on lisätty uusi liike treenille, se näytetään kirjauspalkin yläpuolella kutsumalla metodia initialize_todo_list. Metodi alustaa listanäkymän uudelleen niin, että tallennettu liike tulee näkyviin.
 
 
 ## Sovelluslogiikka
