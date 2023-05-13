@@ -28,8 +28,23 @@ poetry run invoke start
 ```
 
 ## Käyttö
-- Tarvittavat alustukset tehdään komennolla *poetry run invoke build*
-- Sovellus käynnistetään komennolla *poetry run invoke start*
-- Testejä voi ajaa komennolla *poetry run invoke test*
-- Testikattavuusraportin voi muodostaa komennolla *poetry run invoke coverage-report*
-- Komennolla *poetry run invoke lint* voi suorittaa tiedoston .pylintrc määrittelemät tarkistukset
+- Tarvittavat alustukset tehdään komennolla 
+```bash
+poetry run invoke build
+```
+- Sovellus käynnistetään komennolla 
+```bash
+poetry run invoke start
+```
+- Testejä voi ajaa komennolla 
+```bash
+poetry run invoke test
+```
+- Testikattavuusraportin voi muodostaa komennolla 
+```bash
+poetry run invoke coverage-report
+```
+- Tiedoston .pylintrc määrittelemät tarkistukset voi suorittaa komennolla
+```bash
+poetry run invoke lint
+```
