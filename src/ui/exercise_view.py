@@ -5,9 +5,17 @@ from services.logbook_service import logbook_service
 
 
 class ExerciseListView:
-    """Näkymä, joka listaa liikkeet."""
+    """Treenille kirjattujen liikkeiden listauksesta vastaava näkymä."""
+
 
     def __init__(self, root, exercises):
+        """Luokan konstruktori. Luo uuden aiemmin treenille kirjattujen liikkeiden listaamisesta vastaavan näkymän.
+        Args:
+            root:
+                TKinter-elementti, johon näkymä alustetaan.
+            exercises:
+               Lista näytettävitä liikkeistä.
+        """
         self._root = root
         self._exercises = exercises
         self._frame = None
@@ -15,12 +23,15 @@ class ExerciseListView:
         self._initialize()
 
     def pack(self):
+        """"Näyttää nykyisen näkymän."""
         self._frame.pack(fill=constants.X)
 
     def destroy(self):
+        """"Tuhoaa nykyisen näkymän."""
         self._frame.destroy()
 
     def _initialize_exercise(self, exercise, set_number):
+        """Alustaa yhden listattavan liikkeen."""
         item_frame = ttk.Frame(master=self._frame)
         if set_number == 1:
             separator = ttk.Separator(master=item_frame, orient='horizontal')
@@ -39,6 +50,7 @@ class ExerciseListView:
         item_frame.pack(fill=constants.X)
 
     def _initialize(self):
+        """Alustaa listausnäkymän."""
         self._frame = ttk.Frame(master=self._root)
         previous_name = ''
         set_number = 1
@@ -53,8 +65,18 @@ class ExerciseListView:
 
 
 class ExerciseView:
+    """Yksittäisten liikkeiden kirjaamisesta vastaava näkymä."""
 
     def __init__(self, root, handle_logbook_view):
+        """Luokan konstruktori. Luo uuden yksittäiden liikkeiden kirjaamisesta vastaavan näkymän
+        Args:
+            root:
+                TKinter-elementti, johon näkymä alustetaan.
+            handle_logbook_view:
+                Kutsuttava-arvo, jota kutsutaan kun siirrytään takaisin alkunäkymään.
+            handle_exercise_view:
+                Kutsuttava-arvo, jota kutsutaan kun siirrytään yksittäisten liikkeiden kirjausnäkymään.
+        """
         self._root = root
         self._handle_logbook_view = handle_logbook_view
         self._current_view = None
@@ -64,9 +86,11 @@ class ExerciseView:
         self._initialize()
 
     def pack(self):
+        """"Näyttää nykyisen näkymän."""
         self._frame.pack(fill=constants.X)
 
     def destroy(self):
+        """"Tuhoaa nykyisen näkymän."""
         self._frame.destroy()
 
     def _show_error_message(self, message):
@@ -83,7 +107,7 @@ class ExerciseView:
         self._error_label.grid_remove()
 
     def _set_exercise_done(self, set_number):
-
+#////////pois????
         if set_number == 1:
             self._weigth_entry_1.grid_remove()
             self._reps_entry_1.grid_remove()
@@ -95,6 +119,7 @@ class ExerciseView:
             self._weigth_entry_3.grid_remove()
 
     def _create_exercise_handler(self):
+        """Uuden liikkeen luomisesta vastaava tapahtumankäsittelijä"""
         username = user_service.get_current_user()
         log = logbook_service.find_current_log(username)
 
@@ -142,7 +167,6 @@ class ExerciseView:
         self._handle_logbook_view()
 
     def __initialize_header(self):
-        # tähän tuodaan otsikko, joka annettiin äsken treenille
         username = user_service.get_current_user()
         log = logbook_service.find_current_log(username)
 
@@ -159,6 +183,7 @@ class ExerciseView:
             row=0, column=1, sticky=constants.E, padx=5, pady=5)
 
     def _initialize_exercise_list(self):
+        """Alustaa listanäkymän, johon viedään nykyiselle kirjaukselle kirjatut liikeet."""
         if self._exercise_list_view:
             self._exercise_list_view.destroy()
 
@@ -175,6 +200,7 @@ class ExerciseView:
         self._exercise_list_view.pack()
 
     def _initialize_add_exercise(self):
+        """Alustaa treenin kirjaamiseen liittyvät tkinter-elementit."""
         separator = ttk.Separator(master=self._frame, orient='horizontal')
         separator.grid(row=2, sticky=constants.EW, columnspan=5)
 
@@ -201,6 +227,7 @@ class ExerciseView:
         self._initialize_exercise_rows()
 
     def _initialize_exercise_rows(self):
+        """Alustaa entry-kentät, joihin kirjataan kolmen sarjan liikkeiden tiedot."""
         set_label_1 = ttk.Label(master=self._frame, text="1", width=2)
         self._weigth_entry_1 = ttk.Entry(master=self._frame, width=4)
         self._reps_entry_1 = ttk.Entry(master=self._frame, width=4)
@@ -253,7 +280,6 @@ class ExerciseView:
         done_button_3.grid(row=7, column=1, padx=5, pady=5, sticky=constants.E)
 
     def __inilialize_footer(self):
-
         add_exercise_button = ttk.Button(
             master=self._frame,
             text="Lisää",
@@ -286,6 +312,7 @@ class ExerciseView:
         self._hide_error()
 
     def _initialize(self):
+        """Alustaa näkymän."""
         self._frame = ttk.Frame(master=self._root)
         self._exercise_list_frame = ttk.Frame(master=self._frame)
 

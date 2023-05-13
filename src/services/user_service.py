@@ -13,8 +13,7 @@ class InvalidCredentialsError(Exception):
 
 
 class UserService:
-    """Käyttäjiin liittyvästä sovelluslogiikasta vastaava luokka.
-    """
+    """Käyttäjiin liittyvästä sovelluslogiikasta vastaava luokka."""
 
     def __init__(self, user_repository=default_user_repository):
         """Luokan konstruktori. Luo uuden käyttäjien sovelluslogiikasta vastaavan palvelun.

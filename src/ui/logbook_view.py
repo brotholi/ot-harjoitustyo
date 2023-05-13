@@ -6,7 +6,6 @@ from services.logbook_service import logbook_service
 
 
 class SearchListView:
-
     def __init__(self, root, search_results):
         self._root = root
         self._search_results = search_results
@@ -35,7 +34,15 @@ class SearchListView:
 
 
 class LogbookView:
-
+    """Luokan konstruktori. Luo uuden kirjautuneen käyttäjän alkunäkymän.
+        Args:
+            root:
+                TKinter-elementti, johon näkymä alustetaan.
+            handle_back_to_login:
+                Kutsuttava-arvo, jota kutsutaan kun siirrytään takaisin kirjautumisnäkymään.
+            handle_logentry_view:
+                Kutsuttava-arvo, jota kutsutaan kun siirrytään uuden treenin kirjausnäkymään.
+    """
     def __init__(self, root, handle_back_to_login, handle_logentry_view):
         self._root = root
         self._handle_back_to_login = handle_back_to_login
@@ -47,9 +54,11 @@ class LogbookView:
         self._initialize()
 
     def pack(self):
+        """"Näyttää nykyisen näkymän."""
         self._frame.pack(fill=constants.X)
 
     def destroy(self):
+        """Piilottaa error-viestin."""
         self._frame.destroy()
 
     def _show_error_message(self, message):
@@ -65,10 +74,8 @@ class LogbookView:
         """
         self._error_label.grid_remove()
 
-    def _hide_error(self):
-        self._error_label.grid_remove()
-
     def _initialize_search_list(self):
+        "Alustaa hakutulosten listauksesta vastaavan näkymän"
         keyword = self._search_entry.get()
 
         if self._search_list_view:
@@ -83,6 +90,7 @@ class LogbookView:
         # self._search_list_view.pack()
 
     def _initialize(self):
+        """Alustaa näkymän."""
         self._frame = ttk.Frame(master=self._root)
         self._search_list_frame = ttk.Frame(master=self._frame)
         self._initialize_header()
@@ -165,7 +173,7 @@ class LogbookView:
 # oma näkymä???
 # /////////
     def _search_entry_handler(self):
-
+        """Kirjausten hakutoiminnon tapahtumakäsittelijä"""
         keyword = self._search_entry.get()
         search_results = logbook_service.find_log_by_logtitle(keyword)
         if len(search_results) == 0:
@@ -189,6 +197,7 @@ class LogbookView:
             separator.grid(sticky=constants.EW, columnspan=5)
 
     def _initialize_logs(self):
+        """Alustaa käyttäjälle näytettävät viisi aiempaa kirjausta."""
         username = user_service.get_current_user()
         all_logs = logbook_service.find_user_logs(username)
         if len(all_logs) > 5:

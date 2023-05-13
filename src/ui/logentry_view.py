@@ -1,12 +1,21 @@
 from tkinter import ttk, constants, StringVar
-from datetime import datetime
 from services.user_service import user_service
-from services.logbook_service import logbook_service
+from services.logbook_service import logbook_service, InvalidDateFormatError
 
 
 class LogentryView:
+    """Uuden treenin kirjaamisesta vastaava näkymä."""
 
     def __init__(self, root, handle_logbook_view, handle_exercise_view):
+        """Luokan konstruktori. Luo uuden rekisteröitymisnäkymän.
+        Args:
+            root:
+                TKinter-elementti, johon näkymä alustetaan.
+            handle_logbook_view:
+                Kutsuttava-arvo, jota kutsutaan kun siirrytään takaisin alkunäkymään.
+            handle_exercise_view:
+                Kutsuttava-arvo, jota kutsutaan kun siirrytään yksittäisten liikkeiden kirjausnäkymään.
+        """
         self._root = root
         self._handle_logbook_view = handle_logbook_view
         self._handle_exercise_view = handle_exercise_view
@@ -15,6 +24,7 @@ class LogentryView:
         self._initialize()
 
     def pack(self):
+        """Näyttää näkymän. """
         self._frame.pack(fill=constants.X)
 
     def destroy(self):
@@ -29,6 +39,7 @@ class LogentryView:
         self._error_label.grid()
 
     def _show_date_entry(self):
+        """Näyttää päivämäärän kirjaamiseen tarkoitetun kentän."""
         self._date_entry.grid()
 
     def _hide_error(self):
@@ -37,6 +48,7 @@ class LogentryView:
         self._error_label.grid_remove()
 
     def _hide_change_date_button(self):
+        """Piilottaa päivämäärän muuttamiseen tarkoitetun painikkeen."""
         self._change_date_button.grid_forget()
 
     def _hide_date_entry(self):
@@ -45,12 +57,14 @@ class LogentryView:
         self._date_entry.grid_remove()
 
     def _hide_current_date(self):
+        """Piilottaa nykyisen päivämäärän."""
         self.current_date_label.grid_forget()
 
     def _return_handler(self):
         self._handle_logbook_view()
 
     def _create_entry_handler(self):
+        """Uuden kirjauksen luomisesta vastaava tapahtumankäsittelijä"""
         username = user_service.get_current_user()
         title_entry_value = self._title_entry.get()
         date_entry_value = self._date_entry.get()
@@ -60,26 +74,27 @@ class LogentryView:
             return
 
         if len(date_entry_value) == 0:
-            date = datetime.now()
-            date_entry_value = date.strftime("%d.%m.%Y")
+            date_entry_value = logbook_service.get_current_date()
 
-        date_format = logbook_service.check_date_format(date_entry_value)
+        try:
+            logbook_service.check_date_format(date_entry_value)
 
-        if date_format == False:
+        except InvalidDateFormatError:
             self._show_error_message("Syötä päivämäärä muodossa pp.kk.vvvv")
             return
-
         logbook_service.create_new_entry(
-            username, title_entry_value, date_entry_value)
-
+        username, title_entry_value, date_entry_value)
         self._handle_exercise_view()
 
+
     def _change_date_handler(self):
+        """Kirjauksen päivämäärän muuttamisesta vastaava tapahumankäsittelijä"""
         self._hide_change_date_button()
         self._hide_current_date()
         self._show_date_entry()
 
     def _initialize(self):
+        """Alustaa näkymän"""
         self._frame = ttk.Frame(master=self._root)
 
         self.initialize_header()
@@ -88,10 +103,10 @@ class LogentryView:
         self._title_entry = ttk.Entry(master=self._frame)
 
         date_label = ttk.Label(master=self._frame, text="Päivämäärä:")
-        current_date = datetime.now()
+        current_date = logbook_service.get_current_date()
 
         self.current_date_label = ttk.Label(
-            master=self._frame, text=f'{current_date.day}.{current_date.month}.{current_date.year}')
+            master=self._frame, text=current_date)
 
         self._change_date_button = ttk.Button(
             master=self._frame,

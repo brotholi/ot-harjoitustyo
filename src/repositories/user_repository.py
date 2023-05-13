@@ -41,12 +41,10 @@ class UserRep:
 
     def create_new_user(self, user):
         """Syöttää käyttäjän tiedot tauluun.
-
         Args:
-            todo: Tallennettava käyttäjä User-oliona.
-
+            user: Tallennettava käyttäjä User-oliona.
         Returns:
-            Tallennettu käyttjä User-oliona.
+            Tallennettu käyttäjä User-oliona.
         """
 
         cursor = self._connection.cursor()

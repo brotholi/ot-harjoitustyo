@@ -22,7 +22,7 @@ class ExerciseRepository:
     def find_all(self):
         """Palauttaa kaikki tietokannassa olevat liikkeet.
         Returns:
-            Palauttaa listan User-olioita.
+            Palauttaa listan Exercise-olioita.
         """
         cursor = self._connection.cursor()
         try:
@@ -42,14 +42,13 @@ class ExerciseRepository:
         self._connection.commit()
 
     def create_new_exercise(self, logentry_id, exercise):
-        """Syöttää käyttäjän tiedot tauluun.
+        """Syöttää liikken tiedot tauluun.
 
         Args:
-            todo: Tallennettava liike Exercise-oliona ja 
-            logentry_id, joka liittää liikkeen tiettyyn kirjaukseen.
-
+            logentry_id: Tallennettavaan liikkeeseen liittyvän treenikirjauksen yksilöivä tunnus.
+            exercise Tallennettava liike Exercise-oliona.
         Returns:
-            Tallennettu käyttäjä Exercise-oliona.
+            Tallennettu käyttjä Exercise-oliona.
         """
         all = self.find_all()
         id = len(all)
@@ -70,9 +69,9 @@ class ExerciseRepository:
     def find_by_logentry_id(self, logentry_id):
         """Hakee yhden treenin tiedot logentry_id:n perusteella.
         Args:
-            username: Käyttäjätunnus, jonka omaava käyttäjä palautetaan.
+            logentry_id: Tallennettavaan liikkeeseen liittyvän treenikirjauksen yksilöivä tunnus.
         Returns:
-            Palauttaa Exerices-oliot, jos logentry_id on tietokannassa.
+            Palauttaa Exerices-olioiden listan, jos logentry_id on tietokannassa.
             Muutoin palauttaa None.
         """
 
@@ -96,8 +95,11 @@ class ExerciseRepository:
 
     def find_by_exercise_name_for_user(self, logentry_ids, exercise_name):
         """Hakee yhden käyttäjän kaikki samannimiset liikkeet.
-            Saa parametreina kaikki käyttäjän logentry_id:t listana ja liikkeen nimen.
-            Palogentry_idlauttaa kaikki liikkeet listana
+            Args:
+               logentry_ids: Kaikki käyttäjän logentry_id:t listana.
+               exercise_name: liikkeen nimi
+            Returns:
+                Kaikki liikkeet Exercise-olioiden listana.
         """
         exercises = []
         for entry_id in logentry_ids:

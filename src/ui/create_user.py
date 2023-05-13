@@ -22,13 +22,11 @@ class CreateUserView:
         self._initialize()
 
     def pack(self):
-        """Näyttää näkymän.
-        """
+        """Näyttää näkymän."""
         self._frame.pack(fill=constants.X)
 
     def destroy(self):
-        """Tuhoaa näkymän.
-        """
+        """Tuhoaa näkymän."""
         self._frame.destroy()
 
     def _create_user_handler(self):
