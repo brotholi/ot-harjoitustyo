@@ -53,9 +53,9 @@ Lihasloki-sovelluksen kolme luokkaa ovat User, LogEntry ja Exercise. User-luokka
 
 Luokat UserService ja LogbookService vastaavat sovelluksen toiminnallisuudesta. UserService tarjoaa käyttöliittymälle erilaisia käyttäjiin liittyviä metodeita:
 
-- login(username, password)
-- get_current_user()
-- create_new_user(username, password)
+- `login(username, password)`
+- `get_current_user()`
+- `create_new_user(username, password)`
 
 Logbookservice tarjoaa kaikki treenin kirjaukseen liittyvät toiminnot. Niihin kuuluvat esimerkiksi
 - `create_new_entry(username, logtitle, time)`
@@ -66,6 +66,41 @@ Logbookservice tarjoaa kaikki treenin kirjaukseen liittyvät toiminnot. Niihin k
 - `find_logentry_exercises(logentry_id)`
 - `check_date_format(date)`
 
+Services-luokat pääsevät repositories-kansiossa sijaitseviin luokkiin käsiksi. Repositories-luokat vastaavat tiedon tallennuksesta. Kun service-luokka luodaan, sille annetaan tarvittavat repositories-luokat konstruktorissa.
+
+UserService- ja LogbookService -luokkien suhdetta muihin ohjelman osiin kuvaa pakkauskaavio:
+
+
+### Tiedon tallennus
+Repositories-luokat UserRepository, LogbookRepository ja ExerciseRepository vastaavat Lihaslokin tietojen tallennuksesta. UserRepository ja ExerciseRepository tallentavat tietoa SQLite-tietokantaan. LogbookRepository tallentaa tietoa csv-tiedostoon. Tiedon tallennus on suunniteltu repositories-mallin avulla, eli tiedon tallennus on eriytetty sovelluslogiikasta.
+
+### Tiedostot
+
+Käyttäjien ja liikkeiden sekä treenikirjausten tiedot talletetaan erillisiin tiedostoihin. Sovelluksen juuressa on konfiguraatiotiedosto(https://github.com/ohjelmistotekniikka-hy/python-todo-app/blob/master/.env), joka määrittelee eri tiedostojen nimet.
+
+Sovelluksen käyttäjien tiedot tallennetaan SQLite-tietokannan tauluun `lihasloki_users`, joka alustetaan initialize_database.py-tiedostossa.
+
+Treenit talletetaan csv-tiedostoon logentries.csv. Tiedostossa treenikirjausten yleiset tiedot on talletettu seuraavasti:
+
+```
+ruusa;jalkapäivä;13.05.2023;12d5f963-cfff-4141-b569-af5fdcbb3385
+ruusa;Selkä;03.05.2023;bee7fea2-b5bc-4dd7-a622-b2a02cbc0798
+```
+Rivillä on ensin käyttäjätunnus, sitten treenikirjauksen nimi, päivämäärä ja kirjauksen yksilöivä id-tunnus.
+
+Yksittäisten liikkeiden tiedot talletetaan SQLite-tietokannan tauluun `lihasloki_exercises`, joka on samassa tiedostossa database.sqlite kuin käyttäjätiedot. Yksi rivi taulussa on aina yksi sarja, joka sisältää liikkeen nimen, toistot ja lisäpainon. Tietokantaan tallettaessa liikkeellä on aina rivinumero (määritellään tauluun kirjattujen liikkeiden pohjalta), treenikirjauksen id (sama kuin csv-tiedostossa), nimi, lisäpaino ja toistot. Alla on testikäyttäjän ruusa-kirjaaman jalkapäivä-treenin liikkeitä:
+
+```
+```
+0|12d5f963-cfff-4141-b569-af5fdcbb3385|kyykky|45|12
+1|12d5f963-cfff-4141-b569-af5fdcbb3385|kyykky|50|8
+2|12d5f963-cfff-4141-b569-af5fdcbb3385|kyykky|55|6
+3|12d5f963-cfff-4141-b569-af5fdcbb3385|maastaveto|65|8
+4|12d5f963-cfff-4141-b569-af5fdcbb3385|maastaveto|70|5
+5|12d5f963-cfff-4141-b569-af5fdcbb3385|maastaveto|0|0
+
+```
+```
 
 ## Päätoiminnallisuudet
 
