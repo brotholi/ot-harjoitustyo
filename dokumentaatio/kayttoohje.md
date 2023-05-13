@@ -55,7 +55,15 @@ Uuden kirjauksen voi luoda painamalla *Luo uusi treeni*. Tämä avaa uuden kirja
 
 treenin nimi syötetään *nimi*-kenttään. Nimi ei saa olla tyhjä.
 
-Oletusarvoisesti päivämäärä on kuluva päivä. Päivää pääsee muuttamaan painamalla *muuta päivämäärää*. Tällöin avautuu syöttökenttä, johon päivämäärän voi syöttää. Jos kenttään ei syötä mitään, on päivämäärä edelleen kuluva päivä.
+Oletusarvoisesti päivämäärä on kuluva päivä. Päivää pääsee muuttamaan painamalla *muuta päivämäärää*. Tällöin avautuu syöttökenttä, johon päivämäärän voi syöttää. Päivämäärä on syötettävä muodossa pp.kk.vvvv. Jos kenttään ei syötä mitään, on päivämäärä edelleen kuluva päivä.
 
 ![](./kuvat/logentry_view_date.png)
+
+Jos päivämäärän syöttää väärässä, muodossa, ei pääse siirtymään liikkeidenkirjausnäkymään, vaan näytetään virheviesti:
+
+![](./kuvat/logentry_view_error.png)
+
+Painamalla *Ok* käyttäjä pääsee kirjaamaan yksittäiset liikkeet treenille. Tämä avaa uuden näkymän:
+
+
 
