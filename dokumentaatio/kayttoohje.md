@@ -36,6 +36,8 @@ Kirjautumisnäkymästä pääsee luomaan uuden käyttäjän painamalla *Luo uusi
 
 Uuden käyttäjän voi luoda syöttämällä tiedot kenttiin. Käyttäjätunnuksen on oltava vähintään 5 merkkiä pitkä.
 
+## Aloitusnäkymä
+
 Kirjautuminen avaa käyttäjälle oman näkymän: 
 
 ![](./kuvat/logbook_view.png)
@@ -49,6 +51,10 @@ Aikaisempien treenien tarkempia tietoja voi saada kirjoittamalla alhaalla olevaa
 
 Tällöin tuodaan näkyviin lista tällä nimellä olevista treeneistä ja niiden liikkeistä.
 
+[kuva]
+
+## Uuden treenin kirjaus
+
 Uuden kirjauksen voi luoda painamalla *Luo uusi treeni*. Tämä avaa uuden kirjausnäkymän:
 
 ![](./kuvat/logentry_view.png)
@@ -59,11 +65,18 @@ Oletusarvoisesti päivämäärä on kuluva päivä. Päivää pääsee muuttamaa
 
 ![](./kuvat/logentry_view_date.png)
 
-Jos päivämäärän syöttää väärässä, muodossa, ei pääse siirtymään liikkeidenkirjausnäkymään, vaan näytetään virheviesti:
+Jos päivämäärän syöttää väärässä muodossa, ei pääse siirtymään liikkeidenkirjausnäkymään, vaan näytetään virheviesti:
 
 ![](./kuvat/logentry_view_error.png)
 
-Painamalla *Ok* käyttäjä pääsee kirjaamaan yksittäiset liikkeet treenille. Tämä avaa uuden näkymän:
+Painamalla *Ok* käyttäjä pääsee kirjaamaan yksittäiset liikkeet treenille. Tämä avaa uuden näkymän.
 
+## Liikkeiden kirjaus treenille
+
+Liikkeet kirjataan liikkeiden kirjausnäkymässä. Liikkeelle on syötettävä nimi ja kolmelle sarjalle sekä lisäpaino että toistot.
+Liike tallennetaan painamalla *Lisää*. Tällöin se tulee näkyviin liikkeen kirjausnäkymän yläpuolelle.
+
+Treenin voi tallentaa kirjatuilla liikkeillä painamalla *tallenna*, joka vie käyttäjän takaisin aloitusnäkymään. 
+Huom! muista tallentaa myös viimeisenä kirjauksessa oleva liike painamalla *lisää* ennen kuin siirryt aloitusnäkymään takaisin
 
 
