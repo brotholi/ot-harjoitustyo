@@ -59,7 +59,7 @@ Uuden kirjauksen voi luoda painamalla *Luo uusi treeni*. Tämä avaa uuden kirja
 
 ![](./kuvat/logentry_view.png)
 
-Painamalla *peruuta*, käyttäjä pääsee takaisin aloitusnäkymään.
+Painamalla *Peruuta*, käyttäjä pääsee takaisin aloitusnäkymään.
 
 Treenin nimi syötetään *Otsikko*-kenttään. Nimi ei saa olla tyhjä.
 
