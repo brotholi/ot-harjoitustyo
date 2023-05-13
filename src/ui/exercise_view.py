@@ -120,8 +120,6 @@ class ExerciseView:
 
     def _create_exercise_handler(self):
         """Uuden liikkeen luomisesta vastaava tapahtumankäsittelijä"""
-        username = user_service.get_current_user()
-        log = logbook_service.find_current_log(username)
 
         for i in range(0, 3):
             name_entry_value = self._title_entry.get()
@@ -147,8 +145,7 @@ class ExerciseView:
             if weight_number == False or reps_number == False:
                 self._show_error_message("Syötä paino ja toistot numeroina")
                 return
-            logbook_service.create_new_exercise(
-                log.id, name_entry_value, weigth_entry_value, reps_entry_value)
+            logbook_service.create_new_exercise(name_entry_value, weigth_entry_value, reps_entry_value)
 
         self._title_entry.delete(0, constants.END)
         self._weigth_entry_1.delete(0, constants.END)
@@ -171,7 +168,7 @@ class ExerciseView:
         log = logbook_service.find_current_log(username)
 
         title = ttk.Label(
-            master=self._frame, text=f'{log.logtitle}', width=10)
+            master=self._frame, text=f'{log.logtitle}')
 
         title.grid(
             row=0, column=0, sticky=constants.W, padx=5, pady=5)
@@ -282,7 +279,7 @@ class ExerciseView:
     def __inilialize_footer(self):
         add_exercise_button = ttk.Button(
             master=self._frame,
-            text="Lisää",
+            text="Lisää liike",
             command=self._create_exercise_handler
         )
 

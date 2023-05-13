@@ -187,7 +187,6 @@ class LogbookView:
                 master=self._frame, text=f'Pvm:  {log.logdate}')
             date_label.grid(sticky=constants.W, padx=5, pady=5)
             log_exercises = logbook_service.find_logentry_exercises(log.id)
-            print(log_exercises)
             for exercise in log_exercises:
                 exercise_label = ttk.Label(
                     master=self._frame, text=f'{exercise.name}  {exercise.weight}kg  x  {exercise.reps}')

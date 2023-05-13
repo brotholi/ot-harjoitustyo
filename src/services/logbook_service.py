@@ -78,19 +78,20 @@ class LogbookService:
             username, logtitle)
         return logs_by_name
 
-    def create_new_exercise(self, logentry_id, exercise_name, weigth, reps):
+    def create_new_exercise(self, exercise_name, weigth, reps):
         """Luo uuden käyttäjän.
         Args:
-            username: Merkkijonoarvo, joka kuvaa käyttäjän käyttäjätunnusta.
-            logentry_id: Merkkijonoarvo, joka kuvaa yksilöivää treenikirjauksen tunnusta.
             exercise_name: Merkkijonoarvo, joka kuvaa liikeen nimeä.
             weigth: Merkkijonoarvo, joka kuvaa liikeen lisäpainoa.
             reps: Merkkijonoarvo, joka kuvaa liikeen toistomäärää.
         Returns:
             Luotu liike Exercise-oliona.
         """
+        username = user_service.get_current_user()
+        logentry = logbook_service.find_current_log(username)
         exercise = Exercise(exercise_name, weigth, reps)
-        self._exercises_repository.create_new_exercise(logentry_id, exercise)
+
+        self._exercises_repository.create_new_exercise(logentry.id, exercise)
         return exercise
 
     def find_logentry_exercises(self, logentry_id):

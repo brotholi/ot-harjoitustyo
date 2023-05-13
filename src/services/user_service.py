@@ -37,7 +37,7 @@ class UserService:
             UserExistsError:
                 Virhe, kun käyttäjätunnus on jo olemassa toisella käyttäjällä.
         """
-        check_user_exists = self.check_if_user_exists(username)
+        check_user_exists = self._check_if_user_exists(username)
 
         if check_user_exists:
             raise UserExistsError()
@@ -45,7 +45,7 @@ class UserService:
         self._user_repository.create_new_user(new_user)
         return new_user
 
-    def check_if_user_exists(self, username):
+    def _check_if_user_exists(self, username):
         """Tutkii, onko käyttäjää olemassa.
         Args:
             username: Merkkijonoarvo, joka kuvastaa uuden käyttäjän käyttäjätunnusta.
