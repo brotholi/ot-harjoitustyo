@@ -1,4 +1,4 @@
-# Sovelluksen logiikka
+# Arkkitehtuurikuvaus
 
 
 ## Rakenne
@@ -25,6 +25,7 @@ Käyttöliittymällä on viisi erilaista näkymää:
 
 Kaikki käyttöliittymän näkymät ovat erillisiä luokkia, joita hallitsee UI-luokka. UI-luokka vastaa siitä, mikä näkymä näytetään. Näkymät kutsuvat aina services-luokkia.
 
+
 ## Sovelluslogiikka
 
 Lihasloki-sovelluksen kolme luokkaa ovat User, LogEntry ja Exercise. User-luokka kuvaa yhtä käyttäjää, LogEntry yhtä yhden käyttäjän treenikirjausta ja Exercise yhtä liikettä, joita voi olla yhdessä treenissä useita.
@@ -50,7 +51,23 @@ Lihasloki-sovelluksen kolme luokkaa ovat User, LogEntry ja Exercise. User-luokka
       }
 ```
 
-## Toiminnallisuus
+Luokat UserService ja LogbookService vastaavat sovelluksen toiminnallisuudesta. UserService tarjoaa käyttöliittymälle erilaisia käyttäjiin liittyviä metodeita:
+
+- login(username, password)
+- get_current_user()
+- create_new_user(username, password)
+
+Logbookservice tarjoaa kaikki treenin kirjaukseen liittyvät toiminnot. Niihin kuuluvat esimerkiksi
+- `create_new_entry(username, logtitle, time)`
+- `find_user_logs(username)`
+- `find_current_log(username)`
+- `find_log_by_logtitle(logtitle)`
+- `create_new_exercise(exercise_name, weigth, reps)`
+- `find_logentry_exercises(logentry_id)`
+- `check_date_format(date)`
+
+
+## Päätoiminnallisuudet
 
 ### Kirjautuminen
 
