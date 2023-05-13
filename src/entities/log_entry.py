@@ -2,7 +2,7 @@ from datetime import datetime
 
 
 class LogEntry:
-    """Luokka, joka kuvaa yksittäistä tehtävää
+    """Luokka, joka kuvaa yksittäistä treenikirjausta.
 
     Attributes:
         user: Merkkijonoarvo, joka kuvaa kirjausta tehneen käyttäjän käyttäjätunnusta.
@@ -15,8 +15,8 @@ class LogEntry:
         Args:
             user: Merkkijonoarvo, joka kuvaa kirjausta tehneen käyttäjän käyttäjätunnusta.
             logtitle: Merkkijonoarvo, joka kuvaa kirjausta otsikkoa.
-        logtitle: Merkkijonoarvo, joka kuvaa kirjausta otsikkoa.
-        logdate: Merkkijonoarvo, joka kuvaa kirjauksen päivämäärää.
+            logtitle: Merkkijonoarvo, joka kuvaa kirjausta otsikkoa.
+            logdate: Merkkijonoarvo, joka kuvaa kirjauksen päivämäärää.
         """
         self.user = user
         self.logtitle = logtitle
