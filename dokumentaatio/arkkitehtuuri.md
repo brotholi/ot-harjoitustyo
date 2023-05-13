@@ -25,7 +25,9 @@ Käyttöliittymällä on viisi erilaista näkymää:
 
 Kaikki käyttöliittymän näkymät ovat erillisiä luokkia, joita hallitsee UI-luokka. UI-luokka vastaa siitä, mikä näkymä näytetään. Näkymät kutsuvat aina services-luokkia.
 
-Yhden käyttäjän näkymässä näytetään ainoastaan kirjautuneen käyttäjän viisi viimeisintä kirjausta. Hakutoiminnolla hakupalkin alapuolelle näytetään haun tulokset. 
+Yhden käyttäjän näkymässä näytetään ainoastaan kirjautuneen käyttäjän viiden viimeisimmän kirjauksen päivämäärät ja nimet. Kirjausten hakutoiminnolla hakupalkin alapuolelle näytetään haun tulokset, jonne listataan kaikki hakusanaa vastaavien treenikirjausten liikkeet. 
+
+Treenin kirjausnäkymällä päivämäärää ämuutettaessa piilotetaan nykyinen päivämäärä ja muuta päivämäärää -painike. Samalla näkyviin tulee syöttöikkuna, johon uuden päivämäärän voi syöttää.
 
 Kun treenin liikkeiden kirjausnäkymällä on lisätty uusi liike treenille, se näytetään kirjauspalkin yläpuolella kutsumalla metodia initialize_todo_list. Metodi alustaa listanäkymän uudelleen niin, että tallennettu liike tulee näkyviin.
 
