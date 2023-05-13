@@ -20,35 +20,34 @@ Sovelluksessa on tavallisia käyttäjiä ja pääkäyttäjä. Tavallinen käytt�
 **Uuden käyttäjätunnuksen luonti**
 - Kun käyttäjä luo uuden tunnuksen, syötetään käyttäjätunnus ja salasana 
 - Uusi tunnus luodaan painamalla *luo käyttäjä*
+- Uuden käyttäjän luonnista pääsee takaisin kirjautumiseen joko luomalla uuden tunnuksen tai painamalla *takaisin*
 
 **Kaikki kirjaukset**
 - Kirjausnäkymässä käyttäjä näkee aikaisemmin kirjaamansa treenit
-- Kirjausnäkymästä pääsee yksittäisen treenin kirjaamiseen painamalla *uusi*
-- Kirjausnäkymästä käyttäjä pääsee kirjautumaan ulos
+- Kirjausnäkymästä pääsee yksittäisen treenin kirjaamiseen painamalla *uusi treeni*
+- Kirjausnäkymästä käyttäjä pääsee kirjautumaan ulos 
+- Aikaisempia treenejä voi etsiä syöttämällä treenin nimen alhaalla olevaan kenttään
 
 **Treenin kirjaus**
-- Treeninkirjausnäkymässä käyttäjä voi syöttää uusia liikkeitä treeniin
-- Treeninkirjausnäkymästä käyttäjä pääsee takaisin yleisnäkymään painamalla *tallenna*
-- Treenin nimeä ja päivämäärää voi muuttaa
+- Treeninkirjausnäkymässä käyttäjä voi aloittaa uuden treenin kirjauksen
+- Kirjaukselle on annettava nimi
+- Treeninkirjausnäkymästä käyttäjä pääsee liikkeidenkirjausnäkymään painamalla *tallenna*
+- Treenin päivämäärää voi muuttaa, oletusarvoisesti se on kuluva päivä
+
+**Liikkeiden kirjaus**
+- Liikkeidenkirjausnäkymässä käyttäjä voi syöttää uusia liikkeitä treeniin
+- Liikkeidenkirjausnäkymästä pääsee takaisin kaikkien kirjausten näkymään painamalla *tallenna*
 
 
 ## Toiminnallisuus perusversiossa
-- Käyttäjä voi luoda sovellukseen tunnuksen **(tehty)**
-  - Käyttäjätunnuksen on oltava vähintään 5 merkkiä pitkä ja uniikki **(tehty)**
-- Käyttäjä voi kirjautua sovellukseen **(tehty)**
-- Käyttäjälle näkyvät vain käyttäjän itse kirjaamat treenit **(tehty)**
-- Käyttäjä voi kirjata yksittäisen treenin, jolle voi määritellä nimen **(tehty)**
-- Yksittäiseen treeniin voi kirjata päivämäärän **(tehty)**
-- Jokaiseen treeniin voi kirjata useita liikkeitä **(tehty)**
-- Käyttäjä voi lisätä jokaiselle treenin liikkeelle nimen ja sarjojen (settien) määrän (**tehty**)
-- Jokaiselle setille voi kertoa toistojen määrä ja lisäpainon kilogrammoina (**tehty**)
-- Käyttäjä voi kirjautua ulos järjestelmästä **(tehty)**
+- Käyttäjä voi luoda sovellukseen tunnuksen 
+  - Käyttäjätunnuksen on oltava vähintään 5 merkkiä pitkä ja uniikki
+- Käyttäjä voi kirjautua sovellukseen 
+- Käyttäjälle näkyvät vain käyttäjän itse kirjaamat treenit
+- Käyttäjä voi kirjata yksittäisen treenin, jolle voi määritellä nimen 
+- Yksittäiseen treeniin voi kirjata päivämäärän 
+- Jokaiseen treeniin voi kirjata useita liikkeitä
+- Käyttäjä voi lisätä jokaiselle treenin liikkeelle nimen ja sarjojen (settien) määrän 
+- Jokaiselle setille voi kertoa toistojen määrä ja lisäpainon kilogrammoina 
+- Käyttäjä voi kirjautua ulos järjestelmästä 
 
-## Lisätoiminnallisuus - jatkokehittelyideoita
-- Sovellus tilastoi käyttäjän ennätyksiä yhdessä liikkeessä. Ennätys eli personal best lasketaan sekä kilojen että toistojen avulla.
-- Sovellus ilmoittaa jokaisen kirjatun treenin kohdalla personal best:ien määrän. 
-- Omien ennätysten tarkastelu: Sovellus kertoo käyttäjälle henkilökohtaisen ennätyksen jokaisessa liikkeessä treenihistorian perusteella.  
-- Sovellus kertoo, kuinka monta treeniä käyttäjä on kirjannut viikossa.
-- Käyttäjä voi asettaa tavoitteeksi tietyn määrän treenejä viikossa ja sovellus ilmoittaa aina, milloin tavoitteeseen on päästy. Ilmoittaminen tapahtuu treenin kirjaamisen päättyessä. Samassa kohtaa ilmoitetaan henkilökohtaisista ennätyksistä.
-- Treenien poistaminen historiasta
-- Käyttäjätunnuksen poistaminen
