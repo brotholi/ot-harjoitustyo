@@ -12,9 +12,20 @@ Lihasloki-sovelluksella pidetään kirjaa kuntosalitreeneistä. Sovellukseen kir
 - [Release](https://github.com/brotholi/ot-harjoitustyo/releases/tag/viikko6)
 
 ## Asennus
-1. Asenna riippuvuudet komennolla poetry install
-2. Suorita alustukset komennolla poetry run invoke build
-3. Käynnistä sovellus komennolla poetry run invoke start
+
+
+1. Asenna riippuvuudet komennolla 
+```bash
+poetry install
+```
+2. Suorita alustukset komennolla 
+```bash
+poetry run invoke build
+```
+3. Käynnistä sovellus komennolla 
+```bash
+poetry run invoke start
+```
 
 ## Käyttö
 - Tarvittavat alustukset tehdään komennolla *poetry run invoke build*
