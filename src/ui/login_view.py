@@ -71,6 +71,8 @@ class LoginView:
         password_label = ttk.Label(master=self._frame, text="Salasana")
         self._password_entry = ttk.Entry(master=self._frame)
 
+        self._password_entry.config(show="*")
+
         login_button = ttk.Button(
             master=self._frame,
             text="Kirjaudu",

@@ -14,7 +14,8 @@ class LogbookRepository:
         """
         self._file_path = file_path
 
-    def _find_all(self):
+    def find_all(self):
+        """Hakee kaikki csv-tiedostossa olevat treenikirjaukset."""
         return self.read_all()
 
     def read_all(self):
@@ -45,7 +46,7 @@ class LogbookRepository:
         Returns:
             Lista LogEntry-olioita.
         """
-        all_entires = self._find_all()
+        all_entires = self.find_all()
         entries_by_user = filter(
             lambda entry: entry.user == username, all_entires)
         user_entries = list(entries_by_user)
@@ -91,7 +92,7 @@ class LogbookRepository:
         Args:
             entry: Tallennettava kirjaus LogEntry-oliona.
         """
-        entries = self._find_all()
+        entries = self.find_all()
 
         entries.append(entry)
         self.write(entries)

@@ -78,18 +78,17 @@ class LogbookService:
             username, logtitle)
         return logs_by_name
 
-    def create_new_exercise(self, exercise_name, weigth, reps):
+    def create_new_exercise(self, logentry, exercise_name, weight, reps):
         """Luo uuden käyttäjän.
         Args:
+            logentry: LogEntry-olio 
             exercise_name: Merkkijonoarvo, joka kuvaa liikeen nimeä.
-            weigth: Merkkijonoarvo, joka kuvaa liikeen lisäpainoa.
+            weight: Merkkijonoarvo, joka kuvaa liikeen lisäpainoa.
             reps: Merkkijonoarvo, joka kuvaa liikeen toistomäärää.
         Returns:
             Luotu liike Exercise-oliona.
         """
-        username = user_service.get_current_user()
-        logentry = logbook_service.find_current_log(username)
-        exercise = Exercise(exercise_name, weigth, reps)
+        exercise = Exercise(exercise_name, weight, reps)
 
         self._exercises_repository.create_new_exercise(logentry.id, exercise)
         return exercise
@@ -105,23 +104,6 @@ class LogbookService:
         if len(entries) > 0:
             return entries
         return []
-
-    def find_users_exercises_by_exercise_name(self, username, exercise_name):
-        """Palauttaa yhden käyttäjän kirjaamat liikkeet.
-        Args:
-            username: Merkkijonoarvo, joka kuvaa käyttäjän käyttäjätunnusta.
-            exercise_name: Merkkijonoarvo, joka kuvaa liikkeen nimeä.
-        Returns:
-            Käyttäjän samannimiset liikkeet Exercise-olioiden listana.
-        """
-        all_entries = self._logbook_repository.find_by_username(username)
-        user_entries = []
-        for entry in all_entries:
-            logentry_id = entry.id
-            user_entries.append(logentry_id)
-        user_exercises = self._exercises_repository.find_by_exercise_name_for_user(
-            user_entries, exercise_name)
-        return user_exercises
 
     def create_logentry_id(self):
         """Luo uuden treenikirjauksen id-tunnuksen.

@@ -5,34 +5,6 @@ from services.user_service import user_service
 from services.logbook_service import logbook_service
 
 
-class SearchListView:
-    def __init__(self, root, search_results):
-        self._root = root
-        self._search_results = search_results
-        self._frame = None
-
-        self._initialize()
-
-    def pack(self):
-        self._frame.pack(fill=constants.X)
-
-    def destroy(self):
-        self._frame.destroy()
-
-    def _initialize(self):
-        self._frame = ttk.Frame(master=self._root)
-        self._initialize_exercise()
-
-    def _initialize_exercise(self):
-        item_frame = ttk.Frame(master=self._frame)
-
-        label = ttk.Label(master=item_frame, text='')
-        label.grid(column=0, padx=5, pady=5, sticky=constants.W)
-
-        item_frame.grid_columnconfigure(0, weight=1)
-        item_frame.pack(fill=constants.X)
-
-
 class LogbookView:
     """Luokan konstruktori. Luo uuden kirjautuneen käyttäjän alkunäkymän.
         Args:
@@ -47,8 +19,6 @@ class LogbookView:
         self._root = root
         self._handle_back_to_login = handle_back_to_login
         self._handle_logentry_view = handle_logentry_view
-        self._search_list_view = None
-        self._search_list_frame = None
         self._current_view = None
 
         self._initialize()
@@ -65,7 +35,6 @@ class LogbookView:
         """"Näyttää error-viestin käyttäjälle.
         Args:
             message: Merkkijonona error-viesti"""
-
         self._error_var.set(message)
         self._error_label.grid()
 
@@ -74,38 +43,51 @@ class LogbookView:
         """
         self._error_label.grid_remove()
 
-    def _initialize_search_list(self):
-        "Alustaa hakutulosten listauksesta vastaavan näkymän"
+    def _logout_handler(self):
+        self._handle_back_to_login()
+
+    def _add_entry_handler(self):
+        self._handle_logentry_view()
+
+    def _search_entry_handler(self):
+        """Kirjausten hakutoiminnon tapahtumakäsittelijä"""
         keyword = self._search_entry.get()
-
-        if self._search_list_view:
-            self._exercise_list_view.destroy()
         search_results = logbook_service.find_log_by_logtitle(keyword)
+        if len(search_results) == 0:
+            self._show_error_message("Ei hakutuloksia")
+        else:
+            self._hide_error()
 
-        self._exercise_list_view = SearchListView(
-            self._search_list_frame,
-            search_results
-        )
+        for log in search_results:
+            log_label = ttk.Label(master=self._frame,
+                                  text=f'{log.logtitle}', font='Arial 10 bold')
+            log_label.grid(sticky=constants.W, padx=5, pady=5)
+            date_label = ttk.Label(
+                master=self._frame, text=f'Pvm:  {log.logdate}')
+            date_label.grid(sticky=constants.W, padx=5, pady=5)
+            log_exercises = logbook_service.find_logentry_exercises(log.id)
+            for exercise in log_exercises:
+                exercise_label = ttk.Label(
+                    master=self._frame, text=f'{exercise.name}  {exercise.weight}kg  x  {exercise.reps}')
+                exercise_label.grid(sticky=constants.W, padx=5, pady=5)
 
-        # self._search_list_view.pack()
+            separator = ttk.Separator(master=self._frame, orient='horizontal')
+            separator.grid(sticky=constants.EW, columnspan=5)
 
-    def _initialize(self):
-        """Alustaa näkymän."""
-        self._frame = ttk.Frame(master=self._root)
-        self._search_list_frame = ttk.Frame(master=self._frame)
-        self._initialize_header()
-        self._initialize_logs()
-        self._initialize_footer()
-        self._initialize_search_list()
+    def _initialize_logs(self):
+        """Alustaa käyttäjälle näytettävät viisi aiempaa kirjausta."""
+        username = user_service.get_current_user()
+        all_logs = logbook_service.find_user_logs(username)
+        if len(all_logs) > 5:
+            displayable_logs = all_logs[-5:]
+        else:
+            displayable_logs = all_logs
 
-        self._search_list_frame.grid(
-            row=18,
-            column=0,
-            columnspan=2,
-            sticky=constants.EW
-        )
+        for row in displayable_logs:
+            log_label = ttk.Label(
+                master=self._frame, text=f'Pvm:  {row.logdate}  Treeni:  {row.logtitle}')
+            log_label.grid(sticky=constants.W, padx=5, pady=5)
 
-        self._frame.grid_columnconfigure(1, weight=1, minsize=300)
 
     def _initialize_header(self):
         username = user_service.get_current_user()
@@ -164,47 +146,12 @@ class LogbookView:
         self._error_label.grid(row=17, column=0, padx=5,
                                pady=5, sticky=constants.W)
 
-    def _logout_handler(self):
-        self._handle_back_to_login()
 
-    def _add_entry_handler(self):
-        self._handle_logentry_view()
+    def _initialize(self):
+        """Alustaa näkymän."""
+        self._frame = ttk.Frame(master=self._root)
+        self._initialize_header()
+        self._initialize_logs()
+        self._initialize_footer()
 
-# oma näkymä???
-# /////////
-    def _search_entry_handler(self):
-        """Kirjausten hakutoiminnon tapahtumakäsittelijä"""
-        keyword = self._search_entry.get()
-        search_results = logbook_service.find_log_by_logtitle(keyword)
-        if len(search_results) == 0:
-            self._show_error_message("Ei hakutuloksia")
-
-        for log in search_results:
-            log_label = ttk.Label(master=self._frame,
-                                  text=f'{log.logtitle}', font='Arial 10 bold')
-            log_label.grid(sticky=constants.W, padx=5, pady=5)
-            date_label = ttk.Label(
-                master=self._frame, text=f'Pvm:  {log.logdate}')
-            date_label.grid(sticky=constants.W, padx=5, pady=5)
-            log_exercises = logbook_service.find_logentry_exercises(log.id)
-            for exercise in log_exercises:
-                exercise_label = ttk.Label(
-                    master=self._frame, text=f'{exercise.name}  {exercise.weight}kg  x  {exercise.reps}')
-                exercise_label.grid(sticky=constants.W, padx=5, pady=5)
-
-            separator = ttk.Separator(master=self._frame, orient='horizontal')
-            separator.grid(sticky=constants.EW, columnspan=5)
-
-    def _initialize_logs(self):
-        """Alustaa käyttäjälle näytettävät viisi aiempaa kirjausta."""
-        username = user_service.get_current_user()
-        all_logs = logbook_service.find_user_logs(username)
-        if len(all_logs) > 5:
-            displayable_logs = all_logs[-5:]
-        else:
-            displayable_logs = all_logs
-
-        for row in displayable_logs:
-            log_label = ttk.Label(
-                master=self._frame, text=f'Pvm:  {row.logdate}  Treeni:  {row.logtitle}')
-            log_label.grid(sticky=constants.W, padx=5, pady=5)
+        self._frame.grid_columnconfigure(1, weight=1, minsize=300)

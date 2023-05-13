@@ -8,7 +8,7 @@ try:
 except FileNotFoundError:
     pass
 
-LOGENTRIES_FILENAME = os.getenv("EXERCISES_FILENAME") or "logentries.csv"
+LOGENTRIES_FILENAME = os.getenv("LOGENTRIES_FILENAME") or "logentries.csv"
 LOGENTRIES_FILE_PATH = os.path.join(dirname, "..", "data", LOGENTRIES_FILENAME)
 
 DATABASE_FILENAME = os.getenv("DATABASE_FILENAME") or "database.sqlite"

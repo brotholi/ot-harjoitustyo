@@ -84,9 +84,11 @@ class CreateUserView:
 
         password_label = ttk.Label(master=self._frame, text="Anna salasana")
         self._password_entry = ttk.Entry(master=self._frame)
+        self._password_entry.config(show="*")
         password_again_label = ttk.Label(
             master=self._frame, text="Salasana uudelleen")
         self._password_again_entry = ttk.Entry(master=self._frame)
+        self._password_again_entry.config(show="*")
 
         create_user_button = ttk.Button(
             master=self._frame,

@@ -88,7 +88,7 @@ class LogentryView:
 
 
     def _change_date_handler(self):
-        """Kirjauksen päivämäärän muuttamisesta vastaava tapahumankäsittelijä"""
+        """Kirjauksen päivämäärän muuttamisesta vastaava tapahtumankäsittelijä"""
         self._hide_change_date_button()
         self._hide_current_date()
         self._show_date_entry()

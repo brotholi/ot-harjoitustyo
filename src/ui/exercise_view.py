@@ -106,20 +106,11 @@ class ExerciseView:
         """
         self._error_label.grid_remove()
 
-    def _set_exercise_done(self, set_number):
-#////////pois????
-        if set_number == 1:
-            self._weigth_entry_1.grid_remove()
-            self._reps_entry_1.grid_remove()
-
-        if set_number == 2:
-            self._weigth_entry_2.grid_remove()
-
-        if set_number == 3:
-            self._weigth_entry_3.grid_remove()
-
     def _create_exercise_handler(self):
         """Uuden liikkeen luomisesta vastaava tapahtumankäsittelijä"""
+
+        username = user_service.get_current_user()
+        logentry = logbook_service.find_current_log(username)
 
         for i in range(0, 3):
             name_entry_value = self._title_entry.get()
@@ -128,31 +119,31 @@ class ExerciseView:
                 return
 
             if i == 0:
-                weigth_entry_value = self._weigth_entry_1.get()
+                weight_entry_value = self._weight_entry_1.get()
                 reps_entry_value = self._reps_entry_1.get()
 
             if i == 1:
-                weigth_entry_value = self._weigth_entry_2.get()
+                weight_entry_value = self._weight_entry_2.get()
                 reps_entry_value = self._reps_entry_2.get()
 
             if i == 2:
-                weigth_entry_value = self._weigth_entry_3.get()
+                weight_entry_value = self._weight_entry_3.get()
                 reps_entry_value = self._reps_entry_3.get()
 
-            weight_number = weigth_entry_value.isdigit()
+            weight_number = weight_entry_value.isdigit()
             reps_number = reps_entry_value.isdigit()
 
             if weight_number == False or reps_number == False:
                 self._show_error_message("Syötä paino ja toistot numeroina")
                 return
-            logbook_service.create_new_exercise(name_entry_value, weigth_entry_value, reps_entry_value)
+            logbook_service.create_new_exercise(logentry, name_entry_value, weight_entry_value, reps_entry_value)
 
         self._title_entry.delete(0, constants.END)
-        self._weigth_entry_1.delete(0, constants.END)
+        self._weight_entry_1.delete(0, constants.END)
         self._reps_entry_1.delete(0, constants.END)
-        self._weigth_entry_2.delete(0, constants.END)
+        self._weight_entry_2.delete(0, constants.END)
         self._reps_entry_2.delete(0, constants.END)
-        self._weigth_entry_3.delete(0, constants.END)
+        self._weight_entry_3.delete(0, constants.END)
         self._reps_entry_3.delete(0, constants.END)
 
         self._hide_error()
@@ -226,51 +217,48 @@ class ExerciseView:
     def _initialize_exercise_rows(self):
         """Alustaa entry-kentät, joihin kirjataan kolmen sarjan liikkeiden tiedot."""
         set_label_1 = ttk.Label(master=self._frame, text="1", width=2)
-        self._weigth_entry_1 = ttk.Entry(master=self._frame, width=4)
+        self._weight_entry_1 = ttk.Entry(master=self._frame, width=4)
         self._reps_entry_1 = ttk.Entry(master=self._frame, width=4)
 
         done_button_1 = ttk.Button(
             master=self._frame,
             text="✓",
-            command=self._set_exercise_done(1)
         )
 
         set_label_1.grid(row=5, column=0, padx=5, pady=5, sticky=constants.W)
-        self._weigth_entry_1.grid(
+        self._weight_entry_1.grid(
             row=5, column=0, padx=5, pady=5, sticky=constants.E)
         self._reps_entry_1.grid(row=5, column=1, padx=5,
                                 pady=5, sticky=constants.W)
         done_button_1.grid(row=5, column=1, padx=5, pady=5, sticky=constants.E)
 
         set_label_2 = ttk.Label(master=self._frame, text="2", width=2)
-        self._weigth_entry_2 = ttk.Entry(master=self._frame, width=4)
+        self._weight_entry_2 = ttk.Entry(master=self._frame, width=4)
         self._reps_entry_2 = ttk.Entry(master=self._frame, width=4)
 
         done_button_2 = ttk.Button(
             master=self._frame,
             text="✓",
-            command=self._set_exercise_done(2)
         )
 
         set_label_2.grid(row=6, column=0, padx=5, pady=5, sticky=constants.W)
-        self._weigth_entry_2.grid(
+        self._weight_entry_2.grid(
             row=6, column=0, padx=5, pady=5, sticky=constants.E)
         self._reps_entry_2.grid(row=6, column=1, padx=5,
                                 pady=5, sticky=constants.W)
         done_button_2.grid(row=6, column=1, padx=5, pady=5, sticky=constants.E)
 
         set_label_3 = ttk.Label(master=self._frame, text="3", width=2)
-        self._weigth_entry_3 = ttk.Entry(master=self._frame, width=4)
+        self._weight_entry_3 = ttk.Entry(master=self._frame, width=4)
         self._reps_entry_3 = ttk.Entry(master=self._frame, width=4)
 
         done_button_3 = ttk.Button(
             master=self._frame,
             text="✓",
-            command=self._set_exercise_done(3)
         )
 
         set_label_3.grid(row=7, column=0, padx=5, pady=5, sticky=constants.W)
-        self._weigth_entry_3.grid(
+        self._weight_entry_3.grid(
             row=7, column=0, padx=5, pady=5, sticky=constants.E)
         self._reps_entry_3.grid(row=7, column=1, padx=5,
                                 pady=5, sticky=constants.W)

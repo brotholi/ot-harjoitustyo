@@ -93,25 +93,6 @@ class ExerciseRepository:
 
         return exercises
 
-    def find_by_exercise_name_for_user(self, logentry_ids, exercise_name):
-        """Hakee yhden käyttäjän kaikki samannimiset liikkeet.
-            Args:
-               logentry_ids: Kaikki käyttäjän logentry_id:t listana.
-               exercise_name: liikkeen nimi
-            Returns:
-                Kaikki liikkeet Exercise-olioiden listana.
-        """
-        exercises = []
-        for entry_id in logentry_ids:
-            cursor = self._connection.cursor()
-            cursor.execute("select * from lihasloki_exercises where logentry_id = ? and name = ?",
-                           (entry_id, exercise_name,))
-            row = cursor.fetchone()
-            exercise = Exercise(row["name"], row["weight"], row["reps"])
-            exercises.append(exercise)
-
-        return exercises
-
     def _handle_nonexistent_database_error(self):
         """Jos tietokantaa ei ole alustettu, lopettaa sovelluksen.
         """
