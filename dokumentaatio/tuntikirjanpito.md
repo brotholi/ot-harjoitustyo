@@ -16,4 +16,5 @@
 | 8.5.  | 8    | Virheenkorjauksia, testejä ja koodin laatu |
 | 11.5. | 2   | exercise-näkymän toteutusta |
 | 12.5. | 8   | exercise-repositoryn toteutusta ja sovelluksen laajennusta |
-| yht   | 66   | | 
+| 13.5. | 8   | dokumentointia |
+| yht   | 74   | | 
