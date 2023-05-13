@@ -85,7 +85,7 @@ Liike tallennetaan painamalla *Lisää*. Tällöin se tulee näkyviin liikkeen k
 ![](./kuvat/exercise_view_list.png)
 
 Treenin voi tallentaa kirjatuilla liikkeillä painamalla *Tallenna treeni*, joka vie käyttäjän takaisin aloitusnäkymään. 
-**Huom!** muista tallentaa myös viimeisenä kirjauksessa oleva liike painamalla *Lisää* ennen kuin siirryt aloitusnäkymään takaisin
+**Huom!** muista tallentaa myös viimeisenä kirjauksessa oleva liike painamalla *Lisää* ennen kuin tallennat treenin
 
 
 
