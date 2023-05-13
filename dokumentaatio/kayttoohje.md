@@ -44,7 +44,7 @@ Kirjautuminen avaa käyttäjälle oman näkymän:
 
 *Kirjaudu ulos*-nappula kirjaa käyttäjän ulos.
 
-Jos käyttäjällä on yli viisi aikaisempaa kirjausta, viiden aikaisemman treenikirjauksen päivämäärä ja nimi näytetään *Aikaisemmat treenit*-otsikon alla.
+Jos käyttäjällä on yli viisi aikaisempaa kirjausta, viiden viimeisimmän treenikirjauksen päivämäärä ja nimi näytetään *Aikaisemmat treenit* -otsikon alla.
 Muutoin näytetään kaikki aiemmat kirjaukset.
 
 Aikaisempien treenien tarkempia tietoja voi saada kirjoittamalla alhaalla olevaan kenttään treenin nimen. 
