@@ -15,6 +15,7 @@ Sovelluksen testien haaraumakattaavuus on 91%, kun käyttöliittymää ei oteta 
 
 ![](./kuvat/test_coverage-report.png)
 
+
 ## Järjestelmätestaus
 
 ### Asennus ja konfigurointi
