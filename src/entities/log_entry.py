@@ -10,7 +10,7 @@ class LogEntry:
         logdate: Merkkijonoarvo, joka kuvaa kirjauksen päivämäärää.
     """
 
-    def __init__(self, user: str, logtitle: str, logdate: datetime, id: str):
+    def __init__(self, user: str, logtitle: str, logdate: datetime, logentry_id: str):
         """Luokan konstruktori, joka luo uuden kirjauksen.
         Args:
             user: Merkkijonoarvo, joka kuvaa kirjausta tehneen käyttäjän käyttäjätunnusta.
@@ -21,4 +21,4 @@ class LogEntry:
         self.user = user
         self.logtitle = logtitle
         self.logdate = logdate
-        self.id = id
+        self.logid = logentry_id

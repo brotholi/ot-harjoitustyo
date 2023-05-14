@@ -7,7 +7,6 @@ from services.logbook_service import logbook_service
 class ExerciseListView:
     """Treenille kirjattujen liikkeiden listauksesta vastaava näkymä."""
 
-
     def __init__(self, root, exercises):
         """Luokan konstruktori. Luo uuden aiemmin treenille kirjattujen liikkeiden listaamisesta vastaavan näkymän.
         Args:
@@ -136,7 +135,8 @@ class ExerciseView:
             if weight_number == False or reps_number == False:
                 self._show_error_message("Syötä paino ja toistot numeroina")
                 return
-            logbook_service.create_new_exercise(logentry, name_entry_value, weight_entry_value, reps_entry_value)
+            logbook_service.create_new_exercise(
+                logentry, name_entry_value, weight_entry_value, reps_entry_value)
 
         self._title_entry.delete(0, constants.END)
         self._weight_entry_1.delete(0, constants.END)
@@ -178,7 +178,7 @@ class ExerciseView:
         username = user_service.get_current_user()
         log = logbook_service.find_current_log(username)
 
-        exercises = logbook_service.find_logentry_exercises(log.id)
+        exercises = logbook_service.find_logentry_exercises(log.logid)
 
         self._exercise_list_view = ExerciseListView(
             self._exercise_list_frame,
@@ -291,8 +291,8 @@ class ExerciseView:
         save_button.grid(row=20, column=1, padx=5,
                          pady=5, sticky=constants.E)
 
-        self._error_label.grid(row=7, column=1, padx=5,
-                               pady=5, sticky=constants.E)
+        self._error_label.grid(row=20, column=0, padx=5,
+                               pady=5, sticky=constants.W)
 
         self._hide_error()
 

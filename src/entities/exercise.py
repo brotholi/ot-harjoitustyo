@@ -6,6 +6,7 @@ class Exercise:
         weight: Merkkijonoarvo, joka kuvaa liikkeen lisäpainoa.
         reps: Merkkijonoarvo, joka kuvaa liikkeen toistoja.
     """
+
     def __init__(self, exercise_name: str, weight: str, reps: str):
         """Luokan konstruktori, joka luo uuden liikkeen.
         Args:

@@ -35,7 +35,8 @@ class LogbookRepository:
                 date = parts[2]
                 logentry_id = parts[3]
 
-                entries.append(LogEntry(username, log_title, date, logentry_id))
+                entries.append(
+                    LogEntry(username, log_title, date, logentry_id))
 
         return entries
 
@@ -105,7 +106,7 @@ class LogbookRepository:
         self.make_sure_file_exists()
         with open(self._file_path,  "w", encoding="utf-8") as file:
             for entry in entries:
-                row = f"{entry.user};{entry.logtitle};{entry.logdate};{entry.id}"
+                row = f"{entry.user};{entry.logtitle};{entry.logdate};{entry.logid}"
 
                 file.write(row+"\n")
 

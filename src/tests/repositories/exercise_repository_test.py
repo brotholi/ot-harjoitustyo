@@ -34,4 +34,3 @@ class TestExerciseRepository(unittest.TestCase):
     def test_find_by_empty_logentry_id(self):
         logentry_exercises = exercise_repository.find_by_logentry_id("98989")
         self.assertEqual(len(logentry_exercises), 0)
-

@@ -8,7 +8,7 @@ from repositories.logbook_repository import (
 from repositories.exercises_repository import (
     exercise_repository as default_exercise_repository
 )
-from services.user_service import user_service
+
 
 class InvalidDateFormatError(Exception):
     pass
@@ -18,7 +18,7 @@ class LogbookService:
     """Treenikirjauksiin liittyvästä sovelluslogiikasta vastaava luokka."""
 
     def __init__(self, logbook_repository=default_logbook_repository,
-        exercise_repository=default_exercise_repository):
+                 exercise_repository=default_exercise_repository):
         """Luokan konstruktori. Luo uuden treenikirjausten sovelluslogiikasta vastaavan palvelun.
         Args:
             logbook_repository:
@@ -68,12 +68,11 @@ class LogbookService:
         current_log = self._logbook_repository.find_newest_log(username)
         return current_log
 
-    def find_log_by_logtitle(self, logtitle):
+    def find_log_by_logtitle(self, username, logtitle):
         """Paluttaa yhden käyttäjän treenikirjaukset, joilla on hakutekijää vastaava nimi.
         Returns:
             Samannimiset kirjaukset LogEntry-olioden listana.
         """
-        username = user_service.get_current_user()
         logs_by_name = self._logbook_repository.find_by_logtitle(
             username, logtitle)
         return logs_by_name
@@ -90,7 +89,7 @@ class LogbookService:
         """
         exercise = Exercise(exercise_name, weight, reps)
 
-        self._exercises_repository.create_new_exercise(logentry.id, exercise)
+        self._exercises_repository.create_new_exercise(logentry.logid, exercise)
         return exercise
 
     def find_logentry_exercises(self, logentry_id):
@@ -101,7 +100,7 @@ class LogbookService:
             Treenikirjauksen liikkeet Exercise-olioiden listana.
         """
         entries = self._exercises_repository.find_by_logentry_id(logentry_id)
-        if len(entries) > 0:
+        if entries:
             return entries
         return []
 
@@ -113,7 +112,7 @@ class LogbookService:
         uusi = uuid.uuid4()
         logentry_id = str(uusi)
         return logentry_id
-    
+
     def get_current_date(self):
         """Palauttaa kuluvan päivän.
         Returns:
@@ -131,7 +130,7 @@ class LogbookService:
         Returns:
             Oikeassa muodossa olevan päivämäärän.
         """
-        
+
         if "." not in date:
             raise InvalidDateFormatError()
 

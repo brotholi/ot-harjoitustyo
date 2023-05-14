@@ -5,7 +5,8 @@ from entities.user import User
 
 
 class FakeTestUserRep:
-    def __init__(self, lihasloki_users=None):
+    def __init__(self, lihasloki_users=None, user=None):
+        self._user = user
         self.users = lihasloki_users or []
 
     def create_new_user(self, user):
@@ -53,11 +54,11 @@ class TestUserService(unittest.TestCase):
     def test_login(self):
         username = self.user_maija.username
         password = self.user_maija.password
-        # luodaan käyttäjä testiä varten
         self.user_service.create_new_user(username, password)
-        # kirjaudutaan sisään servicellä
         user = self.user_service.login(username, password)
         self.assertEqual(user.username, self.user_maija.username)
 
-    # username = "Kaarlo"
-    # password = "12345"
+        self.assertRaises(
+            InvalidCredentialsError,
+            lambda: self.user_service.login(username, 'haukionkala')
+        )

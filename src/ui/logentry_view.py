@@ -83,9 +83,8 @@ class LogentryView:
             self._show_error_message("Syötä päivämäärä muodossa pp.kk.vvvv")
             return
         logbook_service.create_new_entry(
-        username, title_entry_value, date_entry_value)
+            username, title_entry_value, date_entry_value)
         self._handle_exercise_view()
-
 
     def _change_date_handler(self):
         """Kirjauksen päivämäärän muuttamisesta vastaava tapahtumankäsittelijä"""

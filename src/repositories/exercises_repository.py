@@ -50,15 +50,15 @@ class ExerciseRepository:
         Returns:
             Tallennettu käyttjä Exercise-oliona.
         """
-        all = self.find_all()
-        id = len(all)
+        all_exercises = self.find_all()
+        exercise_id = len(all_exercises)
 
         cursor = self._connection.cursor()
 
         try:
             cursor.execute("""insert into lihasloki_exercises
              (exercise_id, logentry_id, name, weight, reps) values (?, ?, ?, ?, ?)""",
-                           (id, logentry_id, exercise.name,
+                           (exercise_id, logentry_id, exercise.name,
                             exercise.weight, exercise.reps)
                            )
         except sqlite3.OperationalError:

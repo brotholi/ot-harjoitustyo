@@ -1,6 +1,4 @@
 from tkinter import ttk, constants, StringVar
-from entities.log_entry import LogEntry
-from entities.exercise import Exercise
 from services.user_service import user_service
 from services.logbook_service import logbook_service
 
@@ -15,6 +13,7 @@ class LogbookView:
             handle_logentry_view:
                 Kutsuttava-arvo, jota kutsutaan kun siirrytään uuden treenin kirjausnäkymään.
     """
+
     def __init__(self, root, handle_back_to_login, handle_logentry_view):
         self._root = root
         self._handle_back_to_login = handle_back_to_login
@@ -51,8 +50,10 @@ class LogbookView:
 
     def _search_entry_handler(self):
         """Kirjausten hakutoiminnon tapahtumakäsittelijä"""
+        username = user_service.get_current_user()
         keyword = self._search_entry.get()
-        search_results = logbook_service.find_log_by_logtitle(keyword)
+        search_results = logbook_service.find_log_by_logtitle(
+            username, keyword)
         if len(search_results) == 0:
             self._show_error_message("Ei hakutuloksia")
         else:
@@ -65,7 +66,7 @@ class LogbookView:
             date_label = ttk.Label(
                 master=self._frame, text=f'Pvm:  {log.logdate}')
             date_label.grid(sticky=constants.W, padx=5, pady=5)
-            log_exercises = logbook_service.find_logentry_exercises(log.id)
+            log_exercises = logbook_service.find_logentry_exercises(log.logid)
             for exercise in log_exercises:
                 exercise_label = ttk.Label(
                     master=self._frame, text=f'{exercise.name}  {exercise.weight}kg  x  {exercise.reps}')
@@ -87,7 +88,6 @@ class LogbookView:
             log_label = ttk.Label(
                 master=self._frame, text=f'Pvm:  {row.logdate}  Treeni:  {row.logtitle}')
             log_label.grid(sticky=constants.W, padx=5, pady=5)
-
 
     def _initialize_header(self):
         username = user_service.get_current_user()
@@ -145,7 +145,6 @@ class LogbookView:
 
         self._error_label.grid(row=17, column=0, padx=5,
                                pady=5, sticky=constants.W)
-
 
     def _initialize(self):
         """Alustaa näkymän."""
