@@ -80,6 +80,9 @@ Liikkeet kirjataan liikkeiden kirjausnäkymässä.
 ![](./kuvat/exercise_view.png)
 
 Liikkeelle on syötettävä nimi ja kolmelle sarjalle sekä lisäpaino että toistot.
+
+![](./kuvat/exercise_view_error.png)
+
 Liike tallennetaan painamalla *Lisää*. Tällöin se tulee näkyviin liikkeen kirjausnäkymän yläpuolelle.
 
 ![](./kuvat/exercise_view_list.png)
