@@ -30,5 +30,5 @@ Kaikki toiminnallisuudet on myös testattu virheellisillä arvoilla, tyhjillä j
 
 ## Sovellukseen jääneet laatuongelmat
 Hakutoiminnossa voi hakea ainoastaan täsmällisillä hakusanoilla ja haun tulokset eivät välttämättä mahdu ikkunalle, jos niitä on liikaa.
-Tällä hetkellä liikkeidenkirjausnäkymässä sarjojen done-nappulat eivät vielä tee mitään. Näihin mahdollisuus kehittää eteenpäin.
+Tällä hetkellä liikkeidenkirjausnäkymässä sarjojen done-nappulat eivät vielä tee mitään. Niitä olisi mahdollisuus kehittää eteenpäin.
 Sovellus heittää käyttäjän ulos (virheilmoituksen kera), kun SQlite-tietokantaa ei ole alustettu poetry run invoke build -komennolla.
