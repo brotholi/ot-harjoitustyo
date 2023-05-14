@@ -13,7 +13,7 @@ Oliot talentavat tietoa muistiin eivätkä pysyväistallennukseen.
 ### Testauskattavuus
 Sovelluksen testien haaraumakattaavuus on 91%, kun käyttöliittymää ei oteta mukaan.
 
-![](./kuvat/test_coverage.png)
+![](./kuvat/test_coverage-report.png)
 
 ## Järjestelmätestaus
 
