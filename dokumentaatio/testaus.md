@@ -20,7 +20,7 @@ Sovelluksen testien haaraumakattaavuus on 91%, kun käyttöliittymää ei oteta 
 
 ### Asennus ja konfigurointi
 
-Asennusta on testattu lataamalla sovellus Linux-ympäristöön. Konfiguraatiotiedostoa on testattu laittamalla sinne eri tiedostonimet kuin alun perin
+Asennusta on testattu lataamalla sovellus Linux-ympäristöön. Konfiguraatiotiedostoa on testattu laittamalla sinne eri tiedostonimet kuin alun perin.
 Ohjelman käynnistystä on testattu niin, että tiedostot ovat jo olemassa data-kansiossa ja niin, että ne luodaan alustuksen yhteydessä/ohjelmaa suoritettaessa.
 
 ### Toiminnallisuudet
