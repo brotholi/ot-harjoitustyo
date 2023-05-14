@@ -17,5 +17,5 @@
 | 11.5. | 2   | exercise-näkymän toteutusta |
 | 12.5. | 8   | exercise-repositoryn toteutusta ja sovelluksen laajennusta |
 | 13.5. | 8   | dokumentointia |
-| 13.5. | 3   | testikattavuus ylös ja loppupalautus |
+| 14.5. | 3   | testikattavuus ylös ja loppupalautus |
 | yht   | 77   | | 
