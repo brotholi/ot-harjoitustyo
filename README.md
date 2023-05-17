@@ -10,7 +10,7 @@ Lihasloki-sovelluksella pidetään kirjaa kuntosalitreeneistä. Sovellukseen kir
 - [Työaikakirjanpito](./dokumentaatio/tuntikirjanpito.md)
 - [Changelog](./dokumentaatio/changelog.md)
 - [Testausdokumentti](./dokumentaatio/testaus.md)
-- [Release]([https://github.com/brotholi/ot-harjoitustyo/releases/tag/loppupalautus])
+- [Release]([/releases/tag/loppupalautus]](https://github.com/brotholi/ot-harjoitustyo/releases/tag/loppupalautus))
 
 ## Asennus
 
